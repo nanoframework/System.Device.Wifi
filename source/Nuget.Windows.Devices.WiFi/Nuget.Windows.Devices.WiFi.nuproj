@@ -39,7 +39,7 @@
     </Dependency>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>92DAD869-250B-4DFB-A340-CA3B15D05D9F</ProjectGuid>
+    <ProjectGuid>D08AD3FE-8220-4028-AAB4-9BE78350FDCC</ProjectGuid>
   </PropertyGroup>
   <PropertyGroup>
     <NuProjPath>..\packages\NuProj.0.20.4-beta\tools\</NuProjPath>
