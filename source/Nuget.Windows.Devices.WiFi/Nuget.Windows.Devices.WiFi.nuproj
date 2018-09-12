@@ -35,7 +35,7 @@
       <Version>[1.0.0-preview062]</Version>
     </Dependency>
     <Dependency Include="nanoFramework.Runtime.Events">
-      <Version>[1.0.0-preview183]</Version>
+      <Version>[1.0.0-preview188]</Version>
     </Dependency>
   </ItemGroup>
   <PropertyGroup Label="Globals">
