@@ -61,8 +61,6 @@
 
       msbuild source\nanoFramework.Windows.Devices.WiFi.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
-      msbuild source\nanoFramework.Windows.Devices.WiFi.Nuget.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-
   before_deploy:
   # need this to keep ruby happy
   - ps: md c:\tmp
@@ -149,14 +147,12 @@
 
       nuget restore source\nanoFramework.Windows.Devices.WiFi.sln
 
-      gitversion /l console /output buildserver /updateAssemblyInfo /ensureassemblyinfo
+      # gitversion /l console /output buildserver /updateAssemblyInfo /ensureassemblyinfo
 
   build_script:
   - ps: >-
 
       msbuild source\nanoFramework.Windows.Devices.WiFi.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
-
-      msbuild source\nanoFramework.Windows.Devices.WiFi.Nuget.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
   on_success:
   # for this environment variable to work here it has to be set in AppVeyor UI

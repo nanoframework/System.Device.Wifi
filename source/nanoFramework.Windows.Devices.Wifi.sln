@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "Windows.Devices.Wifi", "Windows.Devices.Wifi.nfproj", "{A42BC265-9F96-48E2-AA2A-A5119B9B0B79}"
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "Windows.Devices.Wifi", "Windows.Devices.Wifi\Windows.Devices.Wifi.nfproj", "{A42BC265-9F96-48E2-AA2A-A5119B9B0B79}"
+EndProject
+Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "Nuget.Windows.Devices.WiFi", "Nuget.Windows.Devices.WiFi\Nuget.Windows.Devices.WiFi.nuproj", "{D08AD3FE-8220-4028-AAB4-9BE78350FDCC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A42BC265-9F96-48E2-AA2A-A5119B9B0B79} = {A42BC265-9F96-48E2-AA2A-A5119B9B0B79}
+	EndProjectSection
+EndProject
+Project("{FF286327-C783-4F7A-AB73-9BCBAD0D4460}") = "Nuget.Windows.Devices.Wifi.DELIVERABLES", "Nuget.Windows.Devices.Wifi.DELIVERABLES\Nuget.Windows.Devices.Wifi.DELIVERABLES.nuproj", "{36640B77-C744-4EE2-AD30-ECFD762C18F5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A42BC265-9F96-48E2-AA2A-A5119B9B0B79} = {A42BC265-9F96-48E2-AA2A-A5119B9B0B79}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +25,14 @@ Global
 		{A42BC265-9F96-48E2-AA2A-A5119B9B0B79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A42BC265-9F96-48E2-AA2A-A5119B9B0B79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A42BC265-9F96-48E2-AA2A-A5119B9B0B79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D08AD3FE-8220-4028-AAB4-9BE78350FDCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D08AD3FE-8220-4028-AAB4-9BE78350FDCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D08AD3FE-8220-4028-AAB4-9BE78350FDCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D08AD3FE-8220-4028-AAB4-9BE78350FDCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36640B77-C744-4EE2-AD30-ECFD762C18F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36640B77-C744-4EE2-AD30-ECFD762C18F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36640B77-C744-4EE2-AD30-ECFD762C18F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36640B77-C744-4EE2-AD30-ECFD762C18F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

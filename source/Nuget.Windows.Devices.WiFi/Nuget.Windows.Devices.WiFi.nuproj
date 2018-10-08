@@ -10,20 +10,23 @@
       <Platform>AnyCPU</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <PropertyGroup>
+    <GitVersion_NuGetVersionV2 Condition=" '$(GitVersion_NuGetVersionV2)' == '' ">1.0.0-preview001</GitVersion_NuGetVersionV2>
+  </PropertyGroup>
   <ItemGroup>
-    <Content Include="..\bin\$(Configuration)\Windows.Devices.WiFi.dll">
+    <Content Include="..\Windows.Devices.WiFi\bin\$(Configuration)\Windows.Devices.WiFi.dll">
       <Link>lib\Windows.Devices.WiFi.dll</Link>
     </Content>
-    <Content Include="..\bin\$(Configuration)\Windows.Devices.WiFi.pdb">
+    <Content Include="..\Windows.Devices.WiFi\bin\$(Configuration)\Windows.Devices.WiFi.pdb">
       <Link>lib\Windows.Devices.WiFi.pdb</Link>
     </Content>
-    <Content Include="..\bin\$(Configuration)\Windows.Devices.WiFi.pdbx">
+    <Content Include="..\Windows.Devices.WiFi\bin\$(Configuration)\Windows.Devices.WiFi.pdbx">
       <Link>lib\Windows.Devices.WiFi.pdbx</Link>
     </Content>
-    <Content Include="..\bin\$(Configuration)\Windows.Devices.WiFi.pe">
+    <Content Include="..\Windows.Devices.WiFi\bin\$(Configuration)\Windows.Devices.WiFi.pe">
       <Link>lib\Windows.Devices.WiFi.pe</Link>
     </Content>
-    <Content Include="..\bin\$(Configuration)\Windows.Devices.WiFi.xml">
+    <Content Include="..\Windows.Devices.WiFi\bin\$(Configuration)\Windows.Devices.WiFi.xml">
       <Link>lib\Windows.Devices.WiFi.xml</Link>
     </Content>
   </ItemGroup>
@@ -32,10 +35,10 @@
   </ItemGroup>
   <ItemGroup>
     <Dependency Include="nanoFramework.CoreLibrary">
-      <Version>[1.0.0-preview073]</Version>
+      <Version>[1.0.1-preview118]</Version>
     </Dependency>
     <Dependency Include="nanoFramework.Runtime.Events">
-      <Version>[1.0.0-preview191]</Version>
+      <Version>[1.0.0-preview212]</Version>
     </Dependency>
   </ItemGroup>
   <PropertyGroup Label="Globals">
