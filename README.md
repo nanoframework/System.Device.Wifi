@@ -1,4 +1,4 @@
-[![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Windows.Devices.WiFi.svg)]() [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=nanoframework/lib-Windows.Devices.WiFi)](https://dependabot.com) [![#yourfirstpr](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://github.com/nanoframework/Home/blob/master/CONTRIBUTING.md) [![Discord](https://img.shields.io/discord/478725473862549535.svg)](https://discord.gg/gCyBu8T)
+[![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Windows.Devices.WiFi.svg)]() [![#yourfirstpr](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://github.com/nanoframework/Home/blob/master/CONTRIBUTING.md) [![Discord](https://img.shields.io/discord/478725473862549535.svg)](https://discord.gg/gCyBu8T)
 
 
 ![nanoFramework logo](https://github.com/nanoframework/Home/blob/master/resources/logo/nanoFramework-repo-logo.png)
@@ -12,7 +12,7 @@
 
 | Component | Build Status | NuGet Package |
 |:-|---|---|
-| Windows.Devices.WiFi | [![Build status](https://ci.appveyor.com/api/projects/status/7h9s99kok6898tv4?svg=true)](https://ci.appveyor.com/project/nfbot/lib-windows-devices-wifi) | [![NuGet](https://img.shields.io/nuget/vpre/nanoFramework.Windows.Devices.WiFi.svg)](https://www.nuget.org/packages/nanoFramework.Windows.Devices.WiFi/)  |
+| Windows.Devices.WiFi | [![Build status](https://ci.appveyor.com/api/projects/status/7h9s99kok6898tv4/branch/master?svg=true)](https://ci.appveyor.com/project/nfbot/lib-windows-devices-wifi/branch/master) | [![NuGet](https://img.shields.io/nuget/vpre/nanoFramework.Windows.Devices.WiFi.svg)](https://www.nuget.org/packages/nanoFramework.Windows.Devices.WiFi/)  |
 | Windows.Devices.WiFi (preview) | [![Build status](https://ci.appveyor.com/api/projects/status/7h9s99kok6898tv4/branch/develop?svg=true)](https://ci.appveyor.com/project/nfbot/lib-windows-devices-wifi/branch/develop) | [![MyGet Pre Release](https://img.shields.io/myget/nanoframework-dev/vpre/nanoFramework.Windows.Devices.WiFi.svg)](https://www.myget.org/feed/nanoframework-dev/package/nuget/nanoFramework.Windows.Devices.WiFi) |
 
 ## Feedback and documentation
