@@ -4,6 +4,7 @@
 
 **Documentation and other chores:**
 
+- Update 2 NuGet dependencies [\#10](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/10)
 - Update 2 NuGet dependencies [\#9](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/9)
 - Update 2 NuGet dependencies [\#8](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/8)
 - Bump nanoFramework.Runtime.Events from 1.0.0-preview188 to 1.0.0-preview191 in /source [\#3](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/3)
