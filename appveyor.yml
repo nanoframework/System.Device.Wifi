@@ -70,10 +70,6 @@ build_script:
 
     msbuild source\nanoFramework.Windows.Devices.WiFi.sln /p:Configuration=Release /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
 
-artifacts:
-- path: '**\bin\Release\*.nupkg'
-  name: Nuget_Packages
-
 before_deploy:
   - ps:  >-
       .\commit-assemblyinfo-changes.ps1
