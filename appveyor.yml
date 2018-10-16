@@ -123,8 +123,6 @@ for:
   branches:
     only:
       - /dev.*/
-  
-  skip_branch_with_pr: true
 
   deploy:
   - provider: GitHub
