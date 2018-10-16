@@ -9,6 +9,8 @@ image: Visual Studio 2017
 
 skip_tags: false
 
+skip_branch_with_pr: true
+
 test: off
 
 pull_requests:
@@ -77,6 +79,8 @@ before_deploy:
       .\commit-assemblyinfo-changes.ps1
       
       .\generate-change-log.ps1
+      
+      Push-AppveyorArtifact $env:APPVEYOR_BUILD_FOLDER\source\Nuget.Windows.Devices.WiFi\bin\Release\nanoFramework.Windows.Devices.WiFi.$env:GitVersion_NuGetVersionV2.nupkg
 
 # requires APPVEYOR_DISCORD_WEBHOOK_URL enviroment variable set with Discord webhook URL
 on_failure:
@@ -100,8 +104,7 @@ for:
 
   deploy:
   - provider: NuGet
-    api_key:
-      secure: NSRDXbS8tmzOy4wStGuO3yQMKI8Sk10vF8iQtz9ZDXEnHfwnuDdnXbr/Kno3MMvY
+    api_key: $(NuGetToken)
     skip_symbols: true
     on:
       appveyor_repo_tag: true
@@ -113,7 +116,7 @@ for:
       secure: DNixoFFE+pGlwyhj7McfZoln42vOmj0iY1iNV9zXEr3y0NpXlOIgL8k5ehzlFM1S
     artifact: Nuget_Packages
     draft: true
-    prerelease: true
+    prerelease: false
     force_update: true
 
 -
@@ -147,8 +150,7 @@ for:
 
   deploy:
   - provider: NuGet
-    api_key:
-      secure: NSRDXbS8tmzOy4wStGuO3yQMKI8Sk10vF8iQtz9ZDXEnHfwnuDdnXbr/Kno3MMvY
+    api_key: $(NuGetToken)
     skip_symbols: true
     on:
       appveyor_repo_tag: true
