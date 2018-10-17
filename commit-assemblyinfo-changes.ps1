@@ -63,7 +63,7 @@ if ($env:APPVEYOR_REPO_BRANCH -match "^dev*" -or $env:APPVEYOR_REPO_TAG -eq "tru
 
         # commit changes
         git add -A 2>&1
-        git commit -m"$commitMessage [skip ci]" -m"[version update]" -q
+        git commit -m"$commitMessage" -m"[version update]" -q
         git push --set-upstream origin "$newBranch" --porcelain -q > $null
     
         # start PR
