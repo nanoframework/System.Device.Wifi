@@ -18,8 +18,9 @@
     <tags>
     </tags>
     <dependencies>
-      <dependency id="nanoFramework.CoreLibrary" version="[1.0.6-preview-001]" />
-    </dependencies>
+      <dependency id="nanoFramework.CoreLibrary" version="[1.0.5-preview024]" />
+      <dependency id="nanoFramework.Runtime.Events" version="[1.0.2-preview-004]" />
+    </dependencies>    
   </metadata>
   <files>
     <file src="Windows.Devices.Wifi\bin\Release\Stubs\*.*" target="content\Stubs\" />
