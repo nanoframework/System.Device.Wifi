@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>nanoFramework.Windows.Devices.Wifi</id>
@@ -7,16 +7,18 @@
     <authors>nanoFramework project contributors</authors>
     <owners>nanoFramework project contributors</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <releaseNotes></releaseNotes>
+    <releaseNotes>
+    </releaseNotes>
     <developmentDependency>false</developmentDependency>
     <projectUrl>https://github.com/nanoframework</projectUrl>
     <iconUrl>https://secure.gravatar.com/avatar/97d0e092247f0716db6d4b47b7d1d1ad</iconUrl>
-    <copyright>Copyright (c) 2018 The nanoFramework project contributors</copyright>    
+    <copyright>Copyright (c) 2018 The nanoFramework project contributors</copyright>
     <description>This package includes the Windows.Devices.Wifi assembly for nanoFramework C# projects.</description>
     <summary>Windows.Devices.Wifi assembly for nanoFramework C# projects</summary>
     <tags>nanoFramework C# csharp netmf netnf Windows.Devices.Wifi</tags>
     <dependencies>
       <dependency id="nanoFramework.CoreLibrary" version="[1.0.5-preview024]" />
+      <dependency id="nanoFramework.Runtime.Events" version="[1.0.2-preview-004]" />
     </dependencies>    
   </metadata>
   <files>
@@ -24,6 +26,6 @@
     <file src="Windows.Devices.Wifi\bin\Release\Windows.Devices.Wifi.pdb" target="lib\Windows.Devices.Wifi.pdb" />
     <file src="Windows.Devices.Wifi\bin\Release\Windows.Devices.Wifi.pdbx" target="lib\Windows.Devices.Wifi.pdbx" />
     <file src="Windows.Devices.Wifi\bin\Release\Windows.Devices.Wifi.pe" target="lib\Windows.Devices.Wifi.pe" />
-    <file src="Windows.Devices.Wifi\bin\Release\Windows.Devices.Wifi.xml" target="lib\Windows.Devices.Wifi.xml" /> 
+    <file src="Windows.Devices.Wifi\bin\Release\Windows.Devices.Wifi.xml" target="lib\Windows.Devices.Wifi.xml" />
   </files>
 </package>
