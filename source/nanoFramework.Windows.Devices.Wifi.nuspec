@@ -17,9 +17,9 @@
     <summary>Windows.Devices.Wifi assembly for nanoFramework C# projects</summary>
     <tags>nanoFramework C# csharp netmf netnf Windows.Devices.Wifi</tags>
     <dependencies>
-      <dependency id="nanoFramework.CoreLibrary" version="[1.0.6-preview-001]" />
-      <dependency id="nanoFramework.Runtime.Events" version="[1.0.2-preview-004]" />
-    </dependencies>    
+      <dependency id="nanoFramework.CoreLibrary" version="[1.0.6-preview-010]" />
+      <dependency id="nanoFramework.Runtime.Events" version="[1.0.2-preview-011]" />
+    </dependencies>
   </metadata>
   <files>
     <file src="Windows.Devices.Wifi\bin\Release\Windows.Devices.Wifi.dll" target="lib\Windows.Devices.Wifi.dll" />
