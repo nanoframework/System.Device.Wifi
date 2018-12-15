@@ -12,14 +12,15 @@
 
 | Component | Build Status | NuGet Package |
 |:-|---|---|
-| Windows.Devices.WiFi | [![Build status](https://ci.appveyor.com/api/projects/status/7h9s99kok6898tv4/branch/master?svg=true)](https://ci.appveyor.com/project/nfbot/lib-windows-devices-wifi/branch/master) | [![NuGet](https://img.shields.io/nuget/vpre/nanoFramework.Windows.Devices.WiFi.svg)](https://www.nuget.org/packages/nanoFramework.Windows.Devices.WiFi/)  |
-| Windows.Devices.WiFi (preview) | [![Build status](https://ci.appveyor.com/api/projects/status/7h9s99kok6898tv4/branch/develop?svg=true)](https://ci.appveyor.com/project/nfbot/lib-windows-devices-wifi/branch/develop) | [![MyGet Pre Release](https://img.shields.io/myget/nanoframework-dev/vpre/nanoFramework.Windows.Devices.WiFi.svg)](https://www.myget.org/feed/nanoframework-dev/package/nuget/nanoFramework.Windows.Devices.WiFi) |
+| Windows.Devices.WiFi | [![Build status](https://ci.appveyor.com/api/projects/status/7h9s99kok6898tv4/branch/master?svg=true)](https://ci.appveyor.com/project/nfbot/lib-windows-devices-wifi/branch/master) | [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Windows.Devices.WiFi.svg)](https://www.nuget.org/packages/nanoFramework.Windows.Devices.WiFi/)  |
+| Windows.Devices.WiFi (preview) | [![Build Status](https://dev.azure.com/nanoframework/Windows.Devices.WiFi/_apis/build/status/nanoframework.lib-Windows.Devices.WiFi)](https://dev.azure.com/nanoframework/Windows.Devices.WiFi/_build/latest?definitionId=13) | [![MyGet Pre Release](https://img.shields.io/myget/nanoframework-dev/vpre/nanoFramework.Windows.Devices.WiFi.svg)](https://www.myget.org/feed/nanoframework-dev/package/nuget/nanoFramework.Windows.Devices.WiFi) |
 
 ## Feedback and documentation
 
 For documentation, providing feedback, issues and finding out how to contribute please refer to the [Home repo](https://github.com/nanoframework/Home).
 
-Join our Slack community [here](https://join.slack.com/t/nanoframework/shared_invite/enQtMzI3OTg4MTk0NTgwLWQ0ODQ3ZWIwZjgxZWFmNjU3MDIwN2E2YzM2OTdhMWRiY2Q3M2NlOTk2N2IwNTM3MmRlMmQ2NTRlNjZlYzJlMmY).
+
+Join our Discord community [here](https://discord.gg/gCyBu8T).
 
 
 ## Credits
