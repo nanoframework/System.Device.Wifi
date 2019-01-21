@@ -6,6 +6,7 @@
 
 **Documentation and other chores:**
 
+- Update 2 NuGet dependencies [\#31](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/31)
 - Merge back from Release v1.0.2 [\#30](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/30)
 
 ## [v1.0.2](https://github.com/nanoframework/lib-Windows.Devices.WiFi/tree/v1.0.2) (2018-12-15)
