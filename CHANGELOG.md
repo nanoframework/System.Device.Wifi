@@ -2,7 +2,14 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-Windows.Devices.WiFi/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-Windows.Devices.WiFi/compare/v1.0.6-preview-002...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Devices.WiFi/compare/v1.0.6-preview-008...HEAD)
+
+**Documentation and other chores:**
+
+- Bumps nanoFramework.Runtime.Events from 1.0.5-preview-019 to 1.0.6-preview-001 [\#39](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/39)
+
+## [v1.0.6-preview-008](https://github.com/nanoframework/lib-Windows.Devices.WiFi/tree/v1.0.6-preview-008) (2019-04-23)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Devices.WiFi/compare/v1.0.6-preview-002...v1.0.6-preview-008)
 
 **Documentation and other chores:**
 
