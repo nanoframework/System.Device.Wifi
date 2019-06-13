@@ -10,7 +10,7 @@
     <releaseNotes>
     </releaseNotes>
     <developmentDependency>false</developmentDependency>
-    <projectUrl>https://github.com/nanoframework</projectUrl>
+    <projectUrl>https://github.com/nanoframework/lib-Windows.Devices.WiFi</projectUrl>
     <iconUrl>https://secure.gravatar.com/avatar/97d0e092247f0716db6d4b47b7d1d1ad</iconUrl>
     <copyright>Copyright (c) 2018 The nanoFramework project contributors</copyright>
     <description>This package includes the Windows.Devices.Wifi assembly for nanoFramework C# projects.</description>
