@@ -2,7 +2,14 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-Windows.Devices.WiFi/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-Windows.Devices.WiFi/compare/v1.0.7-preview.2...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Devices.WiFi/compare/v1.0.7-preview.6...HEAD)
+
+**Documentation and other chores:**
+
+- Update 2 NuGet dependencies [\#46](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/46)
+
+## [v1.0.7-preview.6](https://github.com/nanoframework/lib-Windows.Devices.WiFi/tree/v1.0.7-preview.6) (2019-06-12)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Devices.WiFi/compare/v1.0.7-preview.2...v1.0.7-preview.6)
 
 **Documentation and other chores:**
 
@@ -21,7 +28,6 @@
 **Documentation and other chores:**
 
 - Bumps nanoFramework.Runtime.Events from 1.0.5-preview-019 to 1.0.6-preview-001 [\#39](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/39)
-- Update 2 NuGet dependencies [\#10](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/10)
 
 ## [v1.0.6-preview-008](https://github.com/nanoframework/lib-Windows.Devices.WiFi/tree/v1.0.6-preview-008) (2019-04-23)
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Devices.WiFi/compare/v1.0.6-preview-002...v1.0.6-preview-008)
@@ -125,6 +131,7 @@
 
 - Merge 'develop' for Release 1.0.0 [\#15](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/15)
 - Update 2 NuGet dependencies [\#14](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/14)
+- Update 2 NuGet dependencies [\#10](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/10)
 - Update 2 NuGet dependencies [\#9](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/9)
 - Update 2 NuGet dependencies [\#8](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/8)
 - Bump nanoFramework.Runtime.Events from 1.0.0-preview188 to 1.0.0-preview191 in /source [\#3](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/3)
