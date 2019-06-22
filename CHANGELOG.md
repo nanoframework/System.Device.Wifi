@@ -2,7 +2,14 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-Windows.Devices.WiFi/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-Windows.Devices.WiFi/compare/v1.0.7-preview.6...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Devices.WiFi/compare/v1.0.7-preview.9...HEAD)
+
+**Documentation and other chores:**
+
+- Work on native assembly declaration [\#47](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/47) [[Breaking-Change](https://github.com/nanoframework/lib-Windows.Devices.WiFi/labels/Breaking-Change)]
+
+## [v1.0.7-preview.9](https://github.com/nanoframework/lib-Windows.Devices.WiFi/tree/v1.0.7-preview.9) (2019-06-20)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Devices.WiFi/compare/v1.0.7-preview.6...v1.0.7-preview.9)
 
 **Documentation and other chores:**
 
