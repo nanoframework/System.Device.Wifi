@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>nanoFramework.Windows.Devices.Wifi</id>
@@ -8,18 +8,20 @@
     <owners>nanoFramework project contributors</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">Apache-2.0</license>
-    <releaseNotes></releaseNotes>
+    <releaseNotes>
+    </releaseNotes>
     <developmentDependency>false</developmentDependency>
     <projectUrl>https://github.com/nanoframework/lib-Windows.Devices.WiFi</projectUrl>
     <iconUrl>https://secure.gravatar.com/avatar/97d0e092247f0716db6d4b47b7d1d1ad</iconUrl>
     <repository type="git" url="https://github.com/nanoframework/lib-Windows.Devices.Wifi" commit="$commit$" />
     <copyright>Copyright (c) 2018 The nanoFramework project contributors</copyright>
-    <description>This package includes the Windows.Devices.Wifi assembly for nanoFramework C# projects.&#10;This package requires a target with Windows.Devices.Wifi v$nativeVersion$.</description>
+    <description>This package includes the Windows.Devices.Wifi assembly for nanoFramework C# projects.
+This package requires a target with Windows.Devices.Wifi v$nativeVersion$.</description>
     <summary>Windows.Devices.Wifi assembly for nanoFramework C# projects</summary>
     <tags>nanoFramework C# csharp netmf netnf Windows.Devices.Wifi</tags>
     <dependencies>
-      <dependency id="nanoFramework.CoreLibrary" version="1.2.6-preview.1" />
-      <dependency id="nanoFramework.Runtime.Events" version="1.0.8-preview.8" />
+      <dependency id="nanoFramework.CoreLibrary" version="1.2.6-preview.7" />
+      <dependency id="nanoFramework.Runtime.Events" version="1.0.8-preview.14" />
     </dependencies>
   </metadata>
   <files>
@@ -28,7 +30,6 @@
     <file src="Windows.Devices.Wifi\bin\Release\Windows.Devices.Wifi.pdbx" target="lib\Windows.Devices.Wifi.pdbx" />
     <file src="Windows.Devices.Wifi\bin\Release\Windows.Devices.Wifi.pe" target="lib\Windows.Devices.Wifi.pe" />
     <file src="Windows.Devices.Wifi\bin\Release\Windows.Devices.Wifi.xml" target="lib\Windows.Devices.Wifi.xml" />
-
     <!-- readme -->
     <file src="readme.txt" target="readme.txt" />
   </files>
