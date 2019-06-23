@@ -6,6 +6,7 @@
 
 **Documentation and other chores:**
 
+- Update 2 NuGet dependencies [\#49](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/49)
 - Work on native assembly declaration [\#47](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/47) [[Breaking-Change](https://github.com/nanoframework/lib-Windows.Devices.WiFi/labels/Breaking-Change)]
 
 ## [v1.0.7-preview.9](https://github.com/nanoframework/lib-Windows.Devices.WiFi/tree/v1.0.7-preview.9) (2019-06-20)
