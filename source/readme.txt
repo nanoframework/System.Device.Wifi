@@ -6,11 +6,11 @@
                                                                                
 ===================================================================================
 
-API docs: https://docs.nanoframework.net/api/Windows.Devices.Wifi.html
+API docs: https://docs.nanoframework.net/api/Windows.Devices.WiFi.html
 
 Browse our samples repository: https://github.com/nanoframework/samples
 
-Check our documentation online: https://docs.nanoframework.net/articles/intro.html
+Check our documentation online: https://docs.nanoframework.net/
 
 Join our lively Discord community: https://discord.gg/gCyBu8T
 
