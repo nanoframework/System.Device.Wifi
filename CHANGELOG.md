@@ -1,8 +1,7 @@
 # Change Log
 
-## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-Windows.Devices.WiFi/tree/HEAD)
-
-[Full Changelog](https://github.com/nanoframework/lib-Windows.Devices.WiFi/compare/v1.0.7-preview.14...HEAD)
+## [v1.0.7-preview.17](https://github.com/nanoframework/lib-Windows.Devices.WiFi/tree/v1.0.7-preview.17) (2019-07-18)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Devices.WiFi/compare/v1.0.7-preview.14...v1.0.7-preview.17)
 
 **Documentation and other chores:**
 
