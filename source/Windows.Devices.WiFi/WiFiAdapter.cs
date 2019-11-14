@@ -6,7 +6,6 @@ using System;
 using System.Runtime.CompilerServices;
 using nanoFramework.Runtime.Events;
 
-
 namespace Windows.Devices.WiFi
 {
     /// <summary>
@@ -91,7 +90,14 @@ namespace Windows.Devices.WiFi
                 WifiNetworks[index].Bsid = BitConverter.ToString(nativeReport, bytePos, 6);
                 bytePos += 6;
 
-                WifiNetworks[index].Ssid = System.Text.Encoding.UTF8.GetString(nativeReport, bytePos, 33);
+                // need to convert this programmatically to prevent referencing System.Text
+                char[] rawSsid = new char[33];
+                for(int i = 0; i < 33; i++)
+                {
+                    rawSsid[i] = (char)nativeReport[bytePos + 1];
+                }
+
+                WifiNetworks[index].Ssid = new string(rawSsid, 0, 33);
                 bytePos += 33;
 
                 WifiNetworks[index]._rssi = (sbyte)nativeReport[bytePos];
