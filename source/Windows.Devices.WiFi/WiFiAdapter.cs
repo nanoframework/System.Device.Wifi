@@ -94,7 +94,7 @@ namespace Windows.Devices.WiFi
                 char[] rawSsid = new char[33];
                 for(int i = 0; i < 33; i++)
                 {
-                    rawSsid[i] = (char)nativeReport[bytePos + 1];
+                    rawSsid[i] = (char)nativeReport[bytePos + i];
                 }
 
                 WifiNetworks[index].Ssid = new string(rawSsid, 0, 33);
