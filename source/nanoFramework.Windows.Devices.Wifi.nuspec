@@ -21,7 +21,7 @@ This package requires a target with Windows.Devices.Wifi v$nativeVersion$.</desc
     <tags>nanoFramework C# csharp netmf netnf Windows.Devices.Wifi</tags>
     <dependencies>
       <dependency id="nanoFramework.CoreLibrary" version="1.7.3" />
-      <dependency id="nanoFramework.Runtime.Events" version="1.8.0" />
+      <dependency id="nanoFramework.Runtime.Events" version="1.8.1-alpha.18" />
     </dependencies>
   </metadata>
   <files>
