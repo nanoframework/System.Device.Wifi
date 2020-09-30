@@ -2,7 +2,15 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-Windows.Devices.WiFi/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-Windows.Devices.WiFi/compare/v1.3.2-preview.1...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Devices.WiFi/compare/v1.3.2-preview.5...HEAD)
+
+**Documentation and other chores:**
+
+- Update 2 NuGet dependencies [\#91](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/91)
+
+## [v1.3.2-preview.5](https://github.com/nanoframework/lib-Windows.Devices.WiFi/tree/v1.3.2-preview.5) (2020-09-27)
+
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Devices.WiFi/compare/v1.3.2-preview.1...v1.3.2-preview.5)
 
 **Documentation and other chores:**
 
@@ -157,6 +165,10 @@
 
 - Fix SSID from reported networks [\#70](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/70)
 
+**Documentation and other chores:**
+
+- Update 2 NuGet dependencies [\#61](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/61)
+
 ## [v1.2.0-preview.8](https://github.com/nanoframework/lib-Windows.Devices.WiFi/tree/v1.2.0-preview.8) (2019-11-14)
 
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Devices.WiFi/compare/v1.2.0-preview.7...v1.2.0-preview.8)
@@ -216,10 +228,6 @@
 ## [v1.1.0-preview.3](https://github.com/nanoframework/lib-Windows.Devices.WiFi/tree/v1.1.0-preview.3) (2019-10-17)
 
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Devices.WiFi/compare/v1.0.7...v1.1.0-preview.3)
-
-**Documentation and other chores:**
-
-- Update 2 NuGet dependencies [\#61](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/61)
 
 ## [v1.0.7](https://github.com/nanoframework/lib-Windows.Devices.WiFi/tree/v1.0.7) (2019-10-15)
 
