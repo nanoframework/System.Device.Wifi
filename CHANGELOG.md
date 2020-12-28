@@ -2,7 +2,25 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/lib-Windows.Devices.WiFi/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/lib-Windows.Devices.WiFi/compare/v1.3.2-preview.9...HEAD)
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Devices.WiFi/compare/v1.3.2-preview.14...HEAD)
+
+**Documentation and other chores:**
+
+- Update 2 NuGet dependencies [\#98](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/98)
+- Update 2 NuGet dependencies [\#97](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/97)
+
+## [v1.3.2-preview.14](https://github.com/nanoframework/lib-Windows.Devices.WiFi/tree/v1.3.2-preview.14) (2020-12-07)
+
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Devices.WiFi/compare/v1.3.2-preview.11...v1.3.2-preview.14)
+
+**Documentation and other chores:**
+
+- Update 2 NuGet dependencies [\#96](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/96)
+- Update 2 NuGet dependencies [\#94](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/94)
+
+## [v1.3.2-preview.11](https://github.com/nanoframework/lib-Windows.Devices.WiFi/tree/v1.3.2-preview.11) (2020-10-20)
+
+[Full Changelog](https://github.com/nanoframework/lib-Windows.Devices.WiFi/compare/v1.3.2-preview.9...v1.3.2-preview.11)
 
 **Documentation and other chores:**
 
@@ -264,7 +282,6 @@
 **Documentation and other chores:**
 
 - Update 2 NuGet dependencies [\#54](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/54)
-- Update 2 NuGet dependencies [\#52](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/52)
 
 ## [v1.0.7-preview.24](https://github.com/nanoframework/lib-Windows.Devices.WiFi/tree/v1.0.7-preview.24) (2019-09-30)
 
@@ -277,6 +294,10 @@
 ## [v1.0.7-preview.22](https://github.com/nanoframework/lib-Windows.Devices.WiFi/tree/v1.0.7-preview.22) (2019-08-23)
 
 [Full Changelog](https://github.com/nanoframework/lib-Windows.Devices.WiFi/compare/v1.0.7-preview.17...v1.0.7-preview.22)
+
+**Documentation and other chores:**
+
+- Update 2 NuGet dependencies [\#52](https://github.com/nanoframework/lib-Windows.Devices.WiFi/pull/52)
 
 ## [v1.0.7-preview.17](https://github.com/nanoframework/lib-Windows.Devices.WiFi/tree/v1.0.7-preview.17) (2019-07-18)
 
