@@ -1,6 +1,6 @@
 trigger:
   branches:
-    include: [master, develop, "release-*" ]
+    include: [main, develop, "release-*" ]
   paths:
     exclude: ["*.md", .gitignore]
   tags:
@@ -25,7 +25,7 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   nugetPackageName: 'nanoFramework.Windows.Devices.Wifi'
-  repoName: 'lib-Windows.Devices.WiFi'
+  repoName: 'Windows.Devices.WiFi'
 
 steps:
 
