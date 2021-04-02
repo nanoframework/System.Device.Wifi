@@ -21,13 +21,13 @@ namespace Windows.Devices.WiFi
         /// <summary>
         /// Gets the MAC address of the access point.
         /// </summary>
-        public string Bsid { get { return _bsid; } internal set { _bsid = value; } }
+        public string Bsid { get { return _bsid; } set { _bsid = value; } }
 
 
         /// <summary>
         /// Gets the SSID (name) of the network.
         /// </summary>
-        public string Ssid { get { return _ssid; } internal set { _ssid = value; } }
+        public string Ssid { get { return _ssid; } set { _ssid = value; } }
 
         /// <summary>
         /// Gets a value describing the kind of network being described.
