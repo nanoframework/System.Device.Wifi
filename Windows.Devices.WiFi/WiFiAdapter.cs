@@ -134,7 +134,7 @@ namespace Windows.Devices.WiFi
         }
 
         /// <summary>
-        /// Connect this Wi-Fi device to the specified network, with the specified passphrase and reconnection policy.
+        /// Connect this Wi-Fi device to the specified network (using SSID string), with the specified passphrase and reconnection policy.
         /// </summary>
         /// <param name="ssid">Describes the Wi-Fi network to be connected.</param>
         /// <param name="reconnectionKind">Specifies how to reconnect if the connection is lost.</param>
