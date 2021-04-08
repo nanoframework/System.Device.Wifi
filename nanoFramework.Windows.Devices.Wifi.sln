@@ -1,9 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31129.286
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "Windows.Devices.Wifi", "Windows.Devices.Wifi.nfproj", "{A42BC265-9F96-48E2-AA2A-A5119B9B0B79}"
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "Windows.Devices.Wifi", "Windows.Devices.Wifi\Windows.Devices.Wifi.nfproj", "{A42BC265-9F96-48E2-AA2A-A5119B9B0B79}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{19A726FD-5E93-45A7-AD59-A79EFE734567}"
+	ProjectSection(SolutionItems) = preProject
+		nanoFramework.Windows.Devices.Wifi.DELIVERABLES.nuspec = nanoFramework.Windows.Devices.Wifi.DELIVERABLES.nuspec
+		nanoFramework.Windows.Devices.Wifi.nuspec = nanoFramework.Windows.Devices.Wifi.nuspec
+		NuGet.Config = NuGet.Config
+		version.json = version.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,15 +21,13 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A42BC265-9F96-48E2-AA2A-A5119B9B0B79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A42BC265-9F96-48E2-AA2A-A5119B9B0B79}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A42BC265-9F96-48E2-AA2A-A5119B9B0B79}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{A42BC265-9F96-48E2-AA2A-A5119B9B0B79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A42BC265-9F96-48E2-AA2A-A5119B9B0B79}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A42BC265-9F96-48E2-AA2A-A5119B9B0B79}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {DB8D59C2-6070-4C0D-8E29-63BD2454C1DF}
+		SolutionGuid = {5B25FB16-AF7D-469F-81C8-EBC91AA28FAE}
 	EndGlobalSection
 EndGlobal
