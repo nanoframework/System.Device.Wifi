@@ -133,6 +133,22 @@ namespace Windows.Devices.WiFi
             }
         }
 
+        /// <summary>
+        /// Connect this Wi-Fi device to the specified network (using SSID string), with the specified passphrase and reconnection policy.
+        /// </summary>
+        /// <param name="ssid">Describes the Wi-Fi network to be connected.</param>
+        /// <param name="reconnectionKind">Specifies how to reconnect if the connection is lost.</param>
+        /// <param name="passwordCredential">The passphrase to be used to connect to the access point.</param>
+        /// <returns>
+        /// On successful conclusion of the operation, returns an object that describes the result of the connect operation.
+        /// </returns>
+        public WiFiConnectionResult Connect(string ssid, WiFiReconnectionKind reconnectionKind, string passwordCredential)
+        {
+            WiFiAvailableNetwork availableNetwork = new WiFiAvailableNetwork();
+            availableNetwork.Ssid = ssid;
+            return Connect(availableNetwork, reconnectionKind, passwordCredential);
+        }
+
 
         /// <summary>
         /// Disconnects any active Wi-Fi connection through this adapter.
