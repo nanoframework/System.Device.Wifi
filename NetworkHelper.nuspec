@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>nanoFramework.NetWorkHelper</id>
+    <version>$version$</version>
+    <title>nanoFramework.NetWorkHelper</title>
+    <authors>nanoFramework project contributors</authors>
+    <owners>nanoFramework project contributors</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">Apache-2.0</license>
+    <releaseNotes>
+    </releaseNotes>
+    <developmentDependency>false</developmentDependency>
+    <projectUrl>https://github.com/nanoframework/lib-NetWorkHelper</projectUrl>
+    <iconUrl>https://secure.gravatar.com/avatar/97d0e092247f0716db6d4b47b7d1d1ad</iconUrl>
+    <repository type="git" url="https://github.com/nanoframework/lib-NetWorkHelper" commit="$commit$" />
+    <copyright>Copyright (c) .NET Foundation and Contributors</copyright>
+    <description>This package includes the NetWorkHelper assembly for nanoFramework C# projects.</description>
+    <summary>NetWorkHelper assembly for nanoFramework C# projects</summary>
+    <tags>nanoFramework C# csharp netmf netnf NetWorkHelper</tags>
+    <dependencies>
+      <dependency id="nanoFramework.CoreLibrary" version="1.10.5-preview.4" />
+      <dependency id="nanoFramework.Runtime.Events" version="1.9.1-preview.1" />
+      <dependency id="nanoFramework.System.Net" version="1.6.5-preview.31" />
+      <dependency id="nanoFramework.System.Text" version="1.1.1-preview.57" />
+      <dependency id="nanoFramework.Windows.Devices.Wifi" version="1.3.2-preview.36" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="NetWorkHelper\bin\Release\nanoFramework.NetworkHelper.dll" target="lib\nanoFramework.NetworkHelper.dll" />
+    <file src="NetWorkHelper\bin\Release\nanoFramework.NetworkHelper.pdb" target="lib\nanoFramework.NetworkHelper.pdb" />
+    <file src="NetWorkHelper\bin\Release\nanoFramework.NetworkHelper.pdbx" target="lib\nanoFramework.NetworkHelper.pdbx" />
+    <file src="NetWorkHelper\bin\Release\nanoFramework.NetworkHelper.pe" target="lib\nanoFramework.NetworkHelper.pe" />
+    <file src="NetWorkHelper\bin\Release\nanoFramework.NetworkHelper.xml" target="lib\nanoFramework.NetworkHelper.xml" />
+    <!-- readme -->
+    <file src="readme.txt" target="readme.txt" />
+  </files>
+</package>

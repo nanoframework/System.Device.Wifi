@@ -4,7 +4,9 @@
 
 -----
 
-### Welcome to the **nanoFramework** Windows.Devices.WiFi Library repository!
+### Welcome to the **nanoFramework** Windows.Devices.WiFi Library repository and NetworkHelper!
+
+This repository contains nanoFramework Windows.Devices.Wifi and NetworkHelper.
 
 ## Build status
 
@@ -12,6 +14,112 @@
 |:-|---|---|
 | Windows.Devices.WiFi | [![Build Status](https://dev.azure.com/nanoframework/Windows.Devices.WiFi/_apis/build/status/Windows.Devices.WiFi?repoName=nanoframework%2FWindows.Devices.WiFi&branchName=main)](https://dev.azure.com/nanoframework/Windows.Devices.WiFi/_build/latest?definitionId=13&repoName=nanoframework%2FWindows.Devices.WiFi&branchName=main) | [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Windows.Devices.WiFi.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Windows.Devices.WiFi/) |
 | Windows.Devices.WiFi (preview) | [![Build Status](https://dev.azure.com/nanoframework/Windows.Devices.WiFi/_apis/build/status/Windows.Devices.WiFi?repoName=nanoframework%2FWindows.Devices.WiFi&branchName=develop)](https://dev.azure.com/nanoframework/Windows.Devices.WiFi/_build/latest?definitionId=13&repoName=nanoframework%2FWindows.Devices.WiFi&branchName=develop) | [![NuGet](https://img.shields.io/nuget/vpre/nanoFramework.Windows.Devices.WiFi.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Windows.Devices.WiFi/) |
+
+## NetworkHelper usage
+
+The NetworkHelper is mainly dedicated to help you connect automatically to WiFi networks. That said, it can be used as well to check if you have a valid IP address and a valid date on any interface including on ethernet.
+
+### Preferred usage
+
+The following code will allow you to connect automatically, wait for a valid IP address and a valid date with specific credentials:
+
+```csharp
+const string Ssid = "YourSSID";
+const string Password = "YourWifiPassword";
+// Give 60 seconds to the wifi join to happen
+CancellationTokenSource cs = new(60000);
+var success = NetworkHelper.ConnectWifiDhcp(Ssid, Password, setDateTime: true, token: cs.Token);
+if (!success)
+{
+    // Something went wrong, you can get details with the ConnectionError property:
+    Debug.WriteLine($"Can't connect to the network, error: {NetworkHelper.ConnectionError.Error}");
+    if (NetworkHelper.ConnectionError.Exception != null)
+    {
+        Debug.WriteLine($"ex: { NetworkHelper.ConnectionError.Exception}");
+    }
+}
+// Otherwise, you are connected and have a valid IP and date
+```
+
+Note that this function will store the network credentials on the device.
+
+### Using stored credentials
+
+You can as well connect to a network with pre stored credentials on the device depending on the type of device you have. Please check for proper support with your device.
+
+```csharp
+// The wifi credentials are already stored on the device
+ // Give 60 seconds to the wifi join to happen
+CancellationTokenSource cs = new(60000);
+var success = NetworkHelper.ReconnectWifi(setDateTime: true, token: cs.Token);
+if (!success)
+{
+    // Something went wrong, you can get details with the ConnectionError property:
+    Debug.WriteLine($"Can't connect to the network, error: {NetworkHelper.ConnectionError.Error}");
+    if (NetworkHelper.ConnectionError.Exception != null)
+    {
+        Debug.WriteLine($"ex: { NetworkHelper.ConnectionError.Exception}");
+    }
+}
+// Otherwise, you are connected and have a valid IP and date
+```
+
+### Scan and join
+
+You can force to scan the network and then join the network. This case can be useful in specific conditions. Be aware, that you may have to use this method with one of the previous method depending the support of rescanning while you are already connected.
+
+```csharp
+const string Ssid = "YourSSID";
+const string Password = "YourWifiPassword";
+// Give 60 seconds to the wifi join to happen
+CancellationTokenSource cs = new(60000);
+var success = NetworkHelper.ScanAndConnectWifiDhcp(Ssid, Password, setDateTime: true, token: cs.Token);
+if (!success)
+{
+    // Something went wrong, you can get details with the ConnectionError property:
+    Debug.WriteLine($"Can't connect to the network, error: {NetworkHelper.ConnectionError.Error}");
+    if (NetworkHelper.ConnectionError.Exception != null)
+    {
+        Debug.WriteLine($"ex: { NetworkHelper.ConnectionError.Exception}");
+    }
+}
+// Otherwise, you are connected and have a valid IP and date
+```
+
+Note that this function will store the network credentials on the device.
+
+### Joining with a static IP address
+
+You join a WiFi network with a static IP address:
+
+```csharp
+const string Ssid = "YourSSID";
+const string Password = "YourWifiPassword";
+// Give 60 seconds to the wifi join to happen
+CancellationTokenSource cs = new(60000);
+var success = NetworkHelper.ConnectWifiFixAddress(Ssid, Password, new IPConfiguration("192.168.1.7", "255.255.255.0", "192.168.1.1"), setDateTime: true, token: cs.Token);
+```
+
+### Checking valid IP address and date
+
+The NetworkHelper offers couple of functions to check validity of your IP address, the DateTime and helping setting them up:
+
+```csharp
+var success = IsValidDateTime();
+// if success is true, you have a valid DateTime
+success = IsValidIpAddress(NetworkInterfaceType.Wireless80211);
+// if success is true, you have a valid IP address on the Wireless adapter
+// Be aware that a local address like 127.0.0.1 is considered as a valid address for ethernet
+```
+
+You can as well wait for a valid IP address and date time:
+
+```csharp
+// Give 60 seconds to check if we have a valid IP and a valid DateTime
+CancellationTokenSource cs = new(60000);
+var success = WaitForValidIPAndDate(true, NetworkInterfaceType.Ethernet, cs.Token);
+// if success is true then you are connected
+```
 
 ## Feedback and documentation
 
