@@ -48,7 +48,7 @@ Note that this function will store the network credentials on the device.
 You can as well connect to a network with pre stored credentials on the device depending on the type of device you have. Please check for proper support with your device.
 
 ```csharp
-if (!NetworkHelper.IsConfigurationStored)
+if (!NetworkHelper.IsConfigurationStored())
 {
     Debug.WriteLine("No configuration stored in the device");
 }
