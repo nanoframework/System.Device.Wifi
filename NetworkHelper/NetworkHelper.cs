@@ -101,6 +101,27 @@ namespace nanoFramework.Networking
 
         }
 
+        /// <summary>
+        /// Checks if a WiFi configuration is stored.
+        /// </summary>
+        /// <param name="wifiAdapter">The WiFi adapter to be used. Relevant only if you have multiple WiFi adapters.</param>
+        /// <returns>True if a configuration is stored.</returns>
+        public static bool IsConfigurationStored(int wifiAdapter = 0)
+        {
+            _wifi = WiFiAdapter.FindAllAdapters()[wifiAdapter];
+            NetworkInterface[] nis = NetworkInterface.GetAllNetworkInterfaces();
+            foreach (NetworkInterface n in nis)
+            {
+                if (n.NetworkInterfaceType == NetworkInterfaceType.Wireless80211)
+                {
+                    Wireless80211Configuration wc = Wireless80211Configuration.GetAllWireless80211Configurations()[n.SpecificConfigId];
+                    return !string.IsNullOrEmpty(wc.Ssid);
+                }
+            }
+
+            return false;
+        }
+
         private static bool ScanAndConnectWifi(string ssid, string password, IPConfiguration ipConfiguration, bool scan, WiFiReconnectionKind reconnectionKind, bool setDateTime, int wifiAdapter, CancellationToken token)
         {
             try

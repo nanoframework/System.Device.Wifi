@@ -48,20 +48,27 @@ Note that this function will store the network credentials on the device.
 You can as well connect to a network with pre stored credentials on the device depending on the type of device you have. Please check for proper support with your device.
 
 ```csharp
-// The wifi credentials are already stored on the device
- // Give 60 seconds to the wifi join to happen
-CancellationTokenSource cs = new(60000);
-var success = NetworkHelper.ReconnectWifi(setDateTime: true, token: cs.Token);
-if (!success)
+if (!NetworkHelper.IsConfigurationStored)
 {
-    // Something went wrong, you can get details with the ConnectionError property:
-    Debug.WriteLine($"Can't connect to the network, error: {NetworkHelper.ConnectionError.Error}");
-    if (NetworkHelper.ConnectionError.Exception != null)
-    {
-        Debug.WriteLine($"ex: { NetworkHelper.ConnectionError.Exception}");
-    }
+    Debug.WriteLine("No configuration stored in the device");
 }
-// Otherwise, you are connected and have a valid IP and date
+else
+{
+    // The wifi credentials are already stored on the device
+    // Give 60 seconds to the wifi join to happen
+    CancellationTokenSource cs = new(60000);
+    var success = NetworkHelper.ReconnectWifi(setDateTime: true, token: cs.Token);
+    if (!success)
+    {
+        // Something went wrong, you can get details with the ConnectionError property:
+        Debug.WriteLine($"Can't connect to the network, error: {NetworkHelper.ConnectionError.Error}");
+        if (NetworkHelper.ConnectionError.Exception != null)
+        {
+            Debug.WriteLine($"ex: { NetworkHelper.ConnectionError.Exception}");
+        }
+    }
+    // Otherwise, you are connected and have a valid IP and date
+}
 ```
 
 ### Scan and join
