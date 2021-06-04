@@ -5,17 +5,17 @@
     <version>$version$</version>
     <title>nanoFramework.NetWorkHelper</title>
     <authors>nanoFramework project contributors</authors>
-    <owners>nanoFramework project contributors</owners>
+    <owners>nanoFramework project contributors,dotnetfoundation</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <license type="expression">Apache-2.0</license>
+    <license type="file">LICENSE.md</license>
     <releaseNotes>
     </releaseNotes>
     <developmentDependency>false</developmentDependency>
-    <projectUrl>https://github.com/nanoframework/lib-NetWorkHelper</projectUrl>
-    <iconUrl>https://secure.gravatar.com/avatar/97d0e092247f0716db6d4b47b7d1d1ad</iconUrl>
-    <repository type="git" url="https://github.com/nanoframework/lib-NetWorkHelper" commit="$commit$" />
+    <projectUrl>https://github.com/nanoframework/Windows.Devices.WiFi</projectUrl>
+    <icon>images\nf-logo.png</icon>
+    <repository type="git" url="https://github.com/nanoframework/Windows.Devices.Wifi" commit="$commit$" />
     <copyright>Copyright (c) .NET Foundation and Contributors</copyright>
-    <description>This package includes the NetWorkHelper assembly for nanoFramework C# projects.</description>
+    <description>This package includes the NetWorkHelper assembly for .NET nanoFramework C# projects.</description>
     <summary>NetWorkHelper assembly for nanoFramework C# projects</summary>
     <tags>nanoFramework C# csharp netmf netnf NetWorkHelper</tags>
     <dependencies>
@@ -32,7 +32,9 @@
     <file src="NetWorkHelper\bin\Release\nanoFramework.NetworkHelper.pdbx" target="lib\nanoFramework.NetworkHelper.pdbx" />
     <file src="NetWorkHelper\bin\Release\nanoFramework.NetworkHelper.pe" target="lib\nanoFramework.NetworkHelper.pe" />
     <file src="NetWorkHelper\bin\Release\nanoFramework.NetworkHelper.xml" target="lib\nanoFramework.NetworkHelper.xml" />
-    <!-- readme -->
-    <file src="readme.txt" target="readme.txt" />
+
+    <file src="assets\readme.txt" target="" />
+    <file src="assets\nf-logo.png" target="images" />
+    <file src="LICENSE.md" target="" />
   </files>
 </package>
