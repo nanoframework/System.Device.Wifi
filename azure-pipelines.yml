@@ -30,9 +30,90 @@ steps:
 
 # step from template @ nf-tools repo
 # all build, update and publish steps
-- template: azure-pipelines-templates/class-lib-build.yml@templates
+- template: azure-pipelines-templates/class-lib-build-only.yml@templates
   parameters:
     sonarCloudProject: 'nanoframework_lib-Windows.Devices.WiFi'
+    runUnitTests: true
+    unitTestRunsettings: '$(System.DefaultWorkingDirectory)\Tests\NFUnitTestWifiConnection\nano.runsettings'
+
+# rebuild Devices.WiFi project to get the assembky checksum
+- task: MSBuild@1
+  condition: and( succeeded(), eq( variables['StartReleaseCandidate'], false ) )
+  displayName: Rebuild Devices.WiFi
+  inputs:
+    solution: 'Windows.Devices.WiFi\Windows.Devices.Wifi.nfproj' 
+    platform: 'AnyCPU'
+    configuration: '$(buildConfiguration)'
+    msbuildArguments: '/p:PublicRelease=true'
+    maximumCpuCount: true
+
+# package steps
+- template: azure-pipelines-templates/class-lib-package.yml@templates  
+  parameters:
+    nugetPackageName: 'nanoFramework.Windows.Devices.Wifi'
+
+- template: azure-pipelines-templates/class-lib-package.yml@templates  
+  parameters:
+    nugetPackageName: 'NetworkHelper'
+ 
+- template: azure-pipelines-templates/class-lib-publish.yml@templates  
+
+# need to push the other package to NuGet because the template above can only push one package (happens on all builds except PRs)
+- task: NuGetCommand@2
+  condition: and( succeeded(), eq(variables['System.PullRequest.PullRequestId'], ''), eq( variables['StartReleaseCandidate'], false ) )
+  displayName: Push "NetworkHelper" variant NuGet package to Azure Artifacts
+  inputs:
+    command: push
+    nuGetFeedType: external
+    allowPackageConflicts: true
+    packagesToPush: 
+      $(Build.ArtifactStagingDirectory)/nanoFramework.NetWorkHelper.$(MY_NUGET_VERSION).nupkg
+    publishFeedCredentials: 'AzureArtifacts-Windows.Devices.Wifi'
+  continueOnError: true
+
+- task: NuGetCommand@2
+  condition: and( succeeded(), eq(variables['System.PullRequest.PullRequestId'], ''), eq( variables['StartReleaseCandidate'], false ) )
+  displayName: Push "NetworkHelper" variant NuGet package to Azure Artifacts
+  inputs:
+    command: push
+    nuGetFeedType: external
+    allowPackageConflicts: true
+    packagesToPush: 
+      $(Build.ArtifactStagingDirectory)/nanoFramework.NetWorkHelper.$(MY_NUGET_VERSION).nupkg
+    publishFeedCredentials: 'NuGet-Windows.Devices.Wifi'
+  continueOnError: true
+
+# create or update GitHub release
+- task: GithubRelease@1
+  condition: and( succeeded(), eq(variables['System.PullRequest.PullRequestId'], ''), not( startsWith(variables['Build.SourceBranch'], 'refs/tags/v') ), ne( variables['StartReleaseCandidate'], true ) )
+  displayName: Create/Update GitHub PREVIEW release 
+  inputs:
+    gitHubConnection: 'github.com_nano-$(System.TeamProject)'
+    tagSource: userSpecifiedTag
+    tag: v$(MY_NUGET_VERSION)
+    title: '$(nugetPackageName) Library v$(MY_NUGET_VERSION)'
+    releaseNotesSource: inline
+    releaseNotesInline: 'Check the [changelog]($(Build.Repository.Uri)/blob/$(Build.SourceBranchName)/CHANGELOG.md).<br><br><h4>Install from NuGet</h4><br>The following NuGet packages are available for download from this release:<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).'
+    assets: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    assetUploadMode: replace
+    isPreRelease: true
+    addChangeLog: false
+
+# create or update GitHub release ON tags from release or master branches
+- task: GithubRelease@1
+  condition: and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), not(contains(variables['Build.SourceBranch'], 'preview') ), ne( variables['StartReleaseCandidate'], true ) )
+  displayName: Create/Update GitHub stable release
+  inputs:
+    gitHubConnection: 'github.com_nano-$(System.TeamProject)'
+    tagSource: userSpecifiedTag
+    tag: v$(MY_NUGET_VERSION)
+    title: '$(nugetPackageName) Library v$(MY_NUGET_VERSION)'
+    releaseNotesSource: inline
+    releaseNotesInline: 'Check the [changelog]($(Build.Repository.Uri)/blob/$(Build.SourceBranchName)/CHANGELOG.md).<br><br><h4>Install from NuGet</h4><br>The following NuGet packages are available for download from this release:<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).'
+    assets: '$(Build.ArtifactStagingDirectory)/*.nupkg'
+    assetUploadMode: replace
+    isPreRelease: false
+    addChangeLog: false
 
 # step from template @ nf-tools repo
 # report error
