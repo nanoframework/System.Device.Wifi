@@ -1,6 +1,6 @@
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=nanoframework_lib-Windows.Devices.WiFi&metric=alert_status)](https://sonarcloud.io/dashboard?id=nanoframework_lib-Windows.Devices.WiFi) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=nanoframework_lib-Windows.Devices.WiFi&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=nanoframework_lib-Windows.Devices.WiFi) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Windows.Devices.WiFi.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Windows.Devices.WiFi/) [![#yourfirstpr](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://github.com/nanoframework/Home/blob/master/CONTRIBUTING.md) [![Discord](https://img.shields.io/discord/478725473862549535.svg?logo=discord&logoColor=white&label=Discord&color=7289DA)](https://discord.gg/gCyBu8T)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=nanoframework_lib-Windows.Devices.WiFi&metric=alert_status)](https://sonarcloud.io/dashboard?id=nanoframework_lib-Windows.Devices.WiFi) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=nanoframework_lib-Windows.Devices.WiFi&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=nanoframework_lib-Windows.Devices.WiFi) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Windows.Devices.WiFi.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Windows.Devices.WiFi/) [![#yourfirstpr](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://github.com/nanoframework/Home/blob/main/CONTRIBUTING.md) [![Discord](https://img.shields.io/discord/478725473862549535.svg?logo=discord&logoColor=white&label=Discord&color=7289DA)](https://discord.gg/gCyBu8T)
 
-![nanoFramework logo](https://github.com/nanoframework/Home/blob/master/resources/logo/nanoFramework-repo-logo.png)
+![nanoFramework logo](https://github.com/nanoframework/Home/blob/main/resources/logo/nanoFramework-repo-logo.png)
 
 -----
 
@@ -10,8 +10,8 @@
 
 | Component | Build Status | NuGet Package |
 |:-|---|---|
-| Windows.Devices.WiFi | [![Build Status](https://dev.azure.com/nanoframework/Windows.Devices.WiFi/_apis/build/status/nanoframework.lib-Windows.Devices.WiFi?branchName=develop)](https://dev.azure.com/nanoframework/Windows.Devices.WiFi/_build/latest?definitionId=13?branchName=master) | [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Windows.Devices.WiFi.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Windows.Devices.WiFi/) |
-| Windows.Devices.WiFi (preview) | [![Build Status](https://dev.azure.com/nanoframework/Windows.Devices.WiFi/_apis/build/status/nanoframework.lib-Windows.Devices.WiFi?branchName=develop)](https://dev.azure.com/nanoframework/Windows.Devices.WiFi/_build/latest?definitionId=13?branchName=develop) | [![](https://badgen.net/badge/NuGet/preview/D7B023?icon=https://simpleicons.now.sh/azuredevops/fff)](https://dev.azure.com/nanoframework/feed/_packaging?_a=package&feed=sandbox&package=nanoFramework.Windows.Devices.WiFi&protocolType=NuGet&view=overview) |
+| Windows.Devices.WiFi | [![Build Status](https://dev.azure.com/nanoframework/Windows.Devices.WiFi/_apis/build/status/Windows.Devices.WiFi?repoName=nanoframework%2FWindows.Devices.WiFi&branchName=main)](https://dev.azure.com/nanoframework/Windows.Devices.WiFi/_build/latest?definitionId=13&repoName=nanoframework%2FWindows.Devices.WiFi&branchName=main) | [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Windows.Devices.WiFi.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Windows.Devices.WiFi/) |
+| Windows.Devices.WiFi (preview) | [![Build Status](https://dev.azure.com/nanoframework/Windows.Devices.WiFi/_apis/build/status/Windows.Devices.WiFi?repoName=nanoframework%2FWindows.Devices.WiFi&branchName=develop)](https://dev.azure.com/nanoframework/Windows.Devices.WiFi/_build/latest?definitionId=13&repoName=nanoframework%2FWindows.Devices.WiFi&branchName=develop) | [![NuGet](https://img.shields.io/nuget/vpre/nanoFramework.Windows.Devices.WiFi.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Windows.Devices.WiFi/) |
 
 ## Feedback and documentation
 
@@ -21,7 +21,7 @@ Join our Discord community [here](https://discord.gg/gCyBu8T).
 
 ## Credits
 
-The list of contributors to this project can be found at [CONTRIBUTORS](https://github.com/nanoframework/Home/blob/master/CONTRIBUTORS.md).
+The list of contributors to this project can be found at [CONTRIBUTORS](https://github.com/nanoframework/Home/blob/main/CONTRIBUTORS.md).
 
 ## License
 
