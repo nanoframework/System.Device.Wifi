@@ -68,7 +68,7 @@ steps:
     allowPackageConflicts: true
     packagesToPush: 
       $(Build.ArtifactStagingDirectory)/nanoFramework.NetWorkHelper.$(MY_NUGET_VERSION).nupkg
-    publishFeedCredentials: 'AzureArtifacts-CoreLibrary'
+    publishFeedCredentials: 'AzureArtifacts-Windows.Devices.Wifi'
   continueOnError: true
 
 - task: NuGetCommand@2
@@ -80,7 +80,7 @@ steps:
     allowPackageConflicts: true
     packagesToPush: 
       $(Build.ArtifactStagingDirectory)/nanoFramework.NetWorkHelper.$(MY_NUGET_VERSION).nupkg
-    publishFeedCredentials: 'NuGet-CoreLibrary'
+    publishFeedCredentials: 'NuGet-Windows.Devices.Wifi'
   continueOnError: true
 
 # create or update GitHub release
