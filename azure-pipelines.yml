@@ -41,7 +41,7 @@ steps:
   condition: and( succeeded(), eq( variables['StartReleaseCandidate'], false ) )
   displayName: Rebuild Devices.WiFi
   inputs:
-    solution: 'NetworkHelper\NetworkHelper.nfproj' 
+    solution: 'Windows.Devices.WiFi\Windows.Devices.Wifi.nfproj' 
     platform: 'AnyCPU'
     configuration: '$(buildConfiguration)'
     msbuildArguments: '/p:PublicRelease=true'
