@@ -15,11 +15,12 @@
     <icon>images\nf-logo.png</icon>
     <repository type="git" url="https://github.com/nanoframework/Windows.Devices.Wifi" commit="$commit$" />
     <copyright>Copyright (c) .NET Foundation and Contributors</copyright>
-    <description>This package includes the Windows.Devices.Wifi assembly for .NET nanoFramework C# projects.&#10;This package requires a target with Windows.Devices.Wifi v$nativeVersion$.</description>
+    <description>This package includes the Windows.Devices.Wifi assembly for .NET nanoFramework C# projects.
+This package requires a target with Windows.Devices.Wifi v$nativeVersion$.</description>
     <summary>Windows.Devices.Wifi assembly for nanoFramework C# projects</summary>
     <tags>nanoFramework C# csharp netmf netnf Windows.Devices.Wifi</tags>
     <dependencies>
-      <dependency id="nanoFramework.CoreLibrary" version="1.10.4-preview.11" />
+      <dependency id="nanoFramework.CoreLibrary" version="1.10.5-preview.10" />
       <dependency id="nanoFramework.Runtime.Events" version="1.9.0-preview.26" />
     </dependencies>
   </metadata>
@@ -29,7 +30,6 @@
     <file src="Windows.Devices.Wifi\bin\Release\Windows.Devices.Wifi.pdbx" target="lib\Windows.Devices.Wifi.pdbx" />
     <file src="Windows.Devices.Wifi\bin\Release\Windows.Devices.Wifi.pe" target="lib\Windows.Devices.Wifi.pe" />
     <file src="Windows.Devices.Wifi\bin\Release\Windows.Devices.Wifi.xml" target="lib\Windows.Devices.Wifi.xml" />
-
     <file src="assets\readme.txt" target="" />
     <file src="assets\nf-logo.png" target="images" />
     <file src="LICENSE.md" target="" />
