@@ -54,7 +54,7 @@ steps:
 
 - template: azure-pipelines-templates/class-lib-package.yml@templates  
   parameters:
-    nugetPackageName: 'NetworkHelper'
+    nugetPackageName: 'nanoFramework.NetWorkHelper'
  
 - template: azure-pipelines-templates/class-lib-publish.yml@templates  
 
@@ -93,7 +93,7 @@ steps:
     tag: v$(MY_NUGET_VERSION)
     title: '$(nugetPackageName) Library v$(MY_NUGET_VERSION)'
     releaseNotesSource: inline
-    releaseNotesInline: 'Check the [changelog]($(Build.Repository.Uri)/blob/$(Build.SourceBranchName)/CHANGELOG.md).<br><br><h4>Install from NuGet</h4><br>The following NuGet packages are available for download from this release:<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).'
+    releaseNotesInline: 'Check the [changelog]($(Build.Repository.Uri)/blob/$(Build.SourceBranchName)/CHANGELOG.md).<br><br><h4>Install from NuGet</h4><br>The following NuGet packages are available for download from this release:<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).<br>:package: [nanoFramework.NetWorkHelper](https://www.nuget.org/packages/nanoFramework.NetWorkHelper/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).'
     assets: '$(Build.ArtifactStagingDirectory)/*.nupkg'
     assetUploadMode: replace
     isPreRelease: true
@@ -109,7 +109,7 @@ steps:
     tag: v$(MY_NUGET_VERSION)
     title: '$(nugetPackageName) Library v$(MY_NUGET_VERSION)'
     releaseNotesSource: inline
-    releaseNotesInline: 'Check the [changelog]($(Build.Repository.Uri)/blob/$(Build.SourceBranchName)/CHANGELOG.md).<br><br><h4>Install from NuGet</h4><br>The following NuGet packages are available for download from this release:<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).'
+    releaseNotesInline: 'Check the [changelog]($(Build.Repository.Uri)/blob/$(Build.SourceBranchName)/CHANGELOG.md).<br><br><h4>Install from NuGet</h4><br>The following NuGet packages are available for download from this release:<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).<br>:package: [nanoFramework.NetWorkHelper](https://www.nuget.org/packages/nanoFramework.NetWorkHelper/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).'
     assets: '$(Build.ArtifactStagingDirectory)/*.nupkg'
     assetUploadMode: replace
     isPreRelease: false
