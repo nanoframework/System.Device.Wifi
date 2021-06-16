@@ -60,8 +60,7 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
+  <ItemGroup>    
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="..\System.Threading.CancellationToken\System.Threading.CancellationToken.projitems" Label="Shared" />
