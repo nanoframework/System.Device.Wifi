@@ -56,14 +56,14 @@
       <SpecificVersion>True</SpecificVersion>
     </Reference>
     <Reference Include="Windows.Devices.Wifi, Version=1.3.2.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
-      <HintPath>..\packages\nanoFramework.Windows.Devices.Wifi.1.3.2-preview.50\lib\Windows.Devices.Wifi.dll</HintPath>
+      <HintPath>..\packages\nanoFramework.Windows.Devices.Wifi.1.3.2-preview.54\lib\Windows.Devices.Wifi.dll</HintPath>
       <Private>True</Private>
+      <SpecificVersion>True</SpecificVersion>
     </Reference>
   </ItemGroup>
-  <ItemGroup>    
+  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <Import Project="..\System.Threading.CancellationToken\System.Threading.CancellationToken.projitems" Label="Shared" />
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
   <ProjectExtensions>
     <ProjectCapabilities>
