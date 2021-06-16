@@ -1,18 +1,12 @@
-
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "NetworkHelper", "NetWorkHelper\NetworkHelper.nfproj", "{6DA5EDB1-3A71-49EA-B5E2-6A8741633339}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "System.Threading.CancellationToken", "System.Threading.CancellationToken\System.Threading.CancellationToken.shproj", "{809A6044-F4F6-4E6F-8C44-EB5A54B71AB2}"
-EndProject
 Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "NFUnitTestWifiConnection", "Tests\NFUnitTestWifiConnection\NFUnitTestWifiConnection.nfproj", "{C41428D8-396F-4946-98BB-DD8C1B842BC7}"
 EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		System.Threading.CancellationToken\System.Threading.CancellationToken.projitems*{809a6044-f4f6-4e6f-8c44-eb5a54b71ab2}*SharedItemsImports = 13
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
