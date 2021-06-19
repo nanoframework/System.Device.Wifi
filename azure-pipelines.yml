@@ -20,105 +20,201 @@ pool:
   vmImage: 'windows-2019'
 
 variables:
-  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
-  solution: '**/*.sln'
+  DOTNET_NOLOGO: true
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  nugetPackageName: 'nanoFramework.Windows.Devices.Wifi'
 
-steps:
+jobs:
 
-# step from template @ nf-tools repo
-# all build, update and publish steps
-- template: azure-pipelines-templates/class-lib-build-only.yml@templates
-  parameters:
-    sonarCloudProject: 'nanoframework_lib-Windows.Devices.WiFi'
-    runUnitTests: true
-    unitTestRunsettings: '$(System.DefaultWorkingDirectory)\Tests\NFUnitTestWifiConnection\nano.runsettings'
+# check build options
+- job: Check_Build_Options
+  pool:
+    vmImage: 'windows-2019'
 
-# rebuild Devices.WiFi project to get the assembky checksum
-- task: MSBuild@1
-  condition: and( succeeded(), eq( variables['StartReleaseCandidate'], false ) )
-  displayName: Rebuild Devices.WiFi
-  inputs:
-    solution: 'Windows.Devices.WiFi\Windows.Devices.Wifi.nfproj' 
-    platform: 'AnyCPU'
-    configuration: '$(buildConfiguration)'
-    msbuildArguments: '/p:PublicRelease=true'
-    maximumCpuCount: true
+  steps:
+  - checkout: self
+    fetchDepth: 1
 
-# package steps
-- template: azure-pipelines-templates/class-lib-package.yml@templates  
-  parameters:
+  # get commit message
+  - powershell: |
+
+      if($env:StartReleaseCandidate -like "true")
+      {
+        # this is a release prep so NO build
+        echo "##vso[task.setvariable variable=SKIP_BUILD;isOutput=true]true"
+        
+        Write-Host "Release preparation, skipping build."
+      }
+      else
+      {
+        # get commit details, if this is a PR
+        if($env:System_PullRequest_PullRequestId -ne $null)
+        {
+          $commit = Invoke-RestMethod -Uri "https://api.github.com/repos/nanoframework/Windows.Devices.WiFi/commits/$(Build.SourceVersion)" -ContentType "application/json" -Method GET
+
+          if( ($commit.commit.author.name -eq "nfbot") -and ($commit.commit.message -like "*[version update]*") )
+          {
+            echo "##vso[task.setvariable variable=SKIP_BUILD;isOutput=true]true"  
+          }
+          else
+          {
+            echo "##vso[task.setvariable variable=SKIP_BUILD;isOutput=true]false"  
+          }
+        }
+        else
+        {
+          echo "##vso[task.setvariable variable=SKIP_BUILD;isOutput=true]false"
+        }
+      }
+
+    name: BuildOptions
+    displayName: Get build options
+
+  # check what changed
+  - powershell: |
+      git config --global user.email "nfbot"
+      git config --global user.name "nanoframework@outlook.com"
+
+      $auth = "basic $([System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes(":$(GitHubToken)"))))"
+      
+      if($env:StartReleaseCandidate -like "true")
+      {
+          # this is a release prep so NO build
+      }
+      else
+      {
+          if($env:System_PullRequest_PullRequestId -ne $null)
+          {
+              # get files changed in PR, if this is a PR
+              $commit = Invoke-RestMethod -Uri "https://api.github.com/repos/nanoframework/Windows.Devices.WiFi/pulls/$env:System_PullRequest_PullRequestNumber/files" -Header @{"Authorization"="$auth"} -ContentType "application/json" -Method GET
+
+              # filter removed files              
+              $files = $commit.where{$_.status -ne 'removed'}
+          }
+          else
+          {
+              # get files changed in the commit, if this is NOT a PR
+              $commit = Invoke-RestMethod -Uri "https://api.github.com/repos/nanoframework/Windows.Devices.WiFi/commits/$(Build.SourceVersion)" -Header @{"Authorization"="$auth"} -ContentType "application/json" -Method GET
+
+              # filter removed files              
+              $files = $commit.files.where{$_.status -ne 'removed'}
+          }
+
+          # get file names only
+          $files = $files | % {$_.filename}
+
+          Write-host "Files changed:"
+          $files | % { Write-host $_ }
+          Write-host ""
+
+          # set default values 
+          echo "##vso[task.setvariable variable=BUILD_WIN_DEVICES_WIFI;isOutput=true]false"
+          echo "##vso[task.setvariable variable=BUILD_NETWORK_HELPER;isOutput=true]false"
+
+          if(
+              (($files.where{$_.StartsWith('nanoFramework.Windows.Devices.Wifi')}).Count -gt 0) -Or
+              (($files.where{$_.StartsWith('version.json')}).Count -gt 0) -Or
+              (($files.where{$_.StartsWith('Windows.Devices.WiFi')}).Count -gt 0)
+          )
+          {
+              # files at Windows.Devices.WiFi folder
+              $buildWinDevicesWiFi = "true"
+
+              echo "##vso[task.setvariable variable=BUILD_WIN_DEVICES_WIFI;isOutput=true]true"
+
+              Write-host "Building Windows.Devices.WiFi library"
+          }
+
+          if( 
+              (($files.where{$_.StartsWith('nanoFramework.NetWorkHelper')}).Count -gt 0) -Or
+              (($files.where{$_.StartsWith('NetworkHelper')}).Count -gt 0) -Or
+              (($files.where{$_.StartsWith('Tests\NFUnitTestWifiConnection')}).Count -gt 0)
+          )
+          {
+              # files at:
+              # - NetworkHelper
+              # - Unit Tests for NetworkHelper
+
+              $buildNetworkHelper = "true"
+
+              echo "##vso[task.setvariable variable=BUILD_NETWORK_HELPER;isOutput=true]true"
+              
+              Write-host "Building NetworkHelper"
+          }
+      }
+
+    name: LibrariesToBuild
+    displayName: Get libraries to build
+
+#################
+# Windows.Devices.WiFi
+- job: Build_WIN_DEVICES_WIFI
+  condition: and(succeeded(), ne( dependencies.Check_Build_Options.outputs['BuildOptions.SKIP_BUILD'], true ), eq(dependencies.Check_Build_Options.outputs['LibrariesToBuild.BUILD_WIN_DEVICES_WIFI'], true) )
+
+  dependsOn:
+  - Check_Build_Options
+
+  pool:
+    vmImage: 'windows-2019'
+
+  variables:
+    solution: 'nanoFramework.Windows.Devices.Wifi.sln'
     nugetPackageName: 'nanoFramework.Windows.Devices.Wifi'
 
-- template: azure-pipelines-templates/class-lib-package.yml@templates  
-  parameters:
+  steps:
+
+  # step from template @ nf-tools repo
+  # all build, update and publish steps
+  - template: azure-pipelines-templates/class-lib-build.yml@templates
+    parameters:
+      sonarCloudProject: 'nanoframework_lib-Windows.Devices.WiFi'
+
+
+#################
+# NetworkHelper
+- job: Build_BUILD_NETWORK_HELPER
+  condition: and(succeeded(), ne( dependencies.Check_Build_Options.outputs['BuildOptions.SKIP_BUILD'], true ), eq(dependencies.Check_Build_Options.outputs['LibrariesToBuild.BUILD_NETWORK_HELPER'], true) )
+
+  dependsOn:
+  - Check_Build_Options
+
+  pool:
+    vmImage: 'windows-2019'
+
+  variables:
+    solution: 'nanoFramework.NetWorkHelper.sln'
     nugetPackageName: 'nanoFramework.NetWorkHelper'
- 
-- template: azure-pipelines-templates/class-lib-publish.yml@templates  
 
-# need to push the other package to NuGet because the template above can only push one package (happens on all builds except PRs)
-- task: NuGetCommand@2
-  condition: and( succeeded(), eq(variables['System.PullRequest.PullRequestId'], ''), eq( variables['StartReleaseCandidate'], false ) )
-  displayName: Push "NetworkHelper" variant NuGet package to Azure Artifacts
-  inputs:
-    command: push
-    nuGetFeedType: external
-    allowPackageConflicts: true
-    packagesToPush: 
-      $(Build.ArtifactStagingDirectory)/nanoFramework.NetWorkHelper.$(MY_NUGET_VERSION).nupkg
-    publishFeedCredentials: 'AzureArtifacts-Windows.Devices.Wifi'
-  continueOnError: true
+  steps:
 
-- task: NuGetCommand@2
-  condition: and( succeeded(), eq(variables['System.PullRequest.PullRequestId'], ''), eq( variables['StartReleaseCandidate'], false ) )
-  displayName: Push "NetworkHelper" variant NuGet package to Azure Artifacts
-  inputs:
-    command: push
-    nuGetFeedType: external
-    allowPackageConflicts: true
-    packagesToPush: 
-      $(Build.ArtifactStagingDirectory)/nanoFramework.NetWorkHelper.$(MY_NUGET_VERSION).nupkg
-    publishFeedCredentials: 'NuGet-Windows.Devices.Wifi'
-  continueOnError: true
+  # step from template @ nf-tools repo
+  # all build, update and publish steps
+  - template: azure-pipelines-templates/class-lib-build.yml@templates
+    parameters:
+      sonarCloudProject: 'nanoframework_lib-Windows.Devices.WiFi'
+      runUnitTests: true
+      unitTestRunsettings: '$(System.DefaultWorkingDirectory)\Tests\NFUnitTestWifiConnection\nano.runsettings'
 
-# create or update GitHub release
-- task: GithubRelease@1
-  condition: and( succeeded(), eq(variables['System.PullRequest.PullRequestId'], ''), not( startsWith(variables['Build.SourceBranch'], 'refs/tags/v') ), ne( variables['StartReleaseCandidate'], true ) )
-  displayName: Create/Update GitHub PREVIEW release 
-  inputs:
-    gitHubConnection: 'github.com_nano-$(System.TeamProject)'
-    tagSource: userSpecifiedTag
-    tag: v$(MY_NUGET_VERSION)
-    title: '$(nugetPackageName) Library v$(MY_NUGET_VERSION)'
-    releaseNotesSource: inline
-    releaseNotesInline: 'Check the [changelog]($(Build.Repository.Uri)/blob/$(Build.SourceBranchName)/CHANGELOG.md).<br><br><h4>Install from NuGet</h4><br>The following NuGet packages are available for download from this release:<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).<br>:package: [nanoFramework.NetWorkHelper](https://www.nuget.org/packages/nanoFramework.NetWorkHelper/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).'
-    assets: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-    assetUploadMode: replace
-    isPreRelease: true
-    addChangeLog: false
+##################################
+# report build failure to Discord
+- job: Report_Build_Failure
 
-# create or update GitHub release ON tags from release or master branches
-- task: GithubRelease@1
-  condition: and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), not(contains(variables['Build.SourceBranch'], 'preview') ), ne( variables['StartReleaseCandidate'], true ) )
-  displayName: Create/Update GitHub stable release
-  inputs:
-    gitHubConnection: 'github.com_nano-$(System.TeamProject)'
-    tagSource: userSpecifiedTag
-    tag: v$(MY_NUGET_VERSION)
-    title: '$(nugetPackageName) Library v$(MY_NUGET_VERSION)'
-    releaseNotesSource: inline
-    releaseNotesInline: 'Check the [changelog]($(Build.Repository.Uri)/blob/$(Build.SourceBranchName)/CHANGELOG.md).<br><br><h4>Install from NuGet</h4><br>The following NuGet packages are available for download from this release:<br>:package: [.NET](https://www.nuget.org/packages/$(nugetPackageName)/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).<br>:package: [nanoFramework.NetWorkHelper](https://www.nuget.org/packages/nanoFramework.NetWorkHelper/$(MY_NUGET_VERSION)) v$(MY_NUGET_VERSION).'
-    assets: '$(Build.ArtifactStagingDirectory)/*.nupkg'
-    assetUploadMode: replace
-    isPreRelease: false
-    addChangeLog: false
+  dependsOn:
+  - Build_WIN_DEVICES_WIFI
+  - Build_BUILD_NETWORK_HELPER
+  condition: or( failed('Build_WIN_DEVICES_WIFI'), failed('Build_BUILD_NETWORK_HELPER'))
 
-# step from template @ nf-tools repo
-# report error
-- template: azure-pipelines-templates/discord-webhook-task.yml@templates  
-  parameters:
-    status: 'failure'
-    webhookUrl: '$(DiscordWebhook)'
-    message: ''
+  pool:
+    vmImage: 'windows-2019'
+
+  steps:
+
+  - checkout: self
+
+  # step from template @ nf-tools repo
+  # report error
+  - template: azure-pipelines-templates/discord-webhook-task.yml@templates  
+    parameters:
+      status: 'failure'
+      webhookUrl: '$(DiscordWebhook)'
+      message: ''
