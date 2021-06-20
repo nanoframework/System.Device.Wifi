@@ -2,7 +2,15 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/Windows.Devices.WiFi/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/Windows.Devices.WiFi/compare/v1.3.2-preview.60...HEAD)
+[Full Changelog](https://github.com/nanoframework/Windows.Devices.WiFi/compare/v1.3.2-preview.64...HEAD)
+
+**Documentation and other chores:**
+
+- Update 3 nuget dependencies [\#128](https://github.com/nanoframework/Windows.Devices.WiFi/pull/128)
+
+## [v1.3.2-preview.64](https://github.com/nanoframework/Windows.Devices.WiFi/tree/v1.3.2-preview.64) (2021-06-19)
+
+[Full Changelog](https://github.com/nanoframework/Windows.Devices.WiFi/compare/v1.3.2-preview.60...v1.3.2-preview.64)
 
 **Documentation and other chores:**
 
