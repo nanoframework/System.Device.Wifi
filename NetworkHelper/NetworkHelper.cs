@@ -176,6 +176,20 @@ namespace nanoFramework.Networking
                                 _wifi.Disconnect();
                                 // Make sure we store the configuration
                                 StoreConfiguration(ni);
+                                if (_ipConfiguration != null)
+                                {
+                                    ni.EnableStaticIPv4(_ipConfiguration.IPAddress, _ipConfiguration.IPSubnetMask, _ipConfiguration.IPGatewayAddress);
+                                    if ((_ipConfiguration.IPDns != null) && (_ipConfiguration.IPDns.Length > 0))
+                                    {
+                                        ni.EnableStaticIPv4Dns(_ipConfiguration.IPDns);
+                                    }
+                                }
+                                else
+                                {
+                                    ni.EnableDhcp();
+                                    ni.EnableAutomaticDns();
+                                }
+
                                 _wifi.Connect(_ssid, _reconnectionKind, _password);
                                 break;
                             }
