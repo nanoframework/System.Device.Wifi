@@ -15,11 +15,13 @@ namespace nanoFramework.Networking
         /// <param name="ipAddress">The static IP address.</param>
         /// <param name="ipSubnetMask">The IP subnet mask address.</param>
         /// <param name="ipGatewayAddress">The IP gateway address.</param>
-        public IPConfiguration(string ipAddress, string ipSubnetMask, string ipGatewayAddress)
+        /// <param name="ipDns">The IP DNS list, null to let automatic DNS on.</param>
+        public IPConfiguration(string ipAddress, string ipSubnetMask, string ipGatewayAddress, string[] ipDns)
         {
             IPAddress = ipAddress;
             IPSubnetMask = ipSubnetMask;
             IPGatewayAddress = ipGatewayAddress;
+            IPDns = ipDns;
         }
 
         /// <summary>
@@ -36,5 +38,10 @@ namespace nanoFramework.Networking
         /// Gets or sets the he IP gateway address.
         /// </summary>
         public string IPGatewayAddress { get; set; }
+
+        /// <summary>
+        /// Gets or sets the static DNS. null to let the automatic DNS enabled.
+        /// </summary>
+        public string[] IPDns { get; set; }
     }
 }

@@ -25,7 +25,7 @@ namespace NFUnitTestWifiConnection
         {
             // Give 10 seconds to the wifi join to happen
             CancellationTokenSource cs = new(10000);
-            var success = NetworkHelper.ConnectWifiFixAddress(Ssid, Password, new IPConfiguration("192.168.1.7", "255.255.255.0", "192.168.1.1"), setDateTime: true, token: cs.Token);
+            var success = NetworkHelper.ConnectWifiFixAddress(Ssid, Password, new IPConfiguration("192.168.1.7", "255.255.255.0", "192.168.1.1", new[] { "192.168.1.1" }), setDateTime: true, token: cs.Token);
             ConnectToWifiWithCredentialsTests.DisplayLastError(success);
             Assert.True(success);
             Assert.Null(NetworkHelper.ConnectionError.Exception);
