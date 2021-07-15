@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <NanoFrameworkProjectSystemPath>$(MSBuildToolsPath)..\..\..\nanoFramework\v1.0\</NanoFrameworkProjectSystemPath>
+  </PropertyGroup>
+  <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.Default.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.Default.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>a42bc265-9f96-48e2-aa2a-a5119b9b0b79</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>Windows.Devices.Wifi</AssemblyName>
+    <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
+    <NFTargetVersion>v1.0</NFTargetVersion>
+    <NF_IsCoreLibrary>True</NF_IsCoreLibrary>
+    <DocumentationFile>bin\$(Configuration)\Windows.Devices.Wifi.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <!-- override default options for MetaDataProcessor -->
+    <NF_GenerateStubsDirectory>bin\$(Configuration)\Stubs</NF_GenerateStubsDirectory>
+    <NF_GenerateSkeletonProjectName>win_dev_wifi_native</NF_GenerateSkeletonProjectName>
+  </PropertyGroup>
+  <ItemGroup>
+    <NFMDP_PE_ExcludeClassByName Include="ThisAssembly">
+      <InProject>false</InProject>
+    </NFMDP_PE_ExcludeClassByName>
+  </ItemGroup>
+  <ItemGroup>
+    <NFMDP_PE_LoadHints Include="..\packages\nanoFramework.CoreLibrary.1.10.4-preview.11\lib\mscorlib.dll">
+      <InProject>false</InProject>
+    </NFMDP_PE_LoadHints>
+    <NFMDP_PE_LoadHints Include="..\packages\nanoFramework.Runtime.Events.1.9.0-preview.26\lib\nanoFramework.Runtime.Events.dll">
+      <InProject>false</InProject>
+    </NFMDP_PE_LoadHints>
+  </ItemGroup>
+  <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
+  <ItemGroup>
+    <Compile Include="WiFIEvent.cs" />
+    <Compile Include="WiFiEventListener.cs" />
+    <Compile Include="WiFiAdapter.cs" />
+    <Compile Include="WiFiAvailableNetwork.cs" />
+    <Compile Include="WiFiConnectionResult.cs" />
+    <Compile Include="WiFiConnectionStatus.cs" />
+    <Compile Include="WiFiNetworkKind.cs" />
+    <Compile Include="WiFiNetworkReport.cs" />
+    <Compile Include="WiFiReconnectionKind.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="key.snk" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib, Version=1.10.4.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.CoreLibrary.1.10.4-preview.11\lib\mscorlib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nanoFramework.Runtime.Events, Version=1.9.0.0, Culture=neutral, PublicKeyToken=c07d481e9758c731">
+      <HintPath>..\packages\nanoFramework.Runtime.Events.1.9.0-preview.26\lib\nanoFramework.Runtime.Events.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.CSharp.targets')" />
+  <ProjectExtensions>
+    <ProjectCapabilities>
+      <ProjectConfigurationsDeclaredAsItems />
+    </ProjectCapabilities>
+  </ProjectExtensions>
+  <Import Project="..\packages\Nerdbank.GitVersioning.3.1.91\build\Nerdbank.GitVersioning.targets" Condition="Exists('..\packages\Nerdbank.GitVersioning.3.1.91\build\Nerdbank.GitVersioning.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Nerdbank.GitVersioning.3.1.91\build\Nerdbank.GitVersioning.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Nerdbank.GitVersioning.3.1.91\build\Nerdbank.GitVersioning.targets'))" />
+  </Target>
+</Project>
