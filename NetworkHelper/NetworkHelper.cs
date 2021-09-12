@@ -154,6 +154,7 @@ namespace nanoFramework.Networking
                     if (!isAlreadyConnected)
                     {
                         _wifi.Disconnect();
+                        isAlreadyConnected = false;
                     }
                 }
 
