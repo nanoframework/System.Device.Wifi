@@ -20,8 +20,8 @@
 This package requires a target with Windows.Devices.Wifi v$nativeVersion$ (checksum $checksum$).</description>
     <tags>nanoFramework C# csharp netmf netnf Windows.Devices.Wifi</tags>
     <dependencies>
-      <dependency id="nanoFramework.CoreLibrary" version="1.11.6-preview.2" />
-      <dependency id="nanoFramework.Runtime.Events" version="1.9.2-preview.12" />
+      <dependency id="nanoFramework.CoreLibrary" version="1.11.7" />
+      <dependency id="nanoFramework.Runtime.Events" version="1.9.2-preview.14" />
     </dependencies>
   </metadata>
   <files>
