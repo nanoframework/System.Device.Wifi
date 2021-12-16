@@ -269,18 +269,15 @@ namespace nanoFramework.Networking
             NetworkInterface[] nis = NetworkInterface.GetAllNetworkInterfaces();
             foreach (NetworkInterface ni in nis)
             {
-                if (ni.NetworkInterfaceType != interfaceType)
+                if (ni.NetworkInterfaceType != interfaceType || string.IsNullOrEmpty(ni?.IPv4Address))
                 {
-                    break;
+                    continue;
                 }
 
-                if (ni.IPv4Address != null && ni.IPv4Address.Length > 0)
+                if (ni.IPv4Address[0] != '0')
                 {
-                    if (ni.IPv4Address[0] != '0')
-                    {
-                        Debug.WriteLine($"We have and IP: {ni.IPv4Address}");
-                        return true;
-                    }
+                    Debug.WriteLine($"We have and IP: {ni.IPv4Address}");
+                    return true;
                 }
             }
 
