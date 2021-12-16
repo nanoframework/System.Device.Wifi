@@ -2,7 +2,15 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/Windows.Devices.WiFi/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/Windows.Devices.WiFi/compare/v1.3.4-preview.32...HEAD)
+[Full Changelog](https://github.com/nanoframework/Windows.Devices.WiFi/compare/v1.3.4-preview.34...HEAD)
+
+**Implemented enhancements:**
+
+- NetworkHelper.IsValidIpAddress\(\) foreach fixed [\#165](https://github.com/nanoframework/Windows.Devices.WiFi/pull/165)
+
+## [v1.3.4-preview.34](https://github.com/nanoframework/Windows.Devices.WiFi/tree/v1.3.4-preview.34) (2021-12-03)
+
+[Full Changelog](https://github.com/nanoframework/Windows.Devices.WiFi/compare/v1.3.4-preview.32...v1.3.4-preview.34)
 
 **Documentation and other chores:**
 
