@@ -3,6 +3,7 @@
 ![nanoFramework logo](https://raw.githubusercontent.com/nanoframework/Home/main/resources/logo/nanoFramework-repo-logo.png)
 
 -----
+Document Language: [English](README.md) | [简体中文](README.zh-cn.md)
 
 ### Welcome to the .NET **nanoFramework** Windows.Devices.WiFi Library repository and NetworkHelper
 
