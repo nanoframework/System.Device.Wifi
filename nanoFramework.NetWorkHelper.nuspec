@@ -20,7 +20,7 @@
     <tags>nanoFramework C# csharp netmf netnf NetWorkHelper</tags>
     <dependencies>
       <dependency id="nanoFramework.CoreLibrary" version="1.11.7" />
-      <dependency id="nanoFramework.Runtime.Events" version="1.9.2" />
+      <dependency id="nanoFramework.Runtime.Events" version="1.10.0-preview.1" />
       <dependency id="nanoFramework.System.Net" version="1.7.1" />
       <dependency id="nanoFramework.System.Text" version="1.1.2" />
       <dependency id="nanoFramework.System.Threading" version="1.0.3" />
