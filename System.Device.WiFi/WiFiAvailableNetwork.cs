@@ -1,11 +1,9 @@
 ﻿//
 // Copyright (c) .NET Foundation and Contributors
 // See LICENSE file in the project root for full license information.
+//
 
-using System;
-using System.Runtime.CompilerServices;
-
-namespace Windows.Devices.WiFi
+namespace System.Device.WiFi
 {
     /// <summary>
     /// Describes an available Wi-Fi network.
@@ -14,9 +12,9 @@ namespace Windows.Devices.WiFi
     {
         internal string _bsid = "";
         internal string _ssid = "";
-        internal sbyte  _rssi =  0;
+        internal sbyte _rssi = 0;
 
-        private WiFiNetworkKind _networkKind = WiFiNetworkKind.Any;
+        private readonly WiFiNetworkKind _networkKind = WiFiNetworkKind.Any;
 
         /// <summary>
         /// Gets the MAC address of the access point.
@@ -37,7 +35,8 @@ namespace Windows.Devices.WiFi
         /// <summary>
         /// Gets the signal strength of the network in Ddm
         /// </summary>
-        public double NetworkRssiInDecibelMilliwatts {
+        public double NetworkRssiInDecibelMilliwatts
+        {
             get
             {
                 return (double)_rssi;
@@ -47,12 +46,14 @@ namespace Windows.Devices.WiFi
         /// <summary>
         /// Gets the strength of the signal as a number of bars.
         /// </summary>
-        public byte SignalBars {
-            get {
+        public byte SignalBars
+        {
+            get
+            {
                 byte bars = 0;
 
                 // Map Rssi to signal bars
-                if (_rssi > -55)      bars = 4;  // High
+                if (_rssi > -55) bars = 4;  // High
                 else if (_rssi > -75) bars = 3;  // Medium
                 else if (_rssi > -85) bars = 2;  // Low
                 else if (_rssi > -96) bars = 1;  // Unusable 
@@ -60,6 +61,5 @@ namespace Windows.Devices.WiFi
                 return bars;
             }
         }
-
     }
 }

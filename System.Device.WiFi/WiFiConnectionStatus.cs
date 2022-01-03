@@ -1,9 +1,9 @@
 ﻿//
 // Copyright (c) .NET Foundation and Contributors
 // See LICENSE file in the project root for full license information.
+//
 
-
-namespace Windows.Devices.WiFi
+namespace System.Device.WiFi
 {
     /// <summary>
     /// Status of the connection attempt.

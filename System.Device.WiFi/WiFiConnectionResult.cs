@@ -1,11 +1,9 @@
 ﻿//
 // Copyright (c) .NET Foundation and Contributors
 // See LICENSE file in the project root for full license information.
+//
 
-using System;
-using System.Runtime.CompilerServices;
-
-namespace Windows.Devices.WiFi
+namespace System.Device.WiFi
 {
 
     /// <summary>
@@ -13,13 +11,13 @@ namespace Windows.Devices.WiFi
     /// </summary>
     public class WiFiConnectionResult
     {
-        private WiFiConnectionStatus _ConnectionStatus;
+        private readonly WiFiConnectionStatus _ConnectionStatus;
 
-        internal WiFiConnectionResult(WiFiConnectionStatus ConnectionStatus )
+        internal WiFiConnectionResult(WiFiConnectionStatus ConnectionStatus)
         {
             _ConnectionStatus = ConnectionStatus;
         }
-            
+
         /// <summary>
         /// Gets the connection result value.
         /// </summary>

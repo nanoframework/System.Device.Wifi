@@ -45,14 +45,14 @@ jobs:
         # this is a release prep so NO build
         echo "##vso[task.setvariable variable=SKIP_BUILD;isOutput=true]false"
         
-        Write-Host "Release preparation, build Windows.Devices.WiFi."
+        Write-Host "Release preparation, build System.Device.WiFi."
       }
       else
       {
         # get commit details, if this is a PR
         if($env:System_PullRequest_PullRequestId -ne $null)
         {
-          $commit = Invoke-RestMethod -Uri "https://api.github.com/repos/nanoframework/Windows.Devices.WiFi/commits/$(Build.SourceVersion)" -ContentType "application/json" -Method GET
+          $commit = Invoke-RestMethod -Uri "https://api.github.com/repos/$env:Build_Repository_Name/commits/$(Build.SourceVersion)" -ContentType "application/json" -Method GET
 
           if( ($commit.commit.author.name -eq "nfbot") -and ($commit.commit.message -like "*[version update]*") )
           {
@@ -81,9 +81,9 @@ jobs:
       
       if($env:StartReleaseCandidate -like "true")
       {
-          # this is a release prep build Windows.Devices.WiFi
+          # this is a release prep build System.Device.WiFi
 
-          Write-Host "Release preparation, build Windows.Devices.WiFi."
+          Write-Host "Release preparation, build System.Device.WiFi."
 
           echo "##vso[task.setvariable variable=BUILD_WIN_DEVICES_WIFI;isOutput=true]true"
           echo "##vso[task.setvariable variable=BUILD_NETWORK_HELPER;isOutput=true]false"
@@ -93,7 +93,7 @@ jobs:
           if($env:System_PullRequest_PullRequestId -ne $null)
           {
               # get files changed in PR, if this is a PR
-              $commit = Invoke-RestMethod -Uri "https://api.github.com/repos/nanoframework/Windows.Devices.WiFi/pulls/$env:System_PullRequest_PullRequestNumber/files" -Header @{"Authorization"="$auth"} -ContentType "application/json" -Method GET
+              $commit = Invoke-RestMethod -Uri "https://api.github.com/repos/$env:Build_Repository_Name/pulls/$env:System_PullRequest_PullRequestNumber/files" -Header @{"Authorization"="$auth"} -ContentType "application/json" -Method GET
 
               # filter removed files              
               $files = $commit.where{$_.status -ne 'removed'}
@@ -101,7 +101,7 @@ jobs:
           else
           {
               # get files changed in the commit, if this is NOT a PR
-              $commit = Invoke-RestMethod -Uri "https://api.github.com/repos/nanoframework/Windows.Devices.WiFi/commits/$(Build.SourceVersion)" -Header @{"Authorization"="$auth"} -ContentType "application/json" -Method GET
+              $commit = Invoke-RestMethod -Uri "https://api.github.com/repos/$env:Build_Repository_Name/commits/$(Build.SourceVersion)" -Header @{"Authorization"="$auth"} -ContentType "application/json" -Method GET
 
               # filter removed files              
               $files = $commit.files.where{$_.status -ne 'removed'}
@@ -119,17 +119,17 @@ jobs:
           echo "##vso[task.setvariable variable=BUILD_NETWORK_HELPER;isOutput=true]false"
 
           if(
-              (($files.where{$_.StartsWith('nanoFramework.Windows.Devices.Wifi')}).Count -gt 0) -Or
+              (($files.where{$_.StartsWith('nanoFramework.System.Device.WiFi')}).Count -gt 0) -Or
               (($files.where{$_.StartsWith('version.json')}).Count -gt 0) -Or
-              (($files.where{$_.StartsWith('Windows.Devices.WiFi')}).Count -gt 0)
+              (($files.where{$_.StartsWith('System.Device.WiFi')}).Count -gt 0)
           )
           {
-              # files at Windows.Devices.WiFi folder
+              # files at System.Device.WiFi folder
               $buildWinDevicesWiFi = "true"
 
               echo "##vso[task.setvariable variable=BUILD_WIN_DEVICES_WIFI;isOutput=true]true"
 
-              Write-host "Building Windows.Devices.WiFi library"
+              Write-host "Building System.Device.WiFi library"
           }
 
           if( 
@@ -154,7 +154,7 @@ jobs:
     displayName: Get libraries to build
 
 #################
-# Windows.Devices.WiFi
+# System.Device.WiFi
 - job: Build_WIN_DEVICES_WIFI
   condition: and(succeeded(), ne( dependencies.Check_Build_Options.outputs['BuildOptions.SKIP_BUILD'], true ), eq(dependencies.Check_Build_Options.outputs['LibrariesToBuild.BUILD_WIN_DEVICES_WIFI'], true) )
 
@@ -165,8 +165,8 @@ jobs:
     vmImage: 'windows-2019'
 
   variables:
-    solution: 'nanoFramework.Windows.Devices.Wifi.sln'
-    nugetPackageName: 'nanoFramework.Windows.Devices.Wifi'
+    solution: 'nanoFramework.System.Device.WiFi.sln'
+    nugetPackageName: 'nanoFramework.System.Device.WiFi'
 
   steps:
 
@@ -174,7 +174,7 @@ jobs:
   # all build, update and publish steps
   - template: azure-pipelines-templates/class-lib-build.yml@templates
     parameters:
-      sonarCloudProject: 'nanoframework_lib-Windows.Devices.WiFi'
+      sonarCloudProject: 'nanoframework_lib-System.Device.WiFi'
 
 
 #################
@@ -198,7 +198,7 @@ jobs:
   # all build, update and publish steps
   - template: azure-pipelines-templates/class-lib-build.yml@templates
     parameters:
-      sonarCloudProject: 'nanoframework_lib-Windows.Devices.WiFi'
+      sonarCloudProject: 'nanoframework_lib-System.Device.WiFi'
       runUnitTests: true
       unitTestRunsettings: '$(System.DefaultWorkingDirectory)\Tests\NFUnitTestWifiConnection\nano.runsettings'
 

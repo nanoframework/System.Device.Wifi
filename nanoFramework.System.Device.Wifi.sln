@@ -3,12 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "Windows.Devices.Wifi", "Windows.Devices.Wifi\Windows.Devices.Wifi.nfproj", "{A42BC265-9F96-48E2-AA2A-A5119B9B0B79}"
+Project("{11A8DD76-328B-46DF-9F39-F559912D0360}") = "System.Device.WiFi", "System.Device.WiFi\System.Device.WiFi.nfproj", "{A42BC265-9F96-48E2-AA2A-A5119B9B0B79}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{19A726FD-5E93-45A7-AD59-A79EFE734567}"
 	ProjectSection(SolutionItems) = preProject
-		nanoFramework.Windows.Devices.Wifi.DELIVERABLES.nuspec = nanoFramework.Windows.Devices.Wifi.DELIVERABLES.nuspec
-		nanoFramework.Windows.Devices.Wifi.nuspec = nanoFramework.Windows.Devices.Wifi.nuspec
+		nanoFramework.System.Device.WiFi.DELIVERABLES.nuspec = nanoFramework.System.Device.WiFi.DELIVERABLES.nuspec
+		nanoFramework.System.Device.WiFi.nuspec = nanoFramework.System.Device.WiFi.nuspec
 		NuGet.Config = NuGet.Config
 		version.json = version.json
 	EndProjectSection

@@ -1,12 +1,11 @@
 ﻿//
 // Copyright (c) .NET Foundation and Contributors
 // See LICENSE file in the project root for full license information.
+//
 
-using System;
 using System.Runtime.CompilerServices;
-using nanoFramework.Runtime.Events;
 
-namespace Windows.Devices.WiFi
+namespace System.Device.WiFi
 {
     /// <summary>
     /// Event raised when a scan completes on this Wi-Fi adapter. 
@@ -21,13 +20,13 @@ namespace Windows.Devices.WiFi
     /// </summary>
     public sealed class WiFiAdapter : IDisposable
     {
-        private int _networkInterface;
+        private readonly int _networkInterface;
 
         private static WiFiEventListener s_eventListener = new WiFiEventListener();
 
         // This is used as the lock object 
         // a lock is required because multiple threads can access the WifiAdapter
-        private object _syncLock = new object();
+        private readonly object _syncLock = new object();
 
         /// <summary>
         /// Event raised when a scan completes on this Wi-Fi adapter. 
@@ -63,16 +62,17 @@ namespace Windows.Devices.WiFi
         {
             get { return _networkInterface; }
         }
-        
+
         /// <summary>
         /// Gets a list of available networks populated by the last Wi-Fi scan on this WiFiNetworkAdapter.
         /// </summary>
-        public WiFiNetworkReport NetworkReport {
+        public WiFiNetworkReport NetworkReport
+        {
             get
             {
                 lock (_syncLock)
                 {
-                    return new WiFiNetworkReport ( ParseNativeReports( GetNativeScanReport() ) );
+                    return new WiFiNetworkReport(ParseNativeReports(GetNativeScanReport()));
                 }
             }
         }
@@ -92,7 +92,7 @@ namespace Windows.Devices.WiFi
 
                 // need to convert this programmatically to prevent referencing System.Text
                 char[] rawSsid = new char[33];
-                for(int i = 0; i < 33; i++)
+                for (int i = 0; i < 33; i++)
                 {
                     rawSsid[i] = (char)nativeReport[bytePos + i];
                 }
@@ -117,34 +117,43 @@ namespace Windows.Devices.WiFi
         }
 
         /// <summary>
-        /// Connect this Wi-Fi device to the specified network, with the specified passphrase and reconnection policy.
+        /// Connect this Wi-Fi device to the specified network, with the specified pass-phrase and reconnection policy.
         /// </summary>
         /// <param name="availableNetwork">Describes the Wi-Fi network to be connected.</param>
         /// <param name="reconnectionKind">Specifies how to reconnect if the connection is lost.</param>
-        /// <param name="passwordCredential">The passphrase to be used to connect to the access point.</param>
+        /// <param name="passwordCredential">The pass-phrase to be used to connect to the access point.</param>
         /// <returns>
         /// On successful conclusion of the operation, returns an object that describes the result of the connect operation.
         /// </returns>
-        public WiFiConnectionResult Connect(WiFiAvailableNetwork availableNetwork, WiFiReconnectionKind reconnectionKind, string passwordCredential)
+        public WiFiConnectionResult Connect(
+            WiFiAvailableNetwork availableNetwork,
+            WiFiReconnectionKind reconnectionKind,
+            string passwordCredential)
         {
             lock (_syncLock)
             {
-                return new WiFiConnectionResult( NativeConnect(availableNetwork.Ssid, passwordCredential, reconnectionKind) );
+                return new WiFiConnectionResult(NativeConnect(
+                    availableNetwork.Ssid,
+                    passwordCredential,
+                    reconnectionKind));
             }
         }
 
         /// <summary>
-        /// Connect this Wi-Fi device to the specified network (using SSID string), with the specified passphrase and reconnection policy.
+        /// Connect this Wi-Fi device to the specified network (using SSID string), with the specified pass-phrase and reconnection policy.
         /// </summary>
         /// <param name="ssid">Describes the Wi-Fi network to be connected.</param>
         /// <param name="reconnectionKind">Specifies how to reconnect if the connection is lost.</param>
-        /// <param name="passwordCredential">The passphrase to be used to connect to the access point.</param>
+        /// <param name="passwordCredential">The pass-phrase to be used to connect to the access point.</param>
         /// <returns>
         /// On successful conclusion of the operation, returns an object that describes the result of the connect operation.
         /// </returns>
-        public WiFiConnectionResult Connect(string ssid, WiFiReconnectionKind reconnectionKind, string passwordCredential)
+        public WiFiConnectionResult Connect(
+            string ssid,
+            WiFiReconnectionKind reconnectionKind,
+            string passwordCredential)
         {
-            WiFiAvailableNetwork availableNetwork = new WiFiAvailableNetwork();
+            WiFiAvailableNetwork availableNetwork = new();
             availableNetwork.Ssid = ssid;
             return Connect(availableNetwork, reconnectionKind, passwordCredential);
         }
@@ -158,7 +167,6 @@ namespace Windows.Devices.WiFi
             NativeDisconnect();
         }
 
- 
         /// <summary>
         /// A static method that enumerates all the Wi-Fi adapters in the system.
         /// </summary>
@@ -171,7 +179,7 @@ namespace Windows.Devices.WiFi
             byte[] adapterIndexes = NativeFindWirelessAdapters();
             WiFiAdapter[] adapters = new WiFiAdapter[adapterIndexes.Length];
 
-            foreach ( byte adapterIndex in adapterIndexes)
+            foreach (byte adapterIndex in adapterIndexes)
             {
                 adapters[index++] = new WiFiAdapter(adapterIndex);
             }
@@ -193,13 +201,13 @@ namespace Windows.Devices.WiFi
                 NativeScanAsync();
             }
         }
-  
+
         #region IDisposable Support
         private bool _disposedValue = false; // To detect redundant calls
 
         void Dispose(bool disposing)
         {
-            if (! _disposedValue)
+            if (!_disposedValue)
             {
                 if (disposing)
                 {
@@ -238,7 +246,7 @@ namespace Windows.Devices.WiFi
         }
         #endregion
 
-        #region extenal calls to native implementations
+        #region external calls to native implementations
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern void DisposeNative();
