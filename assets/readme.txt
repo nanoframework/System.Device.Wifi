@@ -6,7 +6,7 @@
                                                                                
 ===================================================================================
 
-API docs: https://docs.nanoframework.net/api/Windows.Devices.WiFi.html
+API docs: https://docs.nanoframework.net/api/System.Device.WiFi.html
 
 Browse our samples repository: https://github.com/nanoframework/samples
 

@@ -1,11 +1,9 @@
 ﻿//
 // Copyright (c) .NET Foundation and Contributors
 // See LICENSE file in the project root for full license information.
+//
 
-using System;
-using System.Runtime.CompilerServices;
-
-namespace Windows.Devices.WiFi
+namespace System.Device.WiFi
 {
     /// <summary>
     /// Describes the kinds of Wi-Fi networks.
