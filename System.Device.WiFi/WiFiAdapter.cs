@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 namespace System.Device.WiFi
 {
     /// <summary>
-    /// Event raised when a scan completes on this Wi-Fi adapter. 
+    /// Event raised when a scan completes on this WiFi adapter. 
     /// </summary>
     public delegate void AvailableNetworksChangedEventHandler(
                             WiFiAdapter sender,
@@ -29,7 +29,7 @@ namespace System.Device.WiFi
         private readonly object _syncLock = new object();
 
         /// <summary>
-        /// Event raised when a scan completes on this Wi-Fi adapter. 
+        /// Event raised when a scan completes on this WiFi adapter. 
         /// </summary>
         public event AvailableNetworksChangedEventHandler AvailableNetworksChanged;
 
@@ -56,7 +56,7 @@ namespace System.Device.WiFi
         }
 
         /// <summary>
-        /// Gets the network interface number associatted with this Wi-Fi adapter
+        /// Gets the network interface number associatted with this WiFi adapter
         /// </summary>
         public int NetworkInterface
         {
@@ -64,7 +64,7 @@ namespace System.Device.WiFi
         }
 
         /// <summary>
-        /// Gets a list of available networks populated by the last Wi-Fi scan on this WiFiNetworkAdapter.
+        /// Gets a list of available networks populated by the last WiFi scan on this WiFiNetworkAdapter.
         /// </summary>
         public WiFiNetworkReport NetworkReport
         {
@@ -117,9 +117,9 @@ namespace System.Device.WiFi
         }
 
         /// <summary>
-        /// Connect this Wi-Fi device to the specified network, with the specified pass-phrase and reconnection policy.
+        /// Connect this WiFi device to the specified network, with the specified pass-phrase and reconnection policy.
         /// </summary>
-        /// <param name="availableNetwork">Describes the Wi-Fi network to be connected.</param>
+        /// <param name="availableNetwork">Describes the WiFi network to be connected.</param>
         /// <param name="reconnectionKind">Specifies how to reconnect if the connection is lost.</param>
         /// <param name="passwordCredential">The pass-phrase to be used to connect to the access point.</param>
         /// <returns>
@@ -140,9 +140,9 @@ namespace System.Device.WiFi
         }
 
         /// <summary>
-        /// Connect this Wi-Fi device to the specified network (using SSID string), with the specified pass-phrase and reconnection policy.
+        /// Connect this WiFi device to the specified network (using SSID string), with the specified pass-phrase and reconnection policy.
         /// </summary>
-        /// <param name="ssid">Describes the Wi-Fi network to be connected.</param>
+        /// <param name="ssid">Describes the WiFi network to be connected.</param>
         /// <param name="reconnectionKind">Specifies how to reconnect if the connection is lost.</param>
         /// <param name="passwordCredential">The pass-phrase to be used to connect to the access point.</param>
         /// <returns>
@@ -160,7 +160,7 @@ namespace System.Device.WiFi
 
 
         /// <summary>
-        /// Disconnects any active Wi-Fi connection through this adapter.
+        /// Disconnects any active WiFi connection through this adapter.
         /// </summary>
         public void Disconnect()
         {
@@ -168,7 +168,7 @@ namespace System.Device.WiFi
         }
 
         /// <summary>
-        /// A static method that enumerates all the Wi-Fi adapters in the system.
+        /// A static method that enumerates all the WiFi adapters in the system.
         /// </summary>
         /// <returns>>On successful completion, returns an array of WiFiAdapter objects</returns>
         public static WiFiAdapter[] FindAllAdapters()

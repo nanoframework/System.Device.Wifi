@@ -6,7 +6,7 @@
 namespace System.Device.WiFi
 {
     /// <summary>
-    /// Describes an available Wi-Fi network.
+    /// Describes an available WiFi network.
     /// </summary>
     public class WiFiAvailableNetwork
     {
