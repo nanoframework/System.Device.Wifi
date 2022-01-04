@@ -6,7 +6,7 @@
 namespace System.Device.WiFi
 {
     /// <summary>
-    /// Describes the kinds of Wi-Fi networks.
+    /// Describes the kinds of WiFi networks.
     /// </summary>
     public enum WiFiNetworkKind
     {

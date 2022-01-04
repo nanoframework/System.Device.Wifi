@@ -10,7 +10,7 @@ namespace System.Device.WiFi
     [Flags]
     internal enum WiFiEventType : byte
     {
-        // Wi-Fi scan complete
+        // WiFi scan complete
         ScanComplete = 1
     }
 

@@ -7,7 +7,7 @@ namespace System.Device.WiFi
 {
 
     /// <summary>
-    /// Describes the results of an attempt to connect to a Wi-Fi network.
+    /// Describes the results of an attempt to connect to a WiFi network.
     /// </summary>
     public class WiFiConnectionResult
     {
