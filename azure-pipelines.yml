@@ -17,24 +17,18 @@ resources:
       type: github
       name: nanoframework/nf-tools
       endpoint: nanoframework
-     
-jobs:
 
-##############################
-- job: Build_Library
-  condition: or( eq(variables['UPDATE_DEPENDENTS'], 'false'), eq(variables['StartReleaseCandidate'], 'true') )
-  
-  pool:
-    vmImage: 'windows-2019'
+pool:
+  vmImage: 'windows-2019'
 
-  variables:
-    DOTNET_NOLOGO: true
-    solution: 'nanoFramework.System.Device.Wifi.sln'
-    buildPlatform: 'Any CPU'
-    buildConfiguration: 'Release'
-    nugetPackageName: 'nanoFramework.System.Device.Wifi'
+variables:
+  DOTNET_NOLOGO: true
+  solution: 'nanoFramework.System.Device.Wifi.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+  nugetPackageName: 'nanoFramework.System.Device.Wifi'
 
-  steps:
+steps:
 
   # step from template @ nf-tools repo
   # all build, update and publish steps
@@ -44,51 +38,6 @@ jobs:
       runUnitTests: false
       unitTestRunsettings: '$(System.DefaultWorkingDirectory)\Tests\NFUnitTestWifiConnection\nano.runsettings'
 
-##############################
-- job: Update_Dependents
-  condition: or( and( succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v'), eq(variables['StartReleaseCandidate'], 'false') ), and( succeeded(), contains(variables['getCommitMessage.COMMIT_MESSAGE'], '***UPDATE_DEPENDENTS***'), eq(variables['StartReleaseCandidate'], 'false') ), eq(variables['UPDATE_DEPENDENTS'], 'true') )
-
-  dependsOn:
-  - Build_Library
-
-  pool:
-    vmImage: 'windows-2019'
-
-  variables:
-    DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
-
-  steps:
-
-  - checkout: none
-
-  - template: azure-pipelines-templates/install-nuget.yml@templates
-
-  # update dependencies
-  - task: UpdatenFDependencies@1
-    displayName: Update dependent class libs
-    inputs:
-      gitHubToken: $(GitHubToken)
-      repositoriesToUpdate: |
-        System.Net.Http
-        nanoFramework.System.Net.WebSockets
-        nanoFramework.m2mqtt
-   
-##################################
-# report build failure to Discord
-- job: Report_Build_Failure
-  condition: or( failed('Build_Library'), failed('Update_Dependents'))
-
-  dependsOn:
-  - Build_Library
-  - Update_Dependents
-
-  pool:
-    vmImage: 'windows-2019'
-
-  steps:
-
-  - checkout: self
-      
   # step from template @ nf-tools repo
   # report error
   - template: azure-pipelines-templates/discord-webhook-task.yml@templates  
