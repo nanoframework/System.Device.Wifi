@@ -1,6 +1,10 @@
+//
+// Copyright (c) .NET Foundation and Contributors
+// See LICENSE file in the project root for full license information.
+//
+
 using nanoFramework.Networking;
 using nanoFramework.TestFramework;
-using System;
 using System.Diagnostics;
 using System.Threading;
 
@@ -28,10 +32,10 @@ namespace NFUnitTestWifiConnection
             }
             else
             {
-                Debug.WriteLine($"Can't connect to the network, error: {NetworkHelper.ConnectionError.Error}");
-                if (NetworkHelper.ConnectionError.Exception != null)
+                Debug.WriteLine($"Can't connect to the network, error: {WiFiNetworkHelper.Status}");
+                if (WiFiNetworkHelper.HelperException != null)
                 {
-                    Debug.WriteLine($"ex: { NetworkHelper.ConnectionError.Exception}");
+                    Debug.WriteLine($"ex: { WiFiNetworkHelper.HelperException}");
                 }
             }
         }
@@ -39,12 +43,22 @@ namespace NFUnitTestWifiConnection
         [TestMethod]
         public void TestNormalConnection()
         {
-            // Give 10 seconds to the wifi join to happen
+            // Give 10 seconds to the WiFi join to happen
             CancellationTokenSource cs = new(10000);
-            var success = NetworkHelper.ConnectWifiDhcp(Ssid, Password, setDateTime: true, token: cs.Token);
+
+            var success = WiFiNetworkHelper.ConnectDhcp(
+                Ssid,
+                Password,
+                requiresDateTime: true,
+                token: cs.Token);
+
             DisplayLastError(success);
+
             Assert.True(success);
-            Assert.Null(NetworkHelper.ConnectionError.Exception);
+            Assert.Null(WiFiNetworkHelper.HelperException);
+
+            // need to reset this internal flag to allow calling the NetworkHelper again
+            WiFiNetworkHelper.ResetInstance();
         }
     }
 }

@@ -191,7 +191,7 @@ namespace System.Device.WiFi
         /// <summary>
         /// Directs this adapter to initiate an asynchronous network scan.
         /// </summary>
-        /// <remarks>On successful completion, returns a list of networks scanned by this adapter signalled by the AvailableNetworksChanged event.
+        /// <remarks>On successful completion, returns a list of networks scanned by this adapter signaled by the AvailableNetworksChanged event.
         /// Use NetworkReport to retrive the list of available Networks.
         /// </remarks>
         public void ScanAsync()

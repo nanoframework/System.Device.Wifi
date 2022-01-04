@@ -41,6 +41,8 @@ jobs:
   - template: azure-pipelines-templates/class-lib-build.yml@templates
     parameters:
       sonarCloudProject: 'nanoframework_System.Device.WiFi'
+      runUnitTests: false
+      unitTestRunsettings: '$(System.DefaultWorkingDirectory)\Tests\NFUnitTestWifiConnection\nano.runsettings'
 
 ##############################
 - job: Update_Dependents
