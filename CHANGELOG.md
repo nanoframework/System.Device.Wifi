@@ -2,7 +2,19 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/System.Device.WiFi/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.3.4-preview.43...HEAD)
+[Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.4.0-preview.1...HEAD)
+
+**Implemented enhancements:**
+
+- NetworkReady event is now instanciated on constructor [\#173](https://github.com/nanoframework/System.Device.WiFi/pull/173)
+
+**Documentation and other chores:**
+
+- Bumps nanoFramework.System.Net from 1.8.0-preview.3 to 1.8.0-preview.5 [\#174](https://github.com/nanoframework/System.Device.WiFi/pull/174)
+
+## [v1.4.0-preview.1](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.1) (2022-01-04)
+
+[Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.3.4-preview.43...v1.4.0-preview.1)
 
 **Implemented enhancements:**
 
