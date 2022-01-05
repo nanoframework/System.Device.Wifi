@@ -17,7 +17,7 @@ namespace nanoFramework.Networking
     public static class WiFiNetworkHelper
     {
         private static ManualResetEvent _ipAddressAvailable;
-        private static ManualResetEvent _networkReady;
+        private static ManualResetEvent _networkReady = new(false);
         private static bool _requiresDateTime;
 
         private static string _ssid;
@@ -495,9 +495,6 @@ namespace nanoFramework.Networking
 
                     // setup handler
                     NetworkChange.NetworkAddressChanged += new NetworkAddressChangedEventHandler(AddressChangedCallback);
-
-                    // instantiate events
-                    _networkReady = new(false);
                 }
 
                 if(!string.IsNullOrEmpty(_ssid) &&
@@ -588,7 +585,7 @@ namespace nanoFramework.Networking
         internal static void ResetInstance()
         {
             _ipAddressAvailable = null;
-            _networkReady = null;
+            _networkReady = new(false);
             _requiresDateTime = false;
             _networkHelperStatus = NetworkHelperStatus.None;
             _helperException = null;
