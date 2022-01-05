@@ -20,7 +20,7 @@ namespace nanoFramework.Networking
         private static ManualResetEvent _networkReady = new(false);
         private static bool _requiresDateTime;
 
-        private static st = new(false)ring _ssid;
+        private static string _ssid;
         private static string _password;
         private static WiFiAdapter _wifi;
         private static WiFiReconnectionKind _reconnectionKind;
