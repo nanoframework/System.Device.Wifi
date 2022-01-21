@@ -29,7 +29,7 @@ const string Ssid = "YourSSID";
 const string Password = "YourWifiPassword";
 // Give 60 seconds to the wifi join to happen
 CancellationTokenSource cs = new(60000);
-var success = WiFiNetworkHelper.ConnectDhcp(Ssid, Password, setDateTime: true, token: cs.Token);
+var success = WiFiNetworkHelper.ConnectDhcp(Ssid, Password, requiresDateTime: true, token: cs.Token);
 if (!success)
 {
     // Something went wrong, you can get details with the ConnectionError property:
@@ -58,7 +58,7 @@ else
     // The wifi credentials are already stored on the device
     // Give 60 seconds to the wifi join to happen
     CancellationTokenSource cs = new(60000);
-    var success = WiFiNetworkHelper.Reconnect(setDateTime: true, token: cs.Token);
+    var success = WiFiNetworkHelper.Reconnect(requiresDateTime: true, token: cs.Token);
     if (!success)
     {
         // Something went wrong, you can get details with the ConnectionError property:
@@ -81,7 +81,7 @@ const string Ssid = "YourSSID";
 const string Password = "YourWifiPassword";
 // Give 60 seconds to the wifi join to happen
 CancellationTokenSource cs = new(60000);
-var success = WiFiNetworkHelper.ScanAndConnectDhcp(Ssid, Password, setDateTime: true, token: cs.Token);
+var success = WiFiNetworkHelper.ScanAndConnectDhcp(Ssid, Password, requiresDateTime: true, token: cs.Token);
 if (!success)
 {
     // Something went wrong, you can get details with the ConnectionError property:
@@ -105,7 +105,7 @@ const string Ssid = "YourSSID";
 const string Password = "YourWifiPassword";
 // Give 60 seconds to the wifi join to happen
 CancellationTokenSource cs = new(60000);
-var success = WiFiNetworkHelper.ConnectFixAddress(Ssid, Password, new IPConfiguration("192.168.1.7", "255.255.255.0", "192.168.1.1"), setDateTime: true, token: cs.Token);
+var success = WiFiNetworkHelper.ConnectFixAddress(Ssid, Password, new IPConfiguration("192.168.1.7", "255.255.255.0", "192.168.1.1"), requiresDateTime: true, token: cs.Token);
 ```
 
 ### Checking valid IP address and date
@@ -142,7 +142,7 @@ const string Ssid = "YourSSID";
 const string Password = "YourWifiPassword";
 // Give 60 seconds to the wifi join to happen
 CancellationTokenSource cs = new(60000);
-var success = WiFiNetworkHelper.ConnectDhcp(Ssid, Password, setDateTime: true, token: cs.Token);
+var success = WiFiNetworkHelper.ConnectDhcp(Ssid, Password, requiresDateTime: true, token: cs.Token);
 if (!success)
 {
     // Something went wrong, you can get details with the ConnectionError property:
@@ -165,7 +165,7 @@ You can as well connect to a network with pre stored credentials on the device d
 // The wifi credentials are already stored on the device
  // Give 60 seconds to the wifi join to happen
 CancellationTokenSource cs = new(60000);
-var success = WiFiNetworkHelper.Reconnect(setDateTime: true, token: cs.Token);
+var success = WiFiNetworkHelper.Reconnect(requiresDateTime: true, token: cs.Token);
 if (!success)
 {
     // Something went wrong, you can get details with the ConnectionError property:
@@ -187,7 +187,7 @@ const string Ssid = "YourSSID";
 const string Password = "YourWifiPassword";
 // Give 60 seconds to the wifi join to happen
 CancellationTokenSource cs = new(60000);
-var success = WiFiNetworkHelper.ScanAndConnectDhcp(Ssid, Password, setDateTime: true, token: cs.Token);
+var success = WiFiNetworkHelper.ScanAndConnectDhcp(Ssid, Password, requiresDateTime: true, token: cs.Token);
 if (!success)
 {
     // Something went wrong, you can get details with the ConnectionError property:
@@ -211,7 +211,7 @@ const string Ssid = "YourSSID";
 const string Password = "YourWifiPassword";
 // Give 60 seconds to the wifi join to happen
 CancellationTokenSource cs = new(60000);
-var success = WiFiNetworkHelper.ConnectFixAddress(Ssid, Password, new IPConfiguration("192.168.1.7", "255.255.255.0", "192.168.1.1"), setDateTime: true, token: cs.Token);
+var success = WiFiNetworkHelper.ConnectFixAddress(Ssid, Password, new IPConfiguration("192.168.1.7", "255.255.255.0", "192.168.1.1"), requiresDateTime: true, token: cs.Token);
 ```
 
 ### Checking valid IP address and date
