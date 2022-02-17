@@ -4,8 +4,7 @@
     <id>nanoFramework.System.Device.WiFi.DELIVERABLES</id>
     <version>$version$</version>
     <title>nanoFramework.System.Device.WiFi.DELIVERABLES</title>
-    <authors>nanoFramework project contributors</authors>
-    <owners>nanoframework,dotnetfoundation</owners>
+    <authors>nanoframework</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="file">LICENSE.md</license>
     <releaseNotes>
