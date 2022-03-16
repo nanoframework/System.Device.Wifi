@@ -1,8 +1,8 @@
 # Changelog
 
-## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/System.Device.WiFi/tree/HEAD)
+## [v1.4.0-preview.44](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.44) (2022-03-14)
 
-[Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.4.0-preview.42...HEAD)
+[Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.4.0-preview.42...v1.4.0-preview.44)
 
 **Documentation and other chores:**
 
