@@ -1,12 +1,13 @@
 # Changelog
 
+## [v1.4.0-preview.59](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.59) (2022-03-28)
+
+[Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.4.0-preview.57...v1.4.0-preview.59)
+
 ## [v1.4.0-preview.57](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.57) (2022-03-28)
 
 [Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.4.0-preview.55...v1.4.0-preview.57)
 
-## [v1.3.3-preview.9](https://github.com/nanoframework/Windows.Devices.WiFi/tree/v1.3.3-preview.9) (2021-09-16)
-
-[Full Changelog](https://github.com/nanoframework/Windows.Devices.WiFi/compare/v1.3.3-preview.5...v1.3.3-preview.9)
 **Documentation and other chores:**
 
 - Update 1 NuGet dependencies [\#202](https://github.com/nanoframework/System.Device.WiFi/pull/202)
