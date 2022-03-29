@@ -1,1 +1,1 @@
-**/Windows.Devices.WiFi.*
+**/System.Device.WiFi.*

@@ -1,23 +1,24 @@
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=nanoframework_lib-Windows.Devices.WiFi&metric=alert_status)](https://sonarcloud.io/dashboard?id=nanoframework_lib-Windows.Devices.WiFi) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=nanoframework_lib-Windows.Devices.WiFi&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=nanoframework_lib-Windows.Devices.WiFi) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![NuGet](https://img.shields.io/nuget/dt/nanoFramework.Windows.Devices.WiFi.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Windows.Devices.WiFi/) [![#yourfirstpr](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://github.com/nanoframework/Home/blob/main/CONTRIBUTING.md) [![Discord](https://img.shields.io/discord/478725473862549535.svg?logo=discord&logoColor=white&label=Discord&color=7289DA)](https://discord.gg/gCyBu8T)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=nanoframework_System.Device.WiFi&metric=alert_status)](https://sonarcloud.io/dashboard?id=nanoframework_System.Device.WiFi) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=nanoframework_System.Device.WiFi&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=nanoframework_System.Device.WiFi) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![NuGet](https://img.shields.io/nuget/dt/nanoFramework.System.Device.WiFi.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.System.Device.WiFi/) [![#yourfirstpr](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://github.com/nanoframework/Home/blob/main/CONTRIBUTING.md) [![Discord](https://img.shields.io/discord/478725473862549535.svg?logo=discord&logoColor=white&label=Discord&color=7289DA)](https://discord.gg/gCyBu8T)
 
-![nanoFramework logo](https://github.com/nanoframework/Home/blob/main/resources/logo/nanoFramework-repo-logo.png)
+![nanoFramework logo](https://raw.githubusercontent.com/nanoframework/Home/main/resources/logo/nanoFramework-repo-logo.png)
 
 -----
+Document Language: [English](README.md) | [简体中文](README.zh-cn.md)
 
-### Welcome to the **nanoFramework** Windows.Devices.WiFi Library repository and NetworkHelper!
+### Welcome to the .NET **nanoFramework** System.Device.WiFi Library repository
 
-This repository contains nanoFramework Windows.Devices.Wifi and NetworkHelper.
+This repository contains the nanoFramework System.Device.WiFi class library.
 
 ## Build status
 
 | Component | Build Status | NuGet Package |
 |:-|---|---|
-| Windows.Devices.WiFi | [![Build Status](https://dev.azure.com/nanoframework/Windows.Devices.WiFi/_apis/build/status/Windows.Devices.WiFi?repoName=nanoframework%2FWindows.Devices.WiFi&branchName=main)](https://dev.azure.com/nanoframework/Windows.Devices.WiFi/_build/latest?definitionId=13&repoName=nanoframework%2FWindows.Devices.WiFi&branchName=main) | [![NuGet](https://img.shields.io/nuget/v/nanoFramework.Windows.Devices.WiFi.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Windows.Devices.WiFi/) |
-| Windows.Devices.WiFi (preview) | [![Build Status](https://dev.azure.com/nanoframework/Windows.Devices.WiFi/_apis/build/status/Windows.Devices.WiFi?repoName=nanoframework%2FWindows.Devices.WiFi&branchName=develop)](https://dev.azure.com/nanoframework/Windows.Devices.WiFi/_build/latest?definitionId=13&repoName=nanoframework%2FWindows.Devices.WiFi&branchName=develop) | [![NuGet](https://img.shields.io/nuget/vpre/nanoFramework.Windows.Devices.WiFi.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.Windows.Devices.WiFi/) |
+| System.Device.WiFi | [![Build Status](https://dev.azure.com/nanoframework/System.Device.WiFi/_apis/build/status/System.Device.WiFi?repoName=nanoframework%2FSystem.Device.WiFi&branchName=main)](https://dev.azure.com/nanoframework/System.Device.WiFi/_build/latest?definitionId=13&repoName=nanoframework%2FSystem.Device.WiFi&branchName=main) | [![NuGet](https://img.shields.io/nuget/v/nanoFramework.System.Device.WiFi.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.System.Device.WiFi/) |
+| System.Device.WiFi (preview) | [![Build Status](https://dev.azure.com/nanoframework/System.Device.WiFi/_apis/build/status/System.Device.WiFi?repoName=nanoframework%2FSystem.Device.WiFi&branchName=develop)](https://dev.azure.com/nanoframework/System.Device.WiFi/_build/latest?definitionId=13&repoName=nanoframework%2FSystem.Device.WiFi&branchName=develop) | [![NuGet](https://img.shields.io/nuget/vpre/nanoFramework.System.Device.WiFi.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.System.Device.WiFi/) |
 
-## NetworkHelper usage
+## WiFiNetworkHelper usage
 
-The NetworkHelper is mainly dedicated to help you connect automatically to WiFi networks. That said, it can be used as well to check if you have a valid IP address and a valid date on any interface including on ethernet.
+The WiFiNetworkHelper class is mainly dedicated to help you connect automatically to WiFi networks. That said, it can be used as well to check if you have a valid IP address and a valid date on any interface including on ethernet.
 
 ### Preferred usage
 
@@ -28,14 +29,14 @@ const string Ssid = "YourSSID";
 const string Password = "YourWifiPassword";
 // Give 60 seconds to the wifi join to happen
 CancellationTokenSource cs = new(60000);
-var success = NetworkHelper.ConnectWifiDhcp(Ssid, Password, setDateTime: true, token: cs.Token);
+var success = WiFiNetworkHelper.ConnectDhcp(Ssid, Password, requiresDateTime: true, token: cs.Token);
 if (!success)
 {
     // Something went wrong, you can get details with the ConnectionError property:
-    Debug.WriteLine($"Can't connect to the network, error: {NetworkHelper.ConnectionError.Error}");
-    if (NetworkHelper.ConnectionError.Exception != null)
+    Debug.WriteLine($"Can't connect to the network, error: {WiFiNetworkHelper.Status}");
+    if (WiFiNetworkHelper.HelperException != null)
     {
-        Debug.WriteLine($"ex: { NetworkHelper.ConnectionError.Exception}");
+        Debug.WriteLine($"ex: {WiFiNetworkHelper.HelperException}");
     }
 }
 // Otherwise, you are connected and have a valid IP and date
@@ -48,7 +49,7 @@ Note that this function will store the network credentials on the device.
 You can as well connect to a network with pre stored credentials on the device depending on the type of device you have. Please check for proper support with your device.
 
 ```csharp
-if (!NetworkHelper.IsConfigurationStored())
+if (!WiFiNetworkHelper.IsConfigurationStored())
 {
     Debug.WriteLine("No configuration stored in the device");
 }
@@ -57,14 +58,14 @@ else
     // The wifi credentials are already stored on the device
     // Give 60 seconds to the wifi join to happen
     CancellationTokenSource cs = new(60000);
-    var success = NetworkHelper.ReconnectWifi(setDateTime: true, token: cs.Token);
+    var success = WiFiNetworkHelper.Reconnect(requiresDateTime: true, token: cs.Token);
     if (!success)
     {
         // Something went wrong, you can get details with the ConnectionError property:
-        Debug.WriteLine($"Can't connect to the network, error: {NetworkHelper.ConnectionError.Error}");
-        if (NetworkHelper.ConnectionError.Exception != null)
+        Debug.WriteLine($"Can't connect to the network, error: {WiFiNetworkHelper.Status}");
+        if (WiFiNetworkHelper.HelperException != null)
         {
-            Debug.WriteLine($"ex: { NetworkHelper.ConnectionError.Exception}");
+            Debug.WriteLine($"ex: {WiFiNetworkHelper.HelperException}");
         }
     }
     // Otherwise, you are connected and have a valid IP and date
@@ -80,14 +81,14 @@ const string Ssid = "YourSSID";
 const string Password = "YourWifiPassword";
 // Give 60 seconds to the wifi join to happen
 CancellationTokenSource cs = new(60000);
-var success = NetworkHelper.ScanAndConnectWifiDhcp(Ssid, Password, setDateTime: true, token: cs.Token);
+var success = WiFiNetworkHelper.ScanAndConnectDhcp(Ssid, Password, requiresDateTime: true, token: cs.Token);
 if (!success)
 {
     // Something went wrong, you can get details with the ConnectionError property:
-    Debug.WriteLine($"Can't connect to the network, error: {NetworkHelper.ConnectionError.Error}");
-    if (NetworkHelper.ConnectionError.Exception != null)
+    Debug.WriteLine($"Can't connect to the network, error: {WiFiNetworkHelper.Status}");
+    if (WiFiNetworkHelper.HelperException != null)
     {
-        Debug.WriteLine($"ex: { NetworkHelper.ConnectionError.Exception}");
+        Debug.WriteLine($"ex: {WiFiNetworkHelper.HelperException}");
     }
 }
 // Otherwise, you are connected and have a valid IP and date
@@ -104,12 +105,12 @@ const string Ssid = "YourSSID";
 const string Password = "YourWifiPassword";
 // Give 60 seconds to the wifi join to happen
 CancellationTokenSource cs = new(60000);
-var success = NetworkHelper.ConnectWifiFixAddress(Ssid, Password, new IPConfiguration("192.168.1.7", "255.255.255.0", "192.168.1.1"), setDateTime: true, token: cs.Token);
+var success = WiFiNetworkHelper.ConnectFixAddress(Ssid, Password, new IPConfiguration("192.168.1.7", "255.255.255.0", "192.168.1.1"), requiresDateTime: true, token: cs.Token);
 ```
 
 ### Checking valid IP address and date
 
-The NetworkHelper offers couple of functions to check validity of your IP address, the DateTime and helping setting them up:
+The WiFiNetworkHelper offers couple of functions to check validity of your IP address, the DateTime and helping setting them up:
 
 ```csharp
 var success = IsValidDateTime();
@@ -128,9 +129,9 @@ var success = WaitForValidIPAndDate(true, NetworkInterfaceType.Ethernet, cs.Toke
 // if success is true then you are connected
 ```
 
-## NetworkHelper usage
+## WiFiNetworkHelper usage
 
-The NetworkHelper is mainly dedicated to help you connect automatically to WiFi networks. That said, it can be used as well to check if you have a valid IP address and a valid date on any interface including on ethernet.
+The WiFiNetworkHelper is mainly dedicated to help you connect automatically to WiFi networks. That said, it can be used as well to check if you have a valid IP address and a valid date on any interface including on ethernet.
 
 ### Preferred usage
 
@@ -141,14 +142,14 @@ const string Ssid = "YourSSID";
 const string Password = "YourWifiPassword";
 // Give 60 seconds to the wifi join to happen
 CancellationTokenSource cs = new(60000);
-var success = NetworkHelper.ConnectWifiDhcp(Ssid, Password, setDateTime: true, token: cs.Token);
+var success = WiFiNetworkHelper.ConnectDhcp(Ssid, Password, requiresDateTime: true, token: cs.Token);
 if (!success)
 {
     // Something went wrong, you can get details with the ConnectionError property:
-    Debug.WriteLine($"Can't connect to the network, error: {NetworkHelper.ConnectionError.Error}");
-    if (NetworkHelper.ConnectionError.Exception != null)
+    Debug.WriteLine($"Can't connect to the network, error: {WiFiNetworkHelper.Status}");
+    if (WiFiNetworkHelper.HelperException != null)
     {
-        Debug.WriteLine($"ex: { NetworkHelper.ConnectionError.Exception}");
+        Debug.WriteLine($"ex: {WiFiNetworkHelper.HelperException}");
     }
 }
 // Otherwise, you are connected and have a valid IP and date
@@ -164,14 +165,14 @@ You can as well connect to a network with pre stored credentials on the device d
 // The wifi credentials are already stored on the device
  // Give 60 seconds to the wifi join to happen
 CancellationTokenSource cs = new(60000);
-var success = NetworkHelper.ReconnectWifi(setDateTime: true, token: cs.Token);
+var success = WiFiNetworkHelper.Reconnect(requiresDateTime: true, token: cs.Token);
 if (!success)
 {
     // Something went wrong, you can get details with the ConnectionError property:
-    Debug.WriteLine($"Can't connect to the network, error: {NetworkHelper.ConnectionError.Error}");
-    if (NetworkHelper.ConnectionError.Exception != null)
+    Debug.WriteLine($"Can't connect to the network, error: {WiFiNetworkHelper.Status}");
+    if (WiFiNetworkHelper.HelperException != null)
     {
-        Debug.WriteLine($"ex: { NetworkHelper.ConnectionError.Exception}");
+        Debug.WriteLine($"ex: {WiFiNetworkHelper.HelperException}");
     }
 }
 // Otherwise, you are connected and have a valid IP and date
@@ -186,14 +187,14 @@ const string Ssid = "YourSSID";
 const string Password = "YourWifiPassword";
 // Give 60 seconds to the wifi join to happen
 CancellationTokenSource cs = new(60000);
-var success = NetworkHelper.ScanAndConnectWifiDhcp(Ssid, Password, setDateTime: true, token: cs.Token);
+var success = WiFiNetworkHelper.ScanAndConnectDhcp(Ssid, Password, requiresDateTime: true, token: cs.Token);
 if (!success)
 {
     // Something went wrong, you can get details with the ConnectionError property:
-    Debug.WriteLine($"Can't connect to the network, error: {NetworkHelper.ConnectionError.Error}");
-    if (NetworkHelper.ConnectionError.Exception != null)
+    Debug.WriteLine($"Can't connect to the network, error: {WiFiNetworkHelper.Status}");
+    if (WiFiNetworkHelper.HelperException != null)
     {
-        Debug.WriteLine($"ex: { NetworkHelper.ConnectionError.Exception}");
+        Debug.WriteLine($"ex: {WiFiNetworkHelper.HelperException}");
     }
 }
 // Otherwise, you are connected and have a valid IP and date
@@ -210,12 +211,12 @@ const string Ssid = "YourSSID";
 const string Password = "YourWifiPassword";
 // Give 60 seconds to the wifi join to happen
 CancellationTokenSource cs = new(60000);
-var success = NetworkHelper.ConnectWifiFixAddress(Ssid, Password, new IPConfiguration("192.168.1.7", "255.255.255.0", "192.168.1.1"), setDateTime: true, token: cs.Token);
+var success = WiFiNetworkHelper.ConnectFixAddress(Ssid, Password, new IPConfiguration("192.168.1.7", "255.255.255.0", "192.168.1.1"), requiresDateTime: true, token: cs.Token);
 ```
 
 ### Checking valid IP address and date
 
-The NetworkHelper offers couple of functions to check validity of your IP address, the DateTime and helping setting them up:
+The WiFiNetworkHelper offers couple of functions to check validity of your IP address, the DateTime and helping setting them up:
 
 ```csharp
 var success = IsValidDateTime();
@@ -250,10 +251,9 @@ The **nanoFramework** Class Libraries are licensed under the [MIT license](LICEN
 
 ## Code of Conduct
 
-This project has adopted the code of conduct defined by the Contributor Covenant to clarify expected behavior in our community.
+This project has adopted the code of conduct defined by the Contributor Covenant to clarify expected behaviour in our community.
 For more information see the [.NET Foundation Code of Conduct](https://dotnetfoundation.org/code-of-conduct).
 
 ### .NET Foundation
 
 This project is supported by the [.NET Foundation](https://dotnetfoundation.org).
-

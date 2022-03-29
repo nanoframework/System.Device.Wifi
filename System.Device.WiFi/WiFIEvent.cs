@@ -3,15 +3,15 @@
 // See LICENSE file in the project root for full license information.
 //
 
-using System;
 using nanoFramework.Runtime.Events;
 
-namespace Windows.Devices.WiFi
+namespace System.Device.WiFi
 {
     [Flags]
     internal enum WiFiEventType : byte
     {
-        ScanComplete = 1             // WiFI scan complete
+        // WiFi scan complete
+        ScanComplete = 1
     }
 
     internal class WiFiEvent : BaseEvent

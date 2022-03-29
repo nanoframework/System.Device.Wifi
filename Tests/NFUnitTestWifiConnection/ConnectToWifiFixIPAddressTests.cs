@@ -1,7 +1,10 @@
+//
+// Copyright (c) .NET Foundation and Contributors
+// See LICENSE file in the project root for full license information.
+//
+
 using nanoFramework.Networking;
 using nanoFramework.TestFramework;
-using System;
-using System.Diagnostics;
 using System.Threading;
 
 namespace NFUnitTestWifiConnection
@@ -21,14 +24,45 @@ namespace NFUnitTestWifiConnection
         }
 
         [TestMethod]
-        public void TestFixIPAddress()
+        public void TestFixIPAddress_01()
         {
-            // Give 10 seconds to the wifi join to happen
+            // Give 10 seconds to the WiFi join to happen
             CancellationTokenSource cs = new(10000);
-            var success = NetworkHelper.ConnectWifiFixAddress(Ssid, Password, new IPConfiguration("192.168.1.7", "255.255.255.0", "192.168.1.1", new[] { "192.168.1.1" }), setDateTime: true, token: cs.Token);
+
+            var success = WiFiNetworkHelper.ConnectFixAddress(
+                Ssid,
+                Password,
+                new IPConfiguration(
+                    "192.168.1.7",
+                    "255.255.255.0",
+                    "192.168.1.1",
+                    new[] { "192.168.1.1" }),
+                requiresDateTime: true,
+                token: cs.Token);
+
             ConnectToWifiWithCredentialsTests.DisplayLastError(success);
+
             Assert.True(success);
-            Assert.Null(NetworkHelper.ConnectionError.Exception);
+            Assert.Null(WiFiNetworkHelper.HelperException);
+
+            // need to reset this internal flag to allow calling the NetworkHelper again
+            WiFiNetworkHelper.ResetInstance();
+        }
+
+        [TestMethod]
+        public void TestFixedIPAddress_02()
+        {
+            WiFiNetworkHelper.SetupNetworkHelper(new IPConfiguration(
+                "192.168.1.111",
+                "255.255.255.0",
+                "192.168.1.1",
+                new[] { "192.168.1.1" }), true);
+
+            // wait 10 seconds to connect to the network
+            Assert.True(WiFiNetworkHelper.NetworkReady.WaitOne(10000, true));
+
+            // need to reset this internal flag to allow calling the NetworkHelper again
+            WiFiNetworkHelper.ResetInstance();
         }
     }
 }

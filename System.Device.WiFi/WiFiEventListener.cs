@@ -1,14 +1,16 @@
-﻿using System;
-using System.Collections;
-using nanoFramework.Runtime.Events;
+﻿//
+// Copyright (c) .NET Foundation and Contributors
+// See LICENSE file in the project root for full license information.
+//
 
-namespace Windows.Devices.WiFi
+using nanoFramework.Runtime.Events;
+using System.Collections;
+
+namespace System.Device.WiFi
 {
     internal class WiFiEventListener : IEventProcessor, IEventListener
     {
-        // FIXME currently supports 1 adapter
-        System.Collections.ArrayList wifiAdapters = new ArrayList();
-        //WiFiAdapter wifiAdapter;
+        readonly ArrayList wifiAdapters = new();
 
         public WiFiEventListener()
         {
@@ -23,7 +25,10 @@ namespace Windows.Devices.WiFi
         /// <param name="data2"> data2 </param>
         /// <param name="time"></param>
         /// <returns></returns>
-        public BaseEvent ProcessEvent(uint data1, uint data2, DateTime time)
+        public BaseEvent ProcessEvent(
+            uint data1,
+            uint data2,
+            DateTime time)
         {
             WiFiEventType eventType = (WiFiEventType)(data1 & 0xFF);
             if (eventType >= WiFiEventType.ScanComplete)
@@ -41,7 +46,7 @@ namespace Windows.Devices.WiFi
         {
             if (ev is WiFiEvent)
             {
-                foreach( object obj in wifiAdapters)
+                foreach (object obj in wifiAdapters)
                 {
                     WiFiAdapter wifiAdapter = obj as WiFiAdapter;
                     wifiAdapter.OnAvailableNetworksChangedInternal((WiFiEvent)ev);
@@ -51,8 +56,10 @@ namespace Windows.Devices.WiFi
             }
             return false;
         }
+
         public void InitializeForEventSource()
         {
+            // need this here to match base class
         }
 
         internal void AddAdapter(WiFiAdapter adapter)
