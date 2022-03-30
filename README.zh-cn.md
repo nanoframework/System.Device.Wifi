@@ -14,7 +14,6 @@
 | Component | Build Status | NuGet Package |
 |:-|---|---|
 | System.Device.WiFi | [![Build Status](https://dev.azure.com/nanoframework/System.Device.WiFi/_apis/build/status/System.Device.WiFi?repoName=nanoframework%2FSystem.Device.WiFi&branchName=main)](https://dev.azure.com/nanoframework/System.Device.WiFi/_build/latest?definitionId=13&repoName=nanoframework%2FSystem.Device.WiFi&branchName=main) | [![NuGet](https://img.shields.io/nuget/v/nanoFramework.System.Device.WiFi.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.System.Device.WiFi/) |
-| System.Device.WiFi (预览版) | [![Build Status](https://dev.azure.com/nanoframework/System.Device.WiFi/_apis/build/status/System.Device.WiFi?repoName=nanoframework%2FSystem.Device.WiFi&branchName=develop)](https://dev.azure.com/nanoframework/System.Device.WiFi/_build/latest?definitionId=13&repoName=nanoframework%2FSystem.Device.WiFi&branchName=develop) | [![NuGet](https://img.shields.io/nuget/vpre/nanoFramework.System.Device.WiFi.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.System.Device.WiFi/) |
 
 ## WiFiNetworkHelper用法
 
