@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
-    <id>nanoFramework.System.Device.WiFi</id>
+    <id>nanoFramework.System.Device.Wifi</id>
     <version>$version$</version>
-    <title>nanoFramework.System.Device.WiFi</title>
+    <title>nanoFramework.System.Device.Wifi</title>
     <authors>nanoframework</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="file">LICENSE.md</license>
@@ -11,13 +11,13 @@
     </releaseNotes>
     <readme>docs\README.md</readme>
     <developmentDependency>false</developmentDependency>
-    <projectUrl>https://github.com/nanoframework/System.Device.WiFi</projectUrl>
+    <projectUrl>https://github.com/nanoframework/System.Device.Wifi</projectUrl>
     <icon>images\nf-logo.png</icon>
-    <repository type="git" url="https://github.com/nanoframework/System.Device.WiFi" commit="$commit$" />
+    <repository type="git" url="https://github.com/nanoframework/System.Device.Wifi" commit="$commit$" />
     <copyright>Copyright (c) .NET Foundation and Contributors</copyright>
-    <description>This package includes the System.Device.WiFi assembly for .NET nanoFramework C# projects.
-This package requires a target with System.Device.WiFi v$nativeVersion$ (checksum $checksum$).</description>
-    <tags>nanoFramework C# csharp netmf netnf WiFi</tags>
+    <description>This package includes the System.Device.Wifi assembly for .NET nanoFramework C# projects.
+This package requires a target with System.Device.Wifi v$nativeVersion$ (checksum $checksum$).</description>
+    <tags>nanoFramework C# csharp netmf netnf Wifi</tags>
     <dependencies>
       <dependency id="nanoFramework.CoreLibrary" version="1.12.0" />
       <dependency id="nanoFramework.Runtime.Events" version="1.10.0" />
@@ -25,11 +25,11 @@ This package requires a target with System.Device.WiFi v$nativeVersion$ (checksu
     </dependencies>
   </metadata>
   <files>
-    <file src="System.Device.WiFi\bin\Release\System.Device.WiFi.dll" target="lib\System.Device.WiFi.dll" />
-    <file src="System.Device.WiFi\bin\Release\System.Device.WiFi.pdb" target="lib\System.Device.WiFi.pdb" />
-    <file src="System.Device.WiFi\bin\Release\System.Device.WiFi.pdbx" target="lib\System.Device.WiFi.pdbx" />
-    <file src="System.Device.WiFi\bin\Release\System.Device.WiFi.pe" target="lib\System.Device.WiFi.pe" />
-    <file src="System.Device.WiFi\bin\Release\System.Device.WiFi.xml" target="lib\System.Device.WiFi.xml" />
+    <file src="System.Device.Wifi\bin\Release\System.Device.Wifi.dll" target="lib\System.Device.Wifi.dll" />
+    <file src="System.Device.Wifi\bin\Release\System.Device.Wifi.pdb" target="lib\System.Device.Wifi.pdb" />
+    <file src="System.Device.Wifi\bin\Release\System.Device.Wifi.pdbx" target="lib\System.Device.Wifi.pdbx" />
+    <file src="System.Device.Wifi\bin\Release\System.Device.Wifi.pe" target="lib\System.Device.Wifi.pe" />
+    <file src="System.Device.Wifi\bin\Release\System.Device.Wifi.xml" target="lib\System.Device.Wifi.xml" />
     <file src="assets\readme.txt" target="" />
     <file src="README.md" target="docs\" />
     <file src="assets\nf-logo.png" target="images" />
