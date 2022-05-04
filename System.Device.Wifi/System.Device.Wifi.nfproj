@@ -12,11 +12,11 @@
     <FileAlignment>512</FileAlignment>
     <RootNamespace>
     </RootNamespace>
-    <AssemblyName>System.Device.WiFi</AssemblyName>
+    <AssemblyName>System.Device.Wifi</AssemblyName>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
     <NFTargetVersion>v1.0</NFTargetVersion>
     <NF_IsCoreLibrary>True</NF_IsCoreLibrary>
-    <DocumentationFile>bin\$(Configuration)\System.Device.WiFi.xml</DocumentationFile>
+    <DocumentationFile>bin\$(Configuration)\System.Device.Wifi.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
