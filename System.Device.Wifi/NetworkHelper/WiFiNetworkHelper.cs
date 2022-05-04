@@ -41,7 +41,7 @@ namespace nanoFramework.Networking
         /// Event signaling that networking it's ready.
         /// </summary>
         /// <remarks>
-        /// The conditions for this are setup in the call to <see cref="SetupNetworkHelper"/>. 
+        /// The conditions for this are setup in the call to <see cref="WiFiNetworkHelper.SetupNetworkHelper"/>. 
         /// It will be a composition of network connected, IpAddress available and valid system <see cref="DateTime"/>.</remarks>
         public static ManualResetEvent NetworkReady => _networkReady;
 
@@ -318,17 +318,37 @@ namespace nanoFramework.Networking
 
                                 if (_ipConfiguration != null)
                                 {
-                                    ni.EnableStaticIPv4(_ipConfiguration.IPAddress, _ipConfiguration.IPSubnetMask, _ipConfiguration.IPGatewayAddress);
+                                    ni.EnableStaticIPv4(
+                                        _ipConfiguration.IPAddress,
+                                        _ipConfiguration.IPSubnetMask,
+                                        _ipConfiguration.IPGatewayAddress);
 
-                                    if ((_ipConfiguration.IPDns != null) && (_ipConfiguration.IPDns.Length > 0))
+                                    if (_ipConfiguration.IPDns != null
+                                        && _ipConfiguration.IPDns.Length > 0)
                                     {
                                         ni.EnableStaticIPv4Dns(_ipConfiguration.IPDns);
                                     }
                                 }
                                 else
                                 {
-                                    ni.EnableDhcp();
-                                    ni.EnableAutomaticDns();
+                                    if (ni.IsDhcpEnabled)
+                                    {
+                                        ni.EnableDhcp();
+                                    }
+                                    else
+                                    {
+                                        // setup static IPv4 with network config
+                                        ni.EnableStaticIPv4(
+                                            ni.IPv4Address,
+                                            ni.IPv4SubnetMask,
+                                            ni.IPv4GatewayAddress);
+
+                                        // check if static DNS is to be configured
+                                        if (ni.IPv4DnsAddresses.Length > 0)
+                                        {
+                                            ni.EnableStaticIPv4Dns(ni.IPv4DnsAddresses);
+                                        }
+                                    }
                                 }
 
                                 _wifi.Connect(_ssid, _reconnectionKind, _password);
