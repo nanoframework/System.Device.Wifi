@@ -40,7 +40,7 @@ variables:
   solution: 'nanoFramework.System.Device.Wifi.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  nugetPackageName: 'nanoFramework.System.Device.WiFi'
+  nugetPackageName: 'nanoFramework.System.Device.Wifi'
 
 steps:
 
