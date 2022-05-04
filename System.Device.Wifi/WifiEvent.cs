@@ -5,18 +5,18 @@
 
 using nanoFramework.Runtime.Events;
 
-namespace System.Device.WiFi
+namespace System.Device.Wifi
 {
     [Flags]
-    internal enum WiFiEventType : byte
+    internal enum WifiEventType : byte
     {
-        // WiFi scan complete
+        // Wifi scan complete
         ScanComplete = 1
     }
 
-    internal class WiFiEvent : BaseEvent
+    internal class WifiEvent : BaseEvent
     {
-        public WiFiEventType EventType;
+        public WifiEventType EventType;
         public DateTime Time;
     }
 }

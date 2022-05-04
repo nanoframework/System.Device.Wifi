@@ -4,7 +4,7 @@
 //
 
 using System;
-using System.Device.WiFi;
+using System.Device.Wifi;
 using System.Diagnostics;
 using System.Net.NetworkInformation;
 using System.Threading;
@@ -12,9 +12,9 @@ using System.Threading;
 namespace nanoFramework.Networking
 {
     /// <summary>
-    /// Network helper class providing helper methods to assist on connecting to a WiFi network.
+    /// Network helper class providing helper methods to assist on connecting to a Wifi network.
     /// </summary>
-    public static class WiFiNetworkHelper
+    public static class WifiNetworkHelper
     {
         private static ManualResetEvent _ipAddressAvailable;
         private static ManualResetEvent _networkReady = new(false);
@@ -22,8 +22,8 @@ namespace nanoFramework.Networking
 
         private static string _ssid;
         private static string _password;
-        private static WiFiAdapter _wifi;
-        private static WiFiReconnectionKind _reconnectionKind;
+        private static WifiAdapter _wifi;
+        private static WifiReconnectionKind _reconnectionKind;
         private static IPConfiguration _ipConfiguration;
 
         private static NetworkHelperStatus _networkHelperStatus = NetworkHelperStatus.None;
@@ -41,7 +41,7 @@ namespace nanoFramework.Networking
         /// Event signaling that networking it's ready.
         /// </summary>
         /// <remarks>
-        /// The conditions for this are setup in the call to <see cref="WiFiNetworkHelper.SetupNetworkHelper"/>. 
+        /// The conditions for this are setup in the call to <see cref="WifiNetworkHelper.SetupNetworkHelper"/>. 
         /// It will be a composition of network connected, IpAddress available and valid system <see cref="DateTime"/>.</remarks>
         public static ManualResetEvent NetworkReady => _networkReady;
 
@@ -99,13 +99,13 @@ namespace nanoFramework.Networking
         /// <param name="requiresDateTime">Set to <see langword="true"/> if valid date and time are required.</param>
         /// <param name="ssid">The SSID of the network you are trying to connect to.</param>
         /// <param name="password">The password associated to the SSID of the network you are trying to connect to.</param>
-        /// <param name="reconnectionKind">The <see cref="WiFiReconnectionKind"/> to setup for the connection.</param>
+        /// <param name="reconnectionKind">The <see cref="WifiReconnectionKind"/> to setup for the connection.</param>
         /// <exception cref="InvalidOperationException">If any of the <see cref="NetworkHelper"/> methods is called more than once.</exception>
         /// <exception cref="NotSupportedException">There is no network interface configured. Open the 'Edit Network Configuration' in Device Explorer and configure one.</exception>
         public static void SetupNetworkHelper(
             string ssid,
             string password,
-            WiFiReconnectionKind reconnectionKind = WiFiReconnectionKind.Automatic,
+            WifiReconnectionKind reconnectionKind = WifiReconnectionKind.Automatic,
             bool requiresDateTime = false)
         {
             _requiresDateTime = requiresDateTime;
@@ -125,17 +125,17 @@ namespace nanoFramework.Networking
         /// </summary>
         /// <param name="ssid">The SSID of the network you are trying to connect to.</param>
         /// <param name="password">The password associated to the SSID of the network you are trying to connect to.</param>
-        /// <param name="reconnectionKind">The <see cref="WiFiReconnectionKind"/> to setup for the connection.</param>
+        /// <param name="reconnectionKind">The <see cref="WifiReconnectionKind"/> to setup for the connection.</param>
         /// <param name="requiresDateTime">Set to <see langword="true"/> if valid date and time are required.</param>
-        /// <param name="wifiAdapter">The index of the WiFi adapter to be used. Relevant only if there are multiple WiFi adapters.</param>
+        /// <param name="wifiAdapterId">The index of the Wifi adapter to be used. Relevant only if there are multiple Wifi adapters.</param>
         /// <param name="token">A <see cref="CancellationToken"/> used for timing out the operation.</param>
         /// <returns><see langword="true"/> on success. On failure returns <see langword="false"/> and details with the cause of the failure are made available in the <see cref="Status"/> property</returns>
         public static bool ConnectDhcp(
             string ssid,
             string password,
-            WiFiReconnectionKind reconnectionKind = WiFiReconnectionKind.Automatic,
+            WifiReconnectionKind reconnectionKind = WifiReconnectionKind.Automatic,
             bool requiresDateTime = false,
-            int wifiAdapter = 0,
+            int wifiAdapterId = 0,
             CancellationToken token = default)
             => ScanAndConnect(
                 ssid,
@@ -144,7 +144,7 @@ namespace nanoFramework.Networking
                 false,
                 reconnectionKind,
                 requiresDateTime,
-                wifiAdapter,
+                wifiAdapterId,
                 token);
 
         /// <summary>
@@ -153,19 +153,19 @@ namespace nanoFramework.Networking
         /// </summary>
         /// <param name="ssid">The SSID you are trying to connect to.</param>
         /// <param name="password">The password associated to the SSID you are trying to connect to.</param>
-        /// <param name="ipConfiguration">The static IPv4 configuration to apply to the WiFi network interface.</param>
-        /// <param name="reconnectionKind">The <see cref="WiFiReconnectionKind"/> to setup for the connection.</param>
+        /// <param name="ipConfiguration">The static IPv4 configuration to apply to the Wifi network interface.</param>
+        /// <param name="reconnectionKind">The <see cref="WifiReconnectionKind"/> to setup for the connection.</param>
         /// <param name="requiresDateTime">Set to <see langword="true"/> if valid date and time are required.</param>
-        /// <param name="wifiAdapter">The index of the WiFi adapter to be used. Relevant only if there are multiple WiFi adapters.</param>
+        /// <param name="WifiAdapter">The index of the Wifi adapter to be used. Relevant only if there are multiple Wifi adapters.</param>
         /// <param name="token">A <see cref="CancellationToken"/> used for timing out the operation.</param>
         /// <returns><see langword="true"/> on success. On failure returns <see langword="false"/> and details with the cause of the failure are made available in the <see cref="Status"/> property</returns>
         public static bool ConnectFixAddress(
             string ssid,
             string password,
             IPConfiguration ipConfiguration,
-            WiFiReconnectionKind reconnectionKind = WiFiReconnectionKind.Automatic,
+            WifiReconnectionKind reconnectionKind = WifiReconnectionKind.Automatic,
             bool requiresDateTime = false,
-            int wifiAdapter = 0,
+            int WifiAdapter = 0,
             CancellationToken token = default)
             => ScanAndConnect(
                 ssid,
@@ -174,7 +174,7 @@ namespace nanoFramework.Networking
                 false,
                 reconnectionKind,
                 requiresDateTime,
-                wifiAdapter,
+                WifiAdapter,
                 token);
 
         /// <summary>
@@ -185,15 +185,15 @@ namespace nanoFramework.Networking
         /// <param name="password">The password associated to the SSID you are trying to connect to.</param>
         /// <param name="reconnectionKind">The reconnection type to the network.</param>
         /// <param name="requiresDateTime">Set to <see langword="true"/> if valid date and time are required.</param>
-        /// <param name="wifiAdapter">The index of the WiFi adapter to be used. Relevant only if there are multiple WiFi adapters.</param>
+        /// <param name="WifiAdapter">The index of the Wifi adapter to be used. Relevant only if there are multiple Wifi adapters.</param>
         /// <param name="token">A <see cref="CancellationToken"/> used for timing out the operation.</param>
         /// <returns><see langword="true"/> on success. On failure returns <see langword="false"/> and details with the cause of the failure are made available in the <see cref="Status"/> property</returns>
         public static bool ScanAndConnectDhcp(
             string ssid,
             string password,
-            WiFiReconnectionKind reconnectionKind = WiFiReconnectionKind.Automatic,
+            WifiReconnectionKind reconnectionKind = WifiReconnectionKind.Automatic,
             bool requiresDateTime = false,
-            int wifiAdapter = 0,
+            int WifiAdapter = 0,
             CancellationToken token = default)
             => ScanAndConnect(
                 ssid,
@@ -202,14 +202,14 @@ namespace nanoFramework.Networking
                 true,
                 reconnectionKind,
                 requiresDateTime,
-                wifiAdapter,
+                WifiAdapter,
                 token);
 
         /// <summary>
         /// This method will connect the network, the information used to connect is the one already stored on the device.
         /// </summary>
         /// <param name="requiresDateTime">Set to <see langword="true"/> if valid date and time are required.</param>
-        /// <param name="wifiAdapter">The index of the WiFi adapter to be used. Relevant only if there are multiple WiFi adapters.</param>
+        /// <param name="wifiAdapterId">The index of the Wifi adapter to be used. Relevant only if there are multiple Wifi adapters.</param>
         /// <param name="token">A <see cref="CancellationToken"/> used for timing out the operation.</param>
         /// <returns><see langword="true"/> on success. On failure returns <see langword="false"/> and details with the cause of the failure are made available in the <see cref="Status"/> property</returns>
         /// <remarks>
@@ -217,12 +217,12 @@ namespace nanoFramework.Networking
         /// </remarks>
         public static bool Reconnect(
             bool requiresDateTime = false,
-            int wifiAdapter = 0,
+            int wifiAdapterId = 0,
             CancellationToken token = default)
         {
             try
             {
-                _wifi = WiFiAdapter.FindAllAdapters()[wifiAdapter];
+                _wifi = WifiAdapter.FindAllAdapters()[wifiAdapterId];
 
                 return NetworkHelper.InternalWaitNetworkAvailable(
                     _workingNetworkInterface,
@@ -245,16 +245,16 @@ namespace nanoFramework.Networking
             string password,
             IPConfiguration ipConfiguration,
             bool scan,
-            WiFiReconnectionKind reconnectionKind,
+            WifiReconnectionKind reconnectionKind,
             bool setDateTime,
-            int wifiAdapter,
+            int wifiAdapterId,
             CancellationToken token)
         {
             try
             {
                 _ssid = ssid;
                 _password = password;
-                _wifi = WiFiAdapter.FindAllAdapters()[wifiAdapter];
+                _wifi = WifiAdapter.FindAllAdapters()[wifiAdapterId];
                 _reconnectionKind = reconnectionKind;
                 _ipConfiguration = ipConfiguration;
                 bool isAlreadyConnected = false;
@@ -300,7 +300,7 @@ namespace nanoFramework.Networking
                     {
                         _wifi.AvailableNetworksChanged += WifiAvailableNetworksChanged;
 
-                        Debug.WriteLine("starting WiFi scan");
+                        Debug.WriteLine("starting Wifi scan");
                         _wifi.ScanAsync();
                     }
                     else
@@ -314,7 +314,7 @@ namespace nanoFramework.Networking
                                 _wifi.Disconnect();
 
                                 // Make sure we store the configuration
-                                StoreWiFiConfiguration(ni);
+                                StoreWifiConfiguration(ni);
 
                                 if (_ipConfiguration != null)
                                 {
@@ -375,7 +375,7 @@ namespace nanoFramework.Networking
             }
         }
 
-        private static void StoreWiFiConfiguration(NetworkInterface ni)
+        private static void StoreWifiConfiguration(NetworkInterface ni)
         {
             Wireless80211Configuration wc = Wireless80211Configuration.GetAllWireless80211Configurations()[ni.SpecificConfigId];
 
@@ -386,15 +386,15 @@ namespace nanoFramework.Networking
             wc.SaveConfiguration();
         }
 
-        private static void WifiAvailableNetworksChanged(WiFiAdapter sender, object e)
+        private static void WifiAvailableNetworksChanged(WifiAdapter sender, object e)
         {
             Debug.WriteLine("Wifi_AvailableNetworksChanged - get report");
 
-            // Get Report of all scanned WiFi networks
-            WiFiNetworkReport report = sender.NetworkReport;
+            // Get Report of all scanned Wifi networks
+            WifiNetworkReport report = sender.NetworkReport;
 
             // Enumerate though networks looking for our network
-            foreach (WiFiAvailableNetwork net in report.AvailableNetworks)
+            foreach (WifiAvailableNetwork net in report.AvailableNetworks)
             {
                 // Show all networks found
                 Debug.WriteLine($"Net SSID :{net.Ssid},  BSSID : {net.Bsid},  rssi : {net.NetworkRssiInDecibelMilliwatts},  signal : {net.SignalBars}");
@@ -435,13 +435,13 @@ namespace nanoFramework.Networking
                     }
 
                     // Connect to network
-                    WiFiConnectionResult result = sender.Connect(net, _reconnectionKind, _password);
+                    WifiConnectionResult result = sender.Connect(net, _reconnectionKind, _password);
 
                     // Display status
-                    if (result.ConnectionStatus == WiFiConnectionStatus.Success)
+                    if (result.ConnectionStatus == WifiConnectionStatus.Success)
                     {
                         sender.AvailableNetworksChanged -= WifiAvailableNetworksChanged;
-                        StoreWiFiConfiguration(ni);
+                        StoreWifiConfiguration(ni);
                         return;
                     }
                     else
@@ -491,15 +491,15 @@ namespace nanoFramework.Networking
                 // set flag
                 _helperInstanciated = true;
 
-                // flag to connect to WiFi after IP setup
-                bool connectToWiFi = false;
+                // flag to connect to Wifi after IP setup
+                bool connectToWifi = false;
 
                 // setup event
                 _ipAddressAvailable = new(false);
 
 
-                // currently we only support one WiFi adapter, so this is it
-                _wifi = WiFiAdapter.FindAllAdapters()[0];
+                // currently we only support one Wifi adapter, so this is it
+                _wifi = WifiAdapter.FindAllAdapters()[0];
 
                 NetworkInterface[] nis = NetworkInterface.GetAllNetworkInterfaces();
 
@@ -522,7 +522,7 @@ namespace nanoFramework.Networking
                 {
                     bool isAlreadyConnected = false;
 
-                    // this is to connect to a specific WiFi network
+                    // this is to connect to a specific Wifi network
                     // check if device it's already connected to the correct network
                     foreach (NetworkInterface ni in nis)
                     {
@@ -556,10 +556,10 @@ namespace nanoFramework.Networking
                                 _wifi.Disconnect();
 
                                 // Make sure we store the configuration
-                                StoreWiFiConfiguration(ni);
+                                StoreWifiConfiguration(ni);
 
-                                // set flag to connect to WiFi after IP config
-                                connectToWiFi = true;
+                                // set flag to connect to Wifi after IP config
+                                connectToWifi = true;
 
                                 // done here
                                 break;
@@ -574,9 +574,9 @@ namespace nanoFramework.Networking
                     _workingNetworkInterface,
                     _ipConfiguration);
 
-                if(connectToWiFi)
+                if(connectToWifi)
                 {
-                    // connect to WiFi
+                    // connect to Wifi
                     _wifi.Connect(
                         _ssid,
                         _reconnectionKind,

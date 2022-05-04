@@ -6,13 +6,13 @@
 using nanoFramework.Runtime.Events;
 using System.Collections;
 
-namespace System.Device.WiFi
+namespace System.Device.Wifi
 {
-    internal class WiFiEventListener : IEventProcessor, IEventListener
+    internal class WifiEventListener : IEventProcessor, IEventListener
     {
-        readonly ArrayList wifiAdapters = new();
+        readonly ArrayList WifiAdapters = new();
 
-        public WiFiEventListener()
+        public WifiEventListener()
         {
             EventSink.AddEventProcessor(EventCategory.WiFi, this);
             EventSink.AddEventListener(EventCategory.WiFi, this);
@@ -30,26 +30,26 @@ namespace System.Device.WiFi
             uint data2,
             DateTime time)
         {
-            WiFiEventType eventType = (WiFiEventType)(data1 & 0xFF);
-            if (eventType >= WiFiEventType.ScanComplete)
+            WifiEventType eventType = (WifiEventType)(data1 & 0xFF);
+            if (eventType >= WifiEventType.ScanComplete)
             {
-                WiFiEvent wifiEvent = new WiFiEvent();
-                wifiEvent.EventType = eventType;
-                wifiEvent.Time = time;
+                WifiEvent WifiEvent = new WifiEvent();
+                WifiEvent.EventType = eventType;
+                WifiEvent.Time = time;
 
-                return wifiEvent;
+                return WifiEvent;
             }
             return null;
         }
 
         public bool OnEvent(BaseEvent ev)
         {
-            if (ev is WiFiEvent)
+            if (ev is WifiEvent)
             {
-                foreach (object obj in wifiAdapters)
+                foreach (object obj in WifiAdapters)
                 {
-                    WiFiAdapter wifiAdapter = obj as WiFiAdapter;
-                    wifiAdapter.OnAvailableNetworksChangedInternal((WiFiEvent)ev);
+                    WifiAdapter WifiAdapter = obj as WifiAdapter;
+                    WifiAdapter.OnAvailableNetworksChangedInternal((WifiEvent)ev);
                 }
 
                 return true;
@@ -62,14 +62,14 @@ namespace System.Device.WiFi
             // need this here to match base class
         }
 
-        internal void AddAdapter(WiFiAdapter adapter)
+        internal void AddAdapter(WifiAdapter adapter)
         {
-            wifiAdapters.Add(adapter);
+            WifiAdapters.Add(adapter);
         }
 
-        internal void RemoveAdapter(WiFiAdapter wifi)
+        internal void RemoveAdapter(WifiAdapter Wifi)
         {
-            wifiAdapters.Remove(wifi);
+            WifiAdapters.Remove(Wifi);
         }
     }
 }

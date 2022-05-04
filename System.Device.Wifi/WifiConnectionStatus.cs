@@ -3,12 +3,12 @@
 // See LICENSE file in the project root for full license information.
 //
 
-namespace System.Device.WiFi
+namespace System.Device.Wifi
 {
     /// <summary>
     /// Status of the connection attempt.
     /// </summary>
-    public enum WiFiConnectionStatus
+    public enum WifiConnectionStatus
     {
         /// <summary>
         /// Connection failed because access to the network has been revoked.

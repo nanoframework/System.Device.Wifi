@@ -5,35 +5,35 @@
 
 using System.Runtime.CompilerServices;
 
-namespace System.Device.WiFi
+namespace System.Device.Wifi
 {
     /// <summary>
-    /// Event raised when a scan completes on this WiFi adapter. 
+    /// Event raised when a scan completes on this Wifi adapter. 
     /// </summary>
     public delegate void AvailableNetworksChangedEventHandler(
-                            WiFiAdapter sender,
+                            WifiAdapter sender,
                             Object e);
 
 
     /// <summary>
-    /// Provides a means to scan for nearby WiFi access points, enumerate those that are found, and connect to an access point.
+    /// Provides a means to scan for nearby Wifi access points, enumerate those that are found, and connect to an access point.
     /// </summary>
-    public sealed class WiFiAdapter : IDisposable
+    public sealed class WifiAdapter : IDisposable
     {
         private readonly int _networkInterface;
 
-        private static WiFiEventListener s_eventListener = new WiFiEventListener();
+        private static WifiEventListener s_eventListener = new WifiEventListener();
 
         // This is used as the lock object 
         // a lock is required because multiple threads can access the WifiAdapter
         private readonly object _syncLock = new object();
 
         /// <summary>
-        /// Event raised when a scan completes on this WiFi adapter. 
+        /// Event raised when a scan completes on this Wifi adapter. 
         /// </summary>
         public event AvailableNetworksChangedEventHandler AvailableNetworksChanged;
 
-        internal void OnAvailableNetworksChangedInternal(WiFiEvent e)
+        internal void OnAvailableNetworksChangedInternal(WifiEvent e)
         {
             AvailableNetworksChangedEventHandler callbacks = null;
 
@@ -48,7 +48,7 @@ namespace System.Device.WiFi
             callbacks?.Invoke(this, new EventArgs());
         }
 
-        internal WiFiAdapter(int NetworkInterface)
+        internal WifiAdapter(int NetworkInterface)
         {
             _networkInterface = NetworkInterface;
             NativeInit();
@@ -56,7 +56,7 @@ namespace System.Device.WiFi
         }
 
         /// <summary>
-        /// Gets the network interface number associatted with this WiFi adapter
+        /// Gets the network interface number associatted with this Wifi adapter
         /// </summary>
         public int NetworkInterface
         {
@@ -64,28 +64,28 @@ namespace System.Device.WiFi
         }
 
         /// <summary>
-        /// Gets a list of available networks populated by the last WiFi scan on this WiFiNetworkAdapter.
+        /// Gets a list of available networks populated by the last Wifi scan on this WifiNetworkAdapter.
         /// </summary>
-        public WiFiNetworkReport NetworkReport
+        public WifiNetworkReport NetworkReport
         {
             get
             {
                 lock (_syncLock)
                 {
-                    return new WiFiNetworkReport(ParseNativeReports(GetNativeScanReport()));
+                    return new WifiNetworkReport(ParseNativeReports(GetNativeScanReport()));
                 }
             }
         }
 
-        private WiFiAvailableNetwork[] ParseNativeReports(byte[] nativeReport)
+        private WifiAvailableNetwork[] ParseNativeReports(byte[] nativeReport)
         {
             int bytePos = 1;
             int recordCount = nativeReport[0];
 
-            WiFiAvailableNetwork[] WifiNetworks = new WiFiAvailableNetwork[recordCount];
+            WifiAvailableNetwork[] WifiNetworks = new WifiAvailableNetwork[recordCount];
             for (int index = 0; index < recordCount; index++)
             {
-                WifiNetworks[index] = new WiFiAvailableNetwork();
+                WifiNetworks[index] = new WifiAvailableNetwork();
 
                 WifiNetworks[index].Bsid = BitConverter.ToString(nativeReport, bytePos, 6);
                 bytePos += 6;
@@ -117,22 +117,22 @@ namespace System.Device.WiFi
         }
 
         /// <summary>
-        /// Connect this WiFi device to the specified network, with the specified pass-phrase and reconnection policy.
+        /// Connect this Wifi device to the specified network, with the specified pass-phrase and reconnection policy.
         /// </summary>
-        /// <param name="availableNetwork">Describes the WiFi network to be connected.</param>
+        /// <param name="availableNetwork">Describes the Wifi network to be connected.</param>
         /// <param name="reconnectionKind">Specifies how to reconnect if the connection is lost.</param>
         /// <param name="passwordCredential">The pass-phrase to be used to connect to the access point.</param>
         /// <returns>
         /// On successful conclusion of the operation, returns an object that describes the result of the connect operation.
         /// </returns>
-        public WiFiConnectionResult Connect(
-            WiFiAvailableNetwork availableNetwork,
-            WiFiReconnectionKind reconnectionKind,
+        public WifiConnectionResult Connect(
+            WifiAvailableNetwork availableNetwork,
+            WifiReconnectionKind reconnectionKind,
             string passwordCredential)
         {
             lock (_syncLock)
             {
-                return new WiFiConnectionResult(NativeConnect(
+                return new WifiConnectionResult(NativeConnect(
                     availableNetwork.Ssid,
                     passwordCredential,
                     reconnectionKind));
@@ -140,27 +140,27 @@ namespace System.Device.WiFi
         }
 
         /// <summary>
-        /// Connect this WiFi device to the specified network (using SSID string), with the specified pass-phrase and reconnection policy.
+        /// Connect this Wifi device to the specified network (using SSID string), with the specified pass-phrase and reconnection policy.
         /// </summary>
-        /// <param name="ssid">Describes the WiFi network to be connected.</param>
+        /// <param name="ssid">Describes the Wifi network to be connected.</param>
         /// <param name="reconnectionKind">Specifies how to reconnect if the connection is lost.</param>
         /// <param name="passwordCredential">The pass-phrase to be used to connect to the access point.</param>
         /// <returns>
         /// On successful conclusion of the operation, returns an object that describes the result of the connect operation.
         /// </returns>
-        public WiFiConnectionResult Connect(
+        public WifiConnectionResult Connect(
             string ssid,
-            WiFiReconnectionKind reconnectionKind,
+            WifiReconnectionKind reconnectionKind,
             string passwordCredential)
         {
-            WiFiAvailableNetwork availableNetwork = new();
+            WifiAvailableNetwork availableNetwork = new();
             availableNetwork.Ssid = ssid;
             return Connect(availableNetwork, reconnectionKind, passwordCredential);
         }
 
 
         /// <summary>
-        /// Disconnects any active WiFi connection through this adapter.
+        /// Disconnects any active Wifi connection through this adapter.
         /// </summary>
         public void Disconnect()
         {
@@ -168,20 +168,20 @@ namespace System.Device.WiFi
         }
 
         /// <summary>
-        /// A static method that enumerates all the WiFi adapters in the system.
+        /// A static method that enumerates all the Wifi adapters in the system.
         /// </summary>
-        /// <returns>>On successful completion, returns an array of WiFiAdapter objects</returns>
-        public static WiFiAdapter[] FindAllAdapters()
+        /// <returns>>On successful completion, returns an array of WifiAdapter objects</returns>
+        public static WifiAdapter[] FindAllAdapters()
         {
             int index = 0;
 
             // Get array of available Wireless Adapters interface indexes in system
             byte[] adapterIndexes = NativeFindWirelessAdapters();
-            WiFiAdapter[] adapters = new WiFiAdapter[adapterIndexes.Length];
+            WifiAdapter[] adapters = new WifiAdapter[adapterIndexes.Length];
 
             foreach (byte adapterIndex in adapterIndexes)
             {
-                adapters[index++] = new WiFiAdapter(adapterIndex);
+                adapters[index++] = new WifiAdapter(adapterIndex);
             }
 
             return adapters;
@@ -224,13 +224,13 @@ namespace System.Device.WiFi
         /// <summary>
         /// 
         /// </summary>
-        ~WiFiAdapter()
+        ~WifiAdapter()
         {
             Dispose(false);
         }
 
         /// <summary>
-        /// Dispose WiFiAdapter
+        /// Dispose WifiAdapter
         /// </summary>
         public void Dispose()
         {
@@ -258,7 +258,7 @@ namespace System.Device.WiFi
         private static extern byte[] NativeFindWirelessAdapters();
 
         [MethodImpl(MethodImplOptions.InternalCall)]
-        private extern WiFiConnectionStatus NativeConnect(string Ssid, string passwordCredential, WiFiReconnectionKind reconnectionKind);
+        private extern WifiConnectionStatus NativeConnect(string Ssid, string passwordCredential, WifiReconnectionKind reconnectionKind);
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern void NativeDisconnect();

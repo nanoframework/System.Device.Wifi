@@ -29,7 +29,7 @@ namespace NFUnitTestWifiConnection
             // Give 10 seconds to the WiFi join to happen
             CancellationTokenSource cs = new(10000);
 
-            var success = WiFiNetworkHelper.ConnectFixAddress(
+            var success = WifiNetworkHelper.ConnectFixAddress(
                 Ssid,
                 Password,
                 new IPConfiguration(
@@ -43,26 +43,26 @@ namespace NFUnitTestWifiConnection
             ConnectToWifiWithCredentialsTests.DisplayLastError(success);
 
             Assert.True(success);
-            Assert.Null(WiFiNetworkHelper.HelperException);
+            Assert.Null(WifiNetworkHelper.HelperException);
 
             // need to reset this internal flag to allow calling the NetworkHelper again
-            WiFiNetworkHelper.ResetInstance();
+            WifiNetworkHelper.ResetInstance();
         }
 
         [TestMethod]
         public void TestFixedIPAddress_02()
         {
-            WiFiNetworkHelper.SetupNetworkHelper(new IPConfiguration(
+            WifiNetworkHelper.SetupNetworkHelper(new IPConfiguration(
                 "192.168.1.111",
                 "255.255.255.0",
                 "192.168.1.1",
                 new[] { "192.168.1.1" }), true);
 
             // wait 10 seconds to connect to the network
-            Assert.True(WiFiNetworkHelper.NetworkReady.WaitOne(10000, true));
+            Assert.True(WifiNetworkHelper.NetworkReady.WaitOne(10000, true));
 
             // need to reset this internal flag to allow calling the NetworkHelper again
-            WiFiNetworkHelper.ResetInstance();
+            WifiNetworkHelper.ResetInstance();
         }
     }
 }

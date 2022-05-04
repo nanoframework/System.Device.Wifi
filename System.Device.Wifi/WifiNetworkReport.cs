@@ -3,28 +3,28 @@
 // See LICENSE file in the project root for full license information.
 //
 
-namespace System.Device.WiFi
+namespace System.Device.Wifi
 {
     /// <summary>
     /// Contains the result of a network scan operation.
     /// </summary>
-    public class WiFiNetworkReport
+    public class WifiNetworkReport
     {
-        readonly WiFiAvailableNetwork[] _wifiNetworks;
+        readonly WifiAvailableNetwork[] _WifiNetworks;
 
-        internal WiFiNetworkReport(WiFiAvailableNetwork[] WifiNetworks)
+        internal WifiNetworkReport(WifiAvailableNetwork[] WifiNetworks)
         {
-            _wifiNetworks = WifiNetworks;
+            _WifiNetworks = WifiNetworks;
         }
 
         /// <summary>
         /// A list of available networks.
         /// </summary>
-        public WiFiAvailableNetwork[] AvailableNetworks
+        public WifiAvailableNetwork[] AvailableNetworks
         {
             get
             {
-                return _wifiNetworks;
+                return _WifiNetworks;
             }
         }
     }

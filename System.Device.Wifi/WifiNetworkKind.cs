@@ -3,12 +3,12 @@
 // See LICENSE file in the project root for full license information.
 //
 
-namespace System.Device.WiFi
+namespace System.Device.Wifi
 {
     /// <summary>
-    /// Describes the kinds of WiFi networks.
+    /// Describes the kinds of Wifi networks.
     /// </summary>
-    public enum WiFiNetworkKind
+    public enum WifiNetworkKind
     {
         /// <summary>
         /// An independent (IBSS) network.
