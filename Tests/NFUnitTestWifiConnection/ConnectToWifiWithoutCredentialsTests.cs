@@ -31,7 +31,7 @@ namespace NFUnitTestWifiConnection
             ConnectToWifiWithCredentialsTests.DisplayLastError(success);
 
             Assert.True(success);
-            Assert.Null(NetworkHelper.HelperException);
+            Assert.Null(WiFiNetworkHelper.HelperException);
 
             // need to reset this internal flag to allow calling the NetworkHelper again
             WiFiNetworkHelper.ResetInstance();
