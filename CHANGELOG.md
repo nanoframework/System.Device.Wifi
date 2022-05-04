@@ -1,5 +1,27 @@
 # Changelog
 
+## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/System.Device.WiFi/tree/HEAD)
+
+[Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.4.0...HEAD)
+
+**Implemented enhancements:**
+
+- Improve network helper [\#208](https://github.com/nanoframework/System.Device.Wifi/pull/208)
+
+**Documentation and other chores:**
+
+- Update 1 NuGet dependencies [\#207](https://github.com/nanoframework/System.Device.Wifi/pull/207)
+- Update 1 NuGet dependencies [\#205](https://github.com/nanoframework/System.Device.Wifi/pull/205)
+- Update 1 NuGet dependencies [\#204](https://github.com/nanoframework/System.Device.Wifi/pull/204)
+
+## [v1.4.0](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0) (2022-03-29)
+
+[Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.4.0-preview.59...v1.4.0)
+
+**Documentation and other chores:**
+
+- release-v1.4.0 [\#203](https://github.com/nanoframework/System.Device.Wifi/pull/203)
+
 ## [v1.4.0-preview.59](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.59) (2022-03-28)
 
 [Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.4.0-preview.57...v1.4.0-preview.59)
@@ -10,7 +32,7 @@
 
 **Documentation and other chores:**
 
-- Update 1 NuGet dependencies [\#202](https://github.com/nanoframework/System.Device.WiFi/pull/202)
+- Update 1 NuGet dependencies [\#202](https://github.com/nanoframework/System.Device.Wifi/pull/202)
 
 ## [v1.4.0-preview.55](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.55) (2022-03-28)
 
@@ -18,7 +40,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#201](https://github.com/nanoframework/System.Device.WiFi/pull/201)
+- Update 2 NuGet dependencies [\#201](https://github.com/nanoframework/System.Device.Wifi/pull/201)
 
 ## [v1.4.0-preview.53](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.53) (2022-03-28)
 
@@ -26,7 +48,7 @@
 
 **Documentation and other chores:**
 
-- Update 3 NuGet dependencies [\#200](https://github.com/nanoframework/System.Device.WiFi/pull/200)
+- Update 3 NuGet dependencies [\#200](https://github.com/nanoframework/System.Device.Wifi/pull/200)
 
 ## [v1.4.0-preview.51](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.51) (2022-03-28)
 
@@ -34,8 +56,8 @@
 
 **Documentation and other chores:**
 
-- Update 5 NuGet dependencies [\#199](https://github.com/nanoframework/System.Device.WiFi/pull/199)
-- Update 1 NuGet dependencies [\#197](https://github.com/nanoframework/System.Device.WiFi/pull/197)
+- Update 5 NuGet dependencies [\#199](https://github.com/nanoframework/System.Device.Wifi/pull/199)
+- Update 1 NuGet dependencies [\#197](https://github.com/nanoframework/System.Device.Wifi/pull/197)
 
 ## [v1.4.0-preview.48](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.48) (2022-03-17)
 
@@ -43,7 +65,7 @@
 
 **Documentation and other chores:**
 
-- Update 4 NuGet dependencies [\#196](https://github.com/nanoframework/System.Device.WiFi/pull/196)
+- Update 4 NuGet dependencies [\#196](https://github.com/nanoframework/System.Device.Wifi/pull/196)
 
 ## [v1.4.0-preview.46](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.46) (2022-03-16)
 
@@ -55,7 +77,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#194](https://github.com/nanoframework/System.Device.WiFi/pull/194)
+- Update 2 NuGet dependencies [\#194](https://github.com/nanoframework/System.Device.Wifi/pull/194)
 
 ## [v1.4.0-preview.42](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.42) (2022-03-14)
 
@@ -63,7 +85,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#192](https://github.com/nanoframework/System.Device.WiFi/pull/192)
+- Update 2 NuGet dependencies [\#192](https://github.com/nanoframework/System.Device.Wifi/pull/192)
 
 ## [v1.4.0-preview.40](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.40) (2022-03-14)
 
@@ -71,8 +93,8 @@
 
 **Documentation and other chores:**
 
-- Update 4 NuGet dependencies [\#191](https://github.com/nanoframework/System.Device.WiFi/pull/191)
-- Update 1 NuGet dependencies [\#190](https://github.com/nanoframework/System.Device.WiFi/pull/190)
+- Update 4 NuGet dependencies [\#191](https://github.com/nanoframework/System.Device.Wifi/pull/191)
+- Update 1 NuGet dependencies [\#190](https://github.com/nanoframework/System.Device.Wifi/pull/190)
 
 ## [v1.4.0-preview.36](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.36) (2022-02-17)
 
@@ -80,7 +102,7 @@
 
 **Documentation and other chores:**
 
-- Update 3 NuGet dependencies [\#189](https://github.com/nanoframework/System.Device.WiFi/pull/189)
+- Update 3 NuGet dependencies [\#189](https://github.com/nanoframework/System.Device.Wifi/pull/189)
 
 ## [v1.4.0-preview.34](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.34) (2022-02-08)
 
@@ -88,7 +110,7 @@
 
 **Documentation and other chores:**
 
-- Update 1 NuGet dependencies [\#188](https://github.com/nanoframework/System.Device.WiFi/pull/188)
+- Update 1 NuGet dependencies [\#188](https://github.com/nanoframework/System.Device.Wifi/pull/188)
 
 ## [v1.4.0-preview.32](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.32) (2022-02-04)
 
@@ -96,7 +118,7 @@
 
 **Documentation and other chores:**
 
-- Update 1 NuGet dependencies [\#187](https://github.com/nanoframework/System.Device.WiFi/pull/187)
+- Update 1 NuGet dependencies [\#187](https://github.com/nanoframework/System.Device.Wifi/pull/187)
 
 ## [v1.4.0-preview.30](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.30) (2022-02-04)
 
@@ -104,7 +126,7 @@
 
 **Documentation and other chores:**
 
-- Update 3 NuGet dependencies [\#186](https://github.com/nanoframework/System.Device.WiFi/pull/186)
+- Update 3 NuGet dependencies [\#186](https://github.com/nanoframework/System.Device.Wifi/pull/186)
 
 ## [v1.4.0-preview.28](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.28) (2022-02-04)
 
@@ -112,7 +134,7 @@
 
 **Documentation and other chores:**
 
-- Update 1 NuGet dependencies [\#185](https://github.com/nanoframework/System.Device.WiFi/pull/185)
+- Update 1 NuGet dependencies [\#185](https://github.com/nanoframework/System.Device.Wifi/pull/185)
 
 ## [v1.4.0-preview.26](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.26) (2022-01-28)
 
@@ -120,7 +142,7 @@
 
 **Documentation and other chores:**
 
-- Update 1 NuGet dependencies [\#184](https://github.com/nanoframework/System.Device.WiFi/pull/184)
+- Update 1 NuGet dependencies [\#184](https://github.com/nanoframework/System.Device.Wifi/pull/184)
 
 ## [v1.4.0-preview.24](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.24) (2022-01-28)
 
@@ -128,7 +150,7 @@
 
 **Documentation and other chores:**
 
-- Update 4 NuGet dependencies [\#182](https://github.com/nanoframework/System.Device.WiFi/pull/182)
+- Update 4 NuGet dependencies [\#182](https://github.com/nanoframework/System.Device.Wifi/pull/182)
 
 ## [v1.4.0-preview.21](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.21) (2022-01-21)
 
@@ -136,7 +158,7 @@
 
 **Documentation and other chores:**
 
-- Update 1 NuGet dependencies [\#181](https://github.com/nanoframework/System.Device.WiFi/pull/181)
+- Update 1 NuGet dependencies [\#181](https://github.com/nanoframework/System.Device.Wifi/pull/181)
 
 ## [v1.4.0-preview.19](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.19) (2022-01-21)
 
@@ -144,7 +166,7 @@
 
 **Documentation and other chores:**
 
-- Update 3 NuGet dependencies [\#180](https://github.com/nanoframework/System.Device.WiFi/pull/180)
+- Update 3 NuGet dependencies [\#180](https://github.com/nanoframework/System.Device.Wifi/pull/180)
 
 ## [v1.4.0-preview.17](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.17) (2022-01-21)
 
@@ -152,7 +174,7 @@
 
 **Documentation and other chores:**
 
-- Update 1 NuGet dependencies [\#179](https://github.com/nanoframework/System.Device.WiFi/pull/179)
+- Update 1 NuGet dependencies [\#179](https://github.com/nanoframework/System.Device.Wifi/pull/179)
 
 ## [v1.4.0-preview.15](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.15) (2022-01-21)
 
@@ -160,7 +182,7 @@
 
 **Documentation and other chores:**
 
-- Update 1 NuGet dependencies [\#178](https://github.com/nanoframework/System.Device.WiFi/pull/178)
+- Update 1 NuGet dependencies [\#178](https://github.com/nanoframework/System.Device.Wifi/pull/178)
 
 ## [v1.4.0-preview.13](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.13) (2022-01-21)
 
@@ -168,7 +190,7 @@
 
 **Documentation and other chores:**
 
-- Update 3 NuGet dependencies [\#177](https://github.com/nanoframework/System.Device.WiFi/pull/177)
+- Update 3 NuGet dependencies [\#177](https://github.com/nanoframework/System.Device.Wifi/pull/177)
 
 ## [v1.4.0-preview.11](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.11) (2022-01-12)
 
@@ -176,7 +198,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#175](https://github.com/nanoframework/System.Device.WiFi/pull/175)
+- Update 2 NuGet dependencies [\#175](https://github.com/nanoframework/System.Device.Wifi/pull/175)
 
 ## [v1.4.0-preview.6](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.6) (2022-01-05)
 
@@ -184,11 +206,11 @@
 
 **Implemented enhancements:**
 
-- NetworkReady event is now instanciated on constructor [\#173](https://github.com/nanoframework/System.Device.WiFi/pull/173)
+- NetworkReady event is now instanciated on constructor [\#173](https://github.com/nanoframework/System.Device.Wifi/pull/173)
 
 **Documentation and other chores:**
 
-- Bumps nanoFramework.System.Net from 1.8.0-preview.3 to 1.8.0-preview.5 [\#174](https://github.com/nanoframework/System.Device.WiFi/pull/174)
+- Bumps nanoFramework.System.Net from 1.8.0-preview.3 to 1.8.0-preview.5 [\#174](https://github.com/nanoframework/System.Device.Wifi/pull/174)
 
 ## [v1.4.0-preview.1](https://github.com/nanoframework/System.Device.WiFi/tree/v1.4.0-preview.1) (2022-01-04)
 
@@ -196,7 +218,7 @@
 
 **Implemented enhancements:**
 
-- Move NetworkHelper to library [\#172](https://github.com/nanoframework/System.Device.WiFi/pull/172)
+- Move NetworkHelper to library [\#172](https://github.com/nanoframework/System.Device.Wifi/pull/172)
 
 ## [v1.3.4-preview.43](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.4-preview.43) (2022-01-04)
 
@@ -204,7 +226,7 @@
 
 **Documentation and other chores:**
 
-- Fix typos in comments [\#171](https://github.com/nanoframework/System.Device.WiFi/pull/171)
+- Fix typos in comments [\#171](https://github.com/nanoframework/System.Device.Wifi/pull/171)
 
 ## [v1.3.4-preview.44](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.4-preview.44) (2022-01-03)
 
@@ -216,7 +238,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 nuget dependencies [\#169](https://github.com/nanoframework/System.Device.WiFi/pull/169)
+- Update 2 nuget dependencies [\#169](https://github.com/nanoframework/System.Device.Wifi/pull/169)
 
 ## [v1.3.4-preview.39](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.4-preview.39) (2021-12-28)
 
@@ -224,8 +246,8 @@
 
 **Documentation and other chores:**
 
-- Bumps nanoFramework.Runtime.Events from 1.9.2 to 1.10.0-preview.1 [\#168](https://github.com/nanoframework/System.Device.WiFi/pull/168)
-- Add README localized to ZH-CN [\#167](https://github.com/nanoframework/System.Device.WiFi/pull/167)
+- Bumps nanoFramework.Runtime.Events from 1.9.2 to 1.10.0-preview.1 [\#168](https://github.com/nanoframework/System.Device.Wifi/pull/168)
+- Add README localized to ZH-CN [\#167](https://github.com/nanoframework/System.Device.Wifi/pull/167)
 
 ## [v1.3.4-preview.36](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.4-preview.36) (2021-12-16)
 
@@ -233,7 +255,7 @@
 
 **Implemented enhancements:**
 
-- NetworkHelper.IsValidIpAddress\(\) foreach fixed [\#165](https://github.com/nanoframework/System.Device.WiFi/pull/165)
+- NetworkHelper.IsValidIpAddress\(\) foreach fixed [\#165](https://github.com/nanoframework/System.Device.Wifi/pull/165)
 
 ## [v1.3.4-preview.34](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.4-preview.34) (2021-12-03)
 
@@ -241,7 +263,7 @@
 
 **Documentation and other chores:**
 
-- Update 1 nuget dependencies [\#164](https://github.com/nanoframework/System.Device.WiFi/pull/164)
+- Update 1 nuget dependencies [\#164](https://github.com/nanoframework/System.Device.Wifi/pull/164)
 
 ## [v1.3.4-preview.32](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.4-preview.32) (2021-12-03)
 
@@ -249,7 +271,7 @@
 
 **Documentation and other chores:**
 
-- Update 3 nuget dependencies [\#163](https://github.com/nanoframework/System.Device.WiFi/pull/163)
+- Update 3 nuget dependencies [\#163](https://github.com/nanoframework/System.Device.Wifi/pull/163)
 
 ## [v1.3.4-preview.30](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.4-preview.30) (2021-12-02)
 
@@ -257,7 +279,7 @@
 
 **Documentation and other chores:**
 
-- Bumps nanoFramework.Runtime.Events from 1.9.2-preview.14 to 1.9.2 [\#162](https://github.com/nanoframework/System.Device.WiFi/pull/162)
+- Bumps nanoFramework.Runtime.Events from 1.9.2-preview.14 to 1.9.2 [\#162](https://github.com/nanoframework/System.Device.Wifi/pull/162)
 
 ## [v1.3.4-preview.28](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.4-preview.28) (2021-12-02)
 
@@ -265,7 +287,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 nuget dependencies [\#161](https://github.com/nanoframework/System.Device.WiFi/pull/161)
+- Update 2 nuget dependencies [\#161](https://github.com/nanoframework/System.Device.Wifi/pull/161)
 
 ## [v1.3.4-preview.26](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.4-preview.26) (2021-12-02)
 
@@ -273,7 +295,7 @@
 
 **Documentation and other chores:**
 
-- Update 7 NuGet dependencies [\#160](https://github.com/nanoframework/System.Device.WiFi/pull/160)
+- Update 7 NuGet dependencies [\#160](https://github.com/nanoframework/System.Device.Wifi/pull/160)
 
 ## [v1.3.4-preview.24](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.4-preview.24) (2021-12-02)
 
@@ -281,7 +303,7 @@
 
 **Documentation and other chores:**
 
-- Update 6 nuget dependencies [\#159](https://github.com/nanoframework/System.Device.WiFi/pull/159)
+- Update 6 nuget dependencies [\#159](https://github.com/nanoframework/System.Device.Wifi/pull/159)
 
 ## [v1.3.4-preview.21](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.4-preview.21) (2021-11-13)
 
@@ -289,7 +311,7 @@
 
 **Documentation and other chores:**
 
-- Update 1 nuget dependencies [\#157](https://github.com/nanoframework/System.Device.WiFi/pull/157)
+- Update 1 nuget dependencies [\#157](https://github.com/nanoframework/System.Device.Wifi/pull/157)
 
 ## [v1.3.4-preview.19](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.4-preview.19) (2021-11-12)
 
@@ -297,7 +319,7 @@
 
 **Documentation and other chores:**
 
-- Update 1 nuget dependencies [\#156](https://github.com/nanoframework/System.Device.WiFi/pull/156)
+- Update 1 nuget dependencies [\#156](https://github.com/nanoframework/System.Device.Wifi/pull/156)
 
 ## [v1.3.4-preview.14](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.4-preview.14) (2021-10-23)
 
@@ -305,7 +327,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 nuget dependencies [\#155](https://github.com/nanoframework/System.Device.WiFi/pull/155)
+- Update 2 nuget dependencies [\#155](https://github.com/nanoframework/System.Device.Wifi/pull/155)
 
 ## [v1.3.4-preview.12](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.4-preview.12) (2021-10-22)
 
@@ -313,7 +335,7 @@
 
 **Documentation and other chores:**
 
-- Bumps nanoFramework.Runtime.Events from 1.9.2-preview.5 to 1.9.2-preview.8 [\#154](https://github.com/nanoframework/System.Device.WiFi/pull/154)
+- Bumps nanoFramework.Runtime.Events from 1.9.2-preview.5 to 1.9.2-preview.8 [\#154](https://github.com/nanoframework/System.Device.Wifi/pull/154)
 
 ## [v1.3.4-preview.10](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.4-preview.10) (2021-10-18)
 
@@ -321,7 +343,7 @@
 
 **Fixed bugs:**
 
-- Update NetworkHelper.cs [\#147](https://github.com/nanoframework/System.Device.WiFi/pull/147)
+- Update NetworkHelper.cs [\#147](https://github.com/nanoframework/System.Device.Wifi/pull/147)
 
 ## [v1.3.4-preview.8](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.4-preview.8) (2021-10-18)
 
@@ -329,7 +351,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 nuget dependencies [\#153](https://github.com/nanoframework/System.Device.WiFi/pull/153)
+- Update 2 nuget dependencies [\#153](https://github.com/nanoframework/System.Device.Wifi/pull/153)
 
 ## [v1.3.4-preview.6](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.4-preview.6) (2021-10-17)
 
@@ -337,8 +359,8 @@
 
 **Documentation and other chores:**
 
-- Bumps nanoFramework.Runtime.Events from 1.9.1 to 1.9.2-preview.5 [\#152](https://github.com/nanoframework/System.Device.WiFi/pull/152)
-- Update 1 nuget dependencies [\#151](https://github.com/nanoframework/System.Device.WiFi/pull/151)
+- Bumps nanoFramework.Runtime.Events from 1.9.1 to 1.9.2-preview.5 [\#152](https://github.com/nanoframework/System.Device.Wifi/pull/152)
+- Update 1 nuget dependencies [\#151](https://github.com/nanoframework/System.Device.Wifi/pull/151)
 
 ## [v1.3.4-preview.3](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.4-preview.3) (2021-09-16)
 
@@ -346,11 +368,15 @@
 
 **Documentation and other chores:**
 
-- Update dependencies of Network Helper [\#150](https://github.com/nanoframework/System.Device.WiFi/pull/150)
+- Update dependencies of Network Helper [\#150](https://github.com/nanoframework/System.Device.Wifi/pull/150)
 
 ## [v1.3.3](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.3) (2021-09-16)
 
 [Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.3.3-preview.9...v1.3.3)
+
+**Documentation and other chores:**
+
+- release-v1.3.3 [\#149](https://github.com/nanoframework/System.Device.Wifi/pull/149)
 
 ## [v1.3.3-preview.9](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.3-preview.9) (2021-09-16)
 
@@ -358,7 +384,7 @@
 
 **Documentation and other chores:**
 
-- Update 1 nuget dependencies [\#145](https://github.com/nanoframework/System.Device.WiFi/pull/145)
+- Update 1 nuget dependencies [\#145](https://github.com/nanoframework/System.Device.Wifi/pull/145)
 
 ## [v1.3.3-preview.5](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.3-preview.5) (2021-07-17)
 
@@ -366,7 +392,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 nuget dependencies [\#142](https://github.com/nanoframework/System.Device.WiFi/pull/142)
+- Update 2 nuget dependencies [\#142](https://github.com/nanoframework/System.Device.Wifi/pull/142)
 
 ## [v1.3.3-preview.3](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.3-preview.3) (2021-07-16)
 
@@ -374,11 +400,15 @@
 
 **Documentation and other chores:**
 
-- Update 4 nuget dependencies [\#141](https://github.com/nanoframework/System.Device.WiFi/pull/141)
+- Update 4 nuget dependencies [\#141](https://github.com/nanoframework/System.Device.Wifi/pull/141)
 
 ## [v1.3.2](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2) (2021-07-15)
 
 [Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.3.2-preview.77...v1.3.2)
+
+**Documentation and other chores:**
+
+- release-v1.3.2 [\#140](https://github.com/nanoframework/System.Device.Wifi/pull/140)
 
 ## [v1.3.2-preview.77](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.77) (2021-07-15)
 
@@ -386,7 +416,7 @@
 
 **Documentation and other chores:**
 
-- Update 6 nuget dependencies [\#139](https://github.com/nanoframework/System.Device.WiFi/pull/139)
+- Update 6 nuget dependencies [\#139](https://github.com/nanoframework/System.Device.Wifi/pull/139)
 
 ## [v1.3.2-preview.75](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.75) (2021-07-14)
 
@@ -394,9 +424,9 @@
 
 **Documentation and other chores:**
 
-- Update 1 nuget dependencies [\#138](https://github.com/nanoframework/System.Device.WiFi/pull/138)
-- Update 1 nuget dependencies [\#137](https://github.com/nanoframework/System.Device.WiFi/pull/137)
-- Update 1 nuget dependencies [\#136](https://github.com/nanoframework/System.Device.WiFi/pull/136)
+- Update 1 nuget dependencies [\#138](https://github.com/nanoframework/System.Device.Wifi/pull/138)
+- Update 1 nuget dependencies [\#137](https://github.com/nanoframework/System.Device.Wifi/pull/137)
+- Update 1 nuget dependencies [\#136](https://github.com/nanoframework/System.Device.Wifi/pull/136)
 
 ## [v1.3.2-preview.71](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.71) (2021-07-01)
 
@@ -404,11 +434,11 @@
 
 **Fixed bugs:**
 
-- Fixing handling of static IP in Wi-Fi [\#133](https://github.com/nanoframework/System.Device.WiFi/pull/133)
+- Fixing handling of static IP in Wi-Fi [\#133](https://github.com/nanoframework/System.Device.Wifi/pull/133)
 
 **Documentation and other chores:**
 
-- Update 1 nuget dependencies [\#132](https://github.com/nanoframework/System.Device.WiFi/pull/132)
+- Update 1 nuget dependencies [\#132](https://github.com/nanoframework/System.Device.Wifi/pull/132)
 
 ## [v1.3.2-preview.68](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.68) (2021-06-21)
 
@@ -416,7 +446,7 @@
 
 **Documentation and other chores:**
 
-- Update 1 nuget dependencies [\#129](https://github.com/nanoframework/System.Device.WiFi/pull/129)
+- Update 1 nuget dependencies [\#129](https://github.com/nanoframework/System.Device.Wifi/pull/129)
 
 ## [v1.3.2-preview.66](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.66) (2021-06-20)
 
@@ -424,7 +454,7 @@
 
 **Documentation and other chores:**
 
-- Update 3 nuget dependencies [\#128](https://github.com/nanoframework/System.Device.WiFi/pull/128)
+- Update 3 nuget dependencies [\#128](https://github.com/nanoframework/System.Device.Wifi/pull/128)
 
 ## [v1.3.2-preview.64](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.64) (2021-06-19)
 
@@ -432,7 +462,7 @@
 
 **Documentation and other chores:**
 
-- Update 6 NuGet dependencies [\#127](https://github.com/nanoframework/System.Device.WiFi/pull/127)
+- Update 6 NuGet dependencies [\#127](https://github.com/nanoframework/System.Device.Wifi/pull/127)
 
 ## [v1.3.2-preview.60](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.60) (2021-06-19)
 
@@ -440,7 +470,7 @@
 
 **Documentation and other chores:**
 
-- Update 1 nuget dependencies [\#125](https://github.com/nanoframework/System.Device.WiFi/pull/125)
+- Update 1 nuget dependencies [\#125](https://github.com/nanoframework/System.Device.Wifi/pull/125)
 
 ## [v1.3.2-preview.58](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.58) (2021-06-18)
 
@@ -448,7 +478,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 nuget dependencies [\#124](https://github.com/nanoframework/System.Device.WiFi/pull/124)
+- Update 2 nuget dependencies [\#124](https://github.com/nanoframework/System.Device.Wifi/pull/124)
 
 ## [v1.3.2-preview.56](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.56) (2021-06-16)
 
@@ -456,7 +486,7 @@
 
 **Fixed bugs:**
 
-- Moving System.Threading from shared project to nuget [\#122](https://github.com/nanoframework/System.Device.WiFi/pull/122)
+- Moving System.Threading from shared project to nuget [\#122](https://github.com/nanoframework/System.Device.Wifi/pull/122)
 
 ## [v1.3.2-preview.54](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.54) (2021-06-16)
 
@@ -464,12 +494,12 @@
 
 **Implemented enhancements:**
 
-- Moving System.Threading from shared project to nuget [\#121](https://github.com/nanoframework/System.Device.WiFi/pull/121)
+- Moving System.Threading from shared project to nuget [\#121](https://github.com/nanoframework/System.Device.Wifi/pull/121)
 
 **Documentation and other chores:**
 
-- Update 1 nuget dependencies [\#120](https://github.com/nanoframework/System.Device.WiFi/pull/120)
-- Update 2 nuget dependencies [\#119](https://github.com/nanoframework/System.Device.WiFi/pull/119)
+- Update 1 nuget dependencies [\#120](https://github.com/nanoframework/System.Device.Wifi/pull/120)
+- Update 2 nuget dependencies [\#119](https://github.com/nanoframework/System.Device.Wifi/pull/119)
 
 ## [v1.3.2-preview.50](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.50) (2021-06-07)
 
@@ -477,7 +507,7 @@
 
 **Documentation and other chores:**
 
-- Update 6 NuGet dependencies [\#118](https://github.com/nanoframework/System.Device.WiFi/pull/118)
+- Update 6 NuGet dependencies [\#118](https://github.com/nanoframework/System.Device.Wifi/pull/118)
 
 ## [v1.3.2-preview.48](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.48) (2021-06-07)
 
@@ -485,7 +515,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 nuget dependencies [\#117](https://github.com/nanoframework/System.Device.WiFi/pull/117)
+- Update 2 nuget dependencies [\#117](https://github.com/nanoframework/System.Device.Wifi/pull/117)
 
 ## [v1.3.2-preview.46](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.46) (2021-06-06)
 
@@ -493,7 +523,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#116](https://github.com/nanoframework/System.Device.WiFi/pull/116)
+- Update 2 NuGet dependencies [\#116](https://github.com/nanoframework/System.Device.Wifi/pull/116)
 
 ## [v1.3.2-preview.44](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.44) (2021-06-06)
 
@@ -501,7 +531,7 @@
 
 **Documentation and other chores:**
 
-- Update 1 nuget dependencies [\#115](https://github.com/nanoframework/System.Device.WiFi/pull/115)
+- Update 1 nuget dependencies [\#115](https://github.com/nanoframework/System.Device.Wifi/pull/115)
 
 ## [v1.3.2-preview.42](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.42) (2021-06-05)
 
@@ -513,7 +543,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 nuget dependencies [\#114](https://github.com/nanoframework/System.Device.WiFi/pull/114)
+- Update 2 nuget dependencies [\#114](https://github.com/nanoframework/System.Device.Wifi/pull/114)
 
 ## [v1.3.2-preview.38](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.38) (2021-06-04)
 
@@ -525,7 +555,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#109](https://github.com/nanoframework/System.Device.WiFi/pull/109)
+- Update 2 NuGet dependencies [\#109](https://github.com/nanoframework/System.Device.Wifi/pull/109)
 
 ## [v1.3.2-preview.35](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.35) (2021-05-19)
 
@@ -533,7 +563,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#108](https://github.com/nanoframework/System.Device.WiFi/pull/108)
+- Update 2 NuGet dependencies [\#108](https://github.com/nanoframework/System.Device.Wifi/pull/108)
 
 ## [v1.3.2-preview.34](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.34) (2021-05-13)
 
@@ -541,7 +571,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#107](https://github.com/nanoframework/System.Device.WiFi/pull/107)
+- Update 2 NuGet dependencies [\#107](https://github.com/nanoframework/System.Device.Wifi/pull/107)
 
 ## [v1.3.2-preview.33](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.33) (2021-05-11)
 
@@ -549,7 +579,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#106](https://github.com/nanoframework/System.Device.WiFi/pull/106)
+- Update 2 NuGet dependencies [\#106](https://github.com/nanoframework/System.Device.Wifi/pull/106)
 
 ## [v1.3.2-preview.29](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.29) (2021-04-08)
 
@@ -557,7 +587,7 @@
 
 **Implemented enhancements:**
 
-- Add alternative Connect method  [\#105](https://github.com/nanoframework/System.Device.WiFi/pull/105)
+- Add alternative Connect method  [\#105](https://github.com/nanoframework/System.Device.Wifi/pull/105)
 
 ## [v1.3.2-preview.26](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.26) (2021-03-21)
 
@@ -565,7 +595,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#102](https://github.com/nanoframework/System.Device.WiFi/pull/102)
+- Update 2 NuGet dependencies [\#102](https://github.com/nanoframework/System.Device.Wifi/pull/102)
 
 ## [v1.3.2-preview.24](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.24) (2021-03-02)
 
@@ -573,7 +603,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#101](https://github.com/nanoframework/System.Device.WiFi/pull/101)
+- Update 2 NuGet dependencies [\#101](https://github.com/nanoframework/System.Device.Wifi/pull/101)
 
 ## [v1.3.2-preview.21](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.21) (2021-01-06)
 
@@ -581,7 +611,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#100](https://github.com/nanoframework/System.Device.WiFi/pull/100)
+- Update 2 NuGet dependencies [\#100](https://github.com/nanoframework/System.Device.Wifi/pull/100)
 
 ## [v1.3.2-preview.19](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.19) (2020-12-29)
 
@@ -589,7 +619,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#99](https://github.com/nanoframework/System.Device.WiFi/pull/99)
+- Update 2 NuGet dependencies [\#99](https://github.com/nanoframework/System.Device.Wifi/pull/99)
 
 ## [v1.3.2-preview.17](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.17) (2020-12-28)
 
@@ -597,8 +627,8 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#98](https://github.com/nanoframework/System.Device.WiFi/pull/98)
-- Update 2 NuGet dependencies [\#97](https://github.com/nanoframework/System.Device.WiFi/pull/97)
+- Update 2 NuGet dependencies [\#98](https://github.com/nanoframework/System.Device.Wifi/pull/98)
+- Update 2 NuGet dependencies [\#97](https://github.com/nanoframework/System.Device.Wifi/pull/97)
 
 ## [v1.3.2-preview.14](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.14) (2020-12-07)
 
@@ -606,8 +636,8 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#96](https://github.com/nanoframework/System.Device.WiFi/pull/96)
-- Update 2 NuGet dependencies [\#94](https://github.com/nanoframework/System.Device.WiFi/pull/94)
+- Update 2 NuGet dependencies [\#96](https://github.com/nanoframework/System.Device.Wifi/pull/96)
+- Update 2 NuGet dependencies [\#94](https://github.com/nanoframework/System.Device.Wifi/pull/94)
 
 ## [v1.3.2-preview.11](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.11) (2020-10-20)
 
@@ -615,7 +645,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#93](https://github.com/nanoframework/System.Device.WiFi/pull/93)
+- Update 2 NuGet dependencies [\#93](https://github.com/nanoframework/System.Device.Wifi/pull/93)
 
 ## [v1.3.2-preview.9](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.9) (2020-09-30)
 
@@ -623,7 +653,7 @@
 
 **Documentation and other chores:**
 
-- Bumps nanoFramework.Runtime.Events from 1.8.2-preview.3 to 1.8.2-preview.5 [\#92](https://github.com/nanoframework/System.Device.WiFi/pull/92)
+- Bumps nanoFramework.Runtime.Events from 1.8.2-preview.3 to 1.8.2-preview.5 [\#92](https://github.com/nanoframework/System.Device.Wifi/pull/92)
 
 ## [v1.3.2-preview.7](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.7) (2020-09-30)
 
@@ -631,7 +661,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#91](https://github.com/nanoframework/System.Device.WiFi/pull/91)
+- Update 2 NuGet dependencies [\#91](https://github.com/nanoframework/System.Device.Wifi/pull/91)
 
 ## [v1.3.2-preview.5](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.5) (2020-09-27)
 
@@ -639,7 +669,7 @@
 
 **Documentation and other chores:**
 
-- Bumps nanoFramework.Runtime.Events from 1.8.1-preview.22 to 1.8.2-preview.1 [\#90](https://github.com/nanoframework/System.Device.WiFi/pull/90)
+- Bumps nanoFramework.Runtime.Events from 1.8.1-preview.22 to 1.8.2-preview.1 [\#90](https://github.com/nanoframework/System.Device.Wifi/pull/90)
 
 ## [v1.3.2-preview.1](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.2-preview.1) (2020-09-24)
 
@@ -647,7 +677,7 @@
 
 **Documentation and other chores:**
 
-- Update dependencies [\#89](https://github.com/nanoframework/System.Device.WiFi/pull/89)
+- Update dependencies [\#89](https://github.com/nanoframework/System.Device.Wifi/pull/89)
 
 ## [v1.3.1-preview.6](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.1-preview.6) (2020-07-02)
 
@@ -655,7 +685,7 @@
 
 **Documentation and other chores:**
 
-- Bumps nanoFramework.Runtime.Events from 1.8.1-alpha.18 to 1.8.1-preview.22 [\#88](https://github.com/nanoframework/System.Device.WiFi/pull/88)
+- Bumps nanoFramework.Runtime.Events from 1.8.1-alpha.18 to 1.8.1-preview.22 [\#88](https://github.com/nanoframework/System.Device.Wifi/pull/88)
 
 ## [v1.3.1-preview.4](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.1-preview.4) (2020-07-01)
 
@@ -663,11 +693,15 @@
 
 **Documentation and other chores:**
 
-- Bumps nanoFramework.Runtime.Events from 1.8.0 to 1.8.1-alpha.18 [\#87](https://github.com/nanoframework/System.Device.WiFi/pull/87)
+- Bumps nanoFramework.Runtime.Events from 1.8.0 to 1.8.1-alpha.18 [\#87](https://github.com/nanoframework/System.Device.Wifi/pull/87)
 
 ## [v1.3.0](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.0) (2020-06-16)
 
 [Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.3.1-preview.2...v1.3.0)
+
+**Documentation and other chores:**
+
+- Release release-v1.3.0 [\#86](https://github.com/nanoframework/System.Device.Wifi/pull/86)
 
 ## [v1.3.1-preview.2](https://github.com/nanoframework/System.Device.WiFi/tree/v1.3.1-preview.2) (2020-06-16)
 
@@ -679,11 +713,15 @@
 
 **Documentation and other chores:**
 
-- Bumps nanoFramework.Runtime.Events from 1.4.2 to 1.8.0 [\#85](https://github.com/nanoframework/System.Device.WiFi/pull/85)
+- Bumps nanoFramework.Runtime.Events from 1.4.2 to 1.8.0 [\#85](https://github.com/nanoframework/System.Device.Wifi/pull/85)
 
 ## [v1.2.0](https://github.com/nanoframework/System.Device.WiFi/tree/v1.2.0) (2020-06-12)
 
 [Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.2.0-preview.24...v1.2.0)
+
+**Documentation and other chores:**
+
+- Release release-v1.2.0 [\#84](https://github.com/nanoframework/System.Device.Wifi/pull/84)
 
 ## [v1.2.0-preview.24](https://github.com/nanoframework/System.Device.WiFi/tree/v1.2.0-preview.24) (2020-06-12)
 
@@ -691,7 +729,7 @@
 
 **Documentation and other chores:**
 
-- Bumps nanoFramework.Runtime.Events from 1.4.2-preview.11 to 1.4.2 [\#83](https://github.com/nanoframework/System.Device.WiFi/pull/83)
+- Bumps nanoFramework.Runtime.Events from 1.4.2-preview.11 to 1.4.2 [\#83](https://github.com/nanoframework/System.Device.Wifi/pull/83)
 
 ## [v1.2.0-preview.22](https://github.com/nanoframework/System.Device.WiFi/tree/v1.2.0-preview.22) (2020-06-11)
 
@@ -699,7 +737,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#82](https://github.com/nanoframework/System.Device.WiFi/pull/82)
+- Update 2 NuGet dependencies [\#82](https://github.com/nanoframework/System.Device.Wifi/pull/82)
 
 ## [v1.2.0-preview.20](https://github.com/nanoframework/System.Device.WiFi/tree/v1.2.0-preview.20) (2020-05-29)
 
@@ -707,7 +745,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#81](https://github.com/nanoframework/System.Device.WiFi/pull/81)
+- Update 2 NuGet dependencies [\#81](https://github.com/nanoframework/System.Device.Wifi/pull/81)
 
 ## [v1.2.0-preview.19](https://github.com/nanoframework/System.Device.WiFi/tree/v1.2.0-preview.19) (2020-05-08)
 
@@ -715,7 +753,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#80](https://github.com/nanoframework/System.Device.WiFi/pull/80)
+- Update 2 NuGet dependencies [\#80](https://github.com/nanoframework/System.Device.Wifi/pull/80)
 
 ## [v1.2.0-preview.18](https://github.com/nanoframework/System.Device.WiFi/tree/v1.2.0-preview.18) (2020-05-08)
 
@@ -723,7 +761,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#79](https://github.com/nanoframework/System.Device.WiFi/pull/79)
+- Update 2 NuGet dependencies [\#79](https://github.com/nanoframework/System.Device.Wifi/pull/79)
 
 ## [v1.2.0-preview.17](https://github.com/nanoframework/System.Device.WiFi/tree/v1.2.0-preview.17) (2020-04-27)
 
@@ -731,7 +769,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#78](https://github.com/nanoframework/System.Device.WiFi/pull/78)
+- Update 2 NuGet dependencies [\#78](https://github.com/nanoframework/System.Device.Wifi/pull/78)
 
 ## [v1.2.0-preview.16](https://github.com/nanoframework/System.Device.WiFi/tree/v1.2.0-preview.16) (2020-04-16)
 
@@ -739,7 +777,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#77](https://github.com/nanoframework/System.Device.WiFi/pull/77)
+- Update 2 NuGet dependencies [\#77](https://github.com/nanoframework/System.Device.Wifi/pull/77)
 
 ## [v1.2.0-preview.15](https://github.com/nanoframework/System.Device.WiFi/tree/v1.2.0-preview.15) (2020-04-14)
 
@@ -747,7 +785,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#76](https://github.com/nanoframework/System.Device.WiFi/pull/76)
+- Update 2 NuGet dependencies [\#76](https://github.com/nanoframework/System.Device.Wifi/pull/76)
 
 ## [v1.2.0-preview.14](https://github.com/nanoframework/System.Device.WiFi/tree/v1.2.0-preview.14) (2020-03-15)
 
@@ -755,8 +793,8 @@
 
 **Documentation and other chores:**
 
-- Bumps nanoFramework.Runtime.Events from 1.4.1-preview.9 to 1.4.2-preview.1 [\#75](https://github.com/nanoframework/System.Device.WiFi/pull/75)
-- Update 2 NuGet dependencies [\#74](https://github.com/nanoframework/System.Device.WiFi/pull/74)
+- Bumps nanoFramework.Runtime.Events from 1.4.1-preview.9 to 1.4.2-preview.1 [\#75](https://github.com/nanoframework/System.Device.Wifi/pull/75)
+- Update 2 NuGet dependencies [\#74](https://github.com/nanoframework/System.Device.Wifi/pull/74)
 
 ## [v1.2.0-preview.12](https://github.com/nanoframework/System.Device.WiFi/tree/v1.2.0-preview.12) (2020-03-10)
 
@@ -764,7 +802,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#73](https://github.com/nanoframework/System.Device.WiFi/pull/73)
+- Update 2 NuGet dependencies [\#73](https://github.com/nanoframework/System.Device.Wifi/pull/73)
 
 ## [v1.2.0-preview.11](https://github.com/nanoframework/System.Device.WiFi/tree/v1.2.0-preview.11) (2020-03-09)
 
@@ -772,7 +810,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#71](https://github.com/nanoframework/System.Device.WiFi/pull/71)
+- Update 2 NuGet dependencies [\#71](https://github.com/nanoframework/System.Device.Wifi/pull/71)
 
 ## [v1.2.0-preview.9](https://github.com/nanoframework/System.Device.WiFi/tree/v1.2.0-preview.9) (2019-11-18)
 
@@ -780,7 +818,7 @@
 
 **Fixed bugs:**
 
-- Fix SSID from reported networks [\#70](https://github.com/nanoframework/System.Device.WiFi/pull/70)
+- Fix SSID from reported networks [\#70](https://github.com/nanoframework/System.Device.Wifi/pull/70)
 
 ## [v1.2.0-preview.8](https://github.com/nanoframework/System.Device.WiFi/tree/v1.2.0-preview.8) (2019-11-14)
 
@@ -788,7 +826,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#69](https://github.com/nanoframework/System.Device.WiFi/pull/69)
+- Update 2 NuGet dependencies [\#69](https://github.com/nanoframework/System.Device.Wifi/pull/69)
 
 ## [v1.2.0-preview.7](https://github.com/nanoframework/System.Device.WiFi/tree/v1.2.0-preview.7) (2019-11-07)
 
@@ -796,7 +834,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#68](https://github.com/nanoframework/System.Device.WiFi/pull/68)
+- Update 2 NuGet dependencies [\#68](https://github.com/nanoframework/System.Device.Wifi/pull/68)
 
 ## [v1.2.0-preview.6](https://github.com/nanoframework/System.Device.WiFi/tree/v1.2.0-preview.6) (2019-11-05)
 
@@ -804,7 +842,7 @@
 
 **Documentation and other chores:**
 
-- Bumps nanoFramework.Runtime.Events from 1.4.1-preview.1 to 1.4.1-preview.2 [\#67](https://github.com/nanoframework/System.Device.WiFi/pull/67)
+- Bumps nanoFramework.Runtime.Events from 1.4.1-preview.1 to 1.4.1-preview.2 [\#67](https://github.com/nanoframework/System.Device.Wifi/pull/67)
 
 ## [v1.2.0-preview.5](https://github.com/nanoframework/System.Device.WiFi/tree/v1.2.0-preview.5) (2019-11-04)
 
@@ -812,11 +850,16 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#66](https://github.com/nanoframework/System.Device.WiFi/pull/66)
+- Update 2 NuGet dependencies [\#66](https://github.com/nanoframework/System.Device.Wifi/pull/66)
 
 ## [v1.1.0](https://github.com/nanoframework/System.Device.WiFi/tree/v1.1.0) (2019-10-30)
 
 [Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.2.0-preview.4...v1.1.0)
+
+**Documentation and other chores:**
+
+- Release release-v1.1.0 [\#62](https://github.com/nanoframework/System.Device.Wifi/pull/62)
+- Update 2 NuGet dependencies [\#57](https://github.com/nanoframework/System.Device.Wifi/pull/57)
 
 ## [v1.2.0-preview.4](https://github.com/nanoframework/System.Device.WiFi/tree/v1.2.0-preview.4) (2019-10-23)
 
@@ -824,7 +867,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#64](https://github.com/nanoframework/System.Device.WiFi/pull/64)
+- Update 2 NuGet dependencies [\#64](https://github.com/nanoframework/System.Device.Wifi/pull/64)
 
 ## [v1.2.0-preview.3](https://github.com/nanoframework/System.Device.WiFi/tree/v1.2.0-preview.3) (2019-10-18)
 
@@ -832,7 +875,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#63](https://github.com/nanoframework/System.Device.WiFi/pull/63)
+- Update 2 NuGet dependencies [\#63](https://github.com/nanoframework/System.Device.Wifi/pull/63)
 
 ## [v1.1.0-preview.3](https://github.com/nanoframework/System.Device.WiFi/tree/v1.1.0-preview.3) (2019-10-17)
 
@@ -840,11 +883,15 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#61](https://github.com/nanoframework/System.Device.WiFi/pull/61)
+- Update 2 NuGet dependencies [\#61](https://github.com/nanoframework/System.Device.Wifi/pull/61)
 
 ## [v1.0.7](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.7) (2019-10-15)
 
 [Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.0.7-preview.26...v1.0.7)
+
+**Documentation and other chores:**
+
+- Release v1.0.7 [\#56](https://github.com/nanoframework/System.Device.Wifi/pull/56)
 
 ## [v1.0.7-preview.26](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.7-preview.26) (2019-10-15)
 
@@ -852,7 +899,7 @@
 
 **Documentation and other chores:**
 
-- Bumps nanoFramework.Runtime.Events from 1.1.1-preview.4 to 1.1.1 [\#55](https://github.com/nanoframework/System.Device.WiFi/pull/55)
+- Bumps nanoFramework.Runtime.Events from 1.1.1-preview.4 to 1.1.1 [\#55](https://github.com/nanoframework/System.Device.Wifi/pull/55)
 
 ## [v1.0.7-preview.25](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.7-preview.25) (2019-10-15)
 
@@ -860,7 +907,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#54](https://github.com/nanoframework/System.Device.WiFi/pull/54)
+- Update 2 NuGet dependencies [\#54](https://github.com/nanoframework/System.Device.Wifi/pull/54)
 
 ## [v1.0.7-preview.24](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.7-preview.24) (2019-09-30)
 
@@ -868,7 +915,7 @@
 
 **Documentation and other chores:**
 
-- Bumps nanoFramework.Runtime.Events from 1.1.0-preview.4 to 1.1.1-preview.1 [\#53](https://github.com/nanoframework/System.Device.WiFi/pull/53)
+- Bumps nanoFramework.Runtime.Events from 1.1.0-preview.4 to 1.1.1-preview.1 [\#53](https://github.com/nanoframework/System.Device.Wifi/pull/53)
 
 ## [v1.0.7-preview.22](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.7-preview.22) (2019-08-23)
 
@@ -876,7 +923,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#52](https://github.com/nanoframework/System.Device.WiFi/pull/52)
+- Update 2 NuGet dependencies [\#52](https://github.com/nanoframework/System.Device.Wifi/pull/52)
 
 ## [v1.0.7-preview.17](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.7-preview.17) (2019-07-18)
 
@@ -884,8 +931,8 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#51](https://github.com/nanoframework/System.Device.WiFi/pull/51)
-- Update readme.txt [\#50](https://github.com/nanoframework/System.Device.WiFi/pull/50)
+- Update 2 NuGet dependencies [\#51](https://github.com/nanoframework/System.Device.Wifi/pull/51)
+- Update readme.txt [\#50](https://github.com/nanoframework/System.Device.Wifi/pull/50)
 
 ## [v1.0.7-preview.14](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.7-preview.14) (2019-06-23)
 
@@ -893,8 +940,8 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#49](https://github.com/nanoframework/System.Device.WiFi/pull/49)
-- Work on native assembly declaration [\#47](https://github.com/nanoframework/System.Device.WiFi/pull/47)
+- Update 2 NuGet dependencies [\#49](https://github.com/nanoframework/System.Device.Wifi/pull/49)
+- Work on native assembly declaration [\#47](https://github.com/nanoframework/System.Device.Wifi/pull/47)
 
 ## [v1.0.7-preview.9](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.7-preview.9) (2019-06-20)
 
@@ -902,7 +949,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#46](https://github.com/nanoframework/System.Device.WiFi/pull/46)
+- Update 2 NuGet dependencies [\#46](https://github.com/nanoframework/System.Device.Wifi/pull/46)
 
 ## [v1.0.7-preview.6](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.7-preview.6) (2019-06-12)
 
@@ -910,7 +957,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#45](https://github.com/nanoframework/System.Device.WiFi/pull/45)
+- Update 2 NuGet dependencies [\#45](https://github.com/nanoframework/System.Device.Wifi/pull/45)
 
 ## [v1.0.7-preview.2](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.7-preview.2) (2019-06-12)
 
@@ -918,7 +965,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#44](https://github.com/nanoframework/System.Device.WiFi/pull/44)
+- Update 2 NuGet dependencies [\#44](https://github.com/nanoframework/System.Device.Wifi/pull/44)
 
 ## [v1.0.6-preview-009](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.6-preview-009) (2019-04-24)
 
@@ -926,7 +973,7 @@
 
 **Documentation and other chores:**
 
-- Bumps nanoFramework.Runtime.Events from 1.0.5-preview-019 to 1.0.6-preview-001 [\#39](https://github.com/nanoframework/System.Device.WiFi/pull/39)
+- Bumps nanoFramework.Runtime.Events from 1.0.5-preview-019 to 1.0.6-preview-001 [\#39](https://github.com/nanoframework/System.Device.Wifi/pull/39)
 
 ## [v1.0.6-preview-008](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.6-preview-008) (2019-04-23)
 
@@ -934,7 +981,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#38](https://github.com/nanoframework/System.Device.WiFi/pull/38)
+- Update 2 NuGet dependencies [\#38](https://github.com/nanoframework/System.Device.Wifi/pull/38)
 
 ## [v1.0.6-preview-002](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.6-preview-002) (2019-04-07)
 
@@ -942,7 +989,7 @@
 
 **Documentation and other chores:**
 
-- Bumps nanoFramework.Runtime.Events from 1.0.5-preview-010 to 1.0.5-preview-012 [\#37](https://github.com/nanoframework/System.Device.WiFi/pull/37)
+- Bumps nanoFramework.Runtime.Events from 1.0.5-preview-010 to 1.0.5-preview-012 [\#37](https://github.com/nanoframework/System.Device.Wifi/pull/37)
 
 ## [v1.0.6-preview-001](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.6-preview-001) (2019-04-07)
 
@@ -954,7 +1001,7 @@
 
 **Documentation and other chores:**
 
-- Bumps nanoFramework.Runtime.Events from 1.0.5-preview-008 to 1.0.5-preview-010 [\#36](https://github.com/nanoframework/System.Device.WiFi/pull/36)
+- Bumps nanoFramework.Runtime.Events from 1.0.5-preview-008 to 1.0.5-preview-010 [\#36](https://github.com/nanoframework/System.Device.Wifi/pull/36)
 
 ## [v1.0.4-preview-005](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.4-preview-005) (2019-03-11)
 
@@ -962,7 +1009,7 @@
 
 **Documentation and other chores:**
 
-- Bumps nanoFramework.Runtime.Events from 1.0.5-preview-007 to 1.0.5-preview-008 [\#35](https://github.com/nanoframework/System.Device.WiFi/pull/35)
+- Bumps nanoFramework.Runtime.Events from 1.0.5-preview-007 to 1.0.5-preview-008 [\#35](https://github.com/nanoframework/System.Device.Wifi/pull/35)
 
 ## [v1.0.4-preview-003](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.4-preview-003) (2019-03-10)
 
@@ -970,7 +1017,7 @@
 
 **Documentation and other chores:**
 
-- Bumps nanoFramework.Runtime.Events from 1.0.5-preview-003 to 1.0.5-preview-007 [\#34](https://github.com/nanoframework/System.Device.WiFi/pull/34)
+- Bumps nanoFramework.Runtime.Events from 1.0.5-preview-003 to 1.0.5-preview-007 [\#34](https://github.com/nanoframework/System.Device.Wifi/pull/34)
 
 ## [v1.0.4-preview-001](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.4-preview-001) (2019-03-07)
 
@@ -982,18 +1029,26 @@
 
 **Documentation and other chores:**
 
-- Bumps nanoFramework.Runtime.Events from 1.0.4 to 1.0.5-preview-003 [\#33](https://github.com/nanoframework/System.Device.WiFi/pull/33)
-- Update 2 NuGet dependencies [\#31](https://github.com/nanoframework/System.Device.WiFi/pull/31)
-- Merge back from Release v1.0.2 [\#30](https://github.com/nanoframework/System.Device.WiFi/pull/30)
-- Update 2 NuGet dependencies [\#28](https://github.com/nanoframework/System.Device.WiFi/pull/28)
+- Bumps nanoFramework.Runtime.Events from 1.0.4 to 1.0.5-preview-003 [\#33](https://github.com/nanoframework/System.Device.Wifi/pull/33)
 
 ## [v1.0.4](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.4) (2019-01-22)
 
 [Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.0.2...v1.0.4)
 
+**Documentation and other chores:**
+
+- Release v1.0.4 [\#32](https://github.com/nanoframework/System.Device.Wifi/pull/32)
+- Update 2 NuGet dependencies [\#31](https://github.com/nanoframework/System.Device.Wifi/pull/31)
+- Merge back from Release v1.0.2 [\#30](https://github.com/nanoframework/System.Device.Wifi/pull/30)
+
 ## [v1.0.2](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.2) (2018-12-15)
 
 [Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.0.2-preview-017...v1.0.2)
+
+**Documentation and other chores:**
+
+- Release v1.0.2 [\#29](https://github.com/nanoframework/System.Device.Wifi/pull/29)
+- Update 2 NuGet dependencies [\#28](https://github.com/nanoframework/System.Device.Wifi/pull/28)
 
 ## [v1.0.2-preview-017](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.2-preview-017) (2018-12-03)
 
@@ -1001,7 +1056,7 @@
 
 **Documentation and other chores:**
 
-- Bumps nanoFramework.Runtime.Events from 1.0.2-preview-021 to 1.0.2-preview-023 [\#25](https://github.com/nanoframework/System.Device.WiFi/pull/25)
+- Bumps nanoFramework.Runtime.Events from 1.0.2-preview-021 to 1.0.2-preview-023 [\#25](https://github.com/nanoframework/System.Device.Wifi/pull/25)
 
 ## [v1.0.2-preview-015](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.2-preview-015) (2018-11-30)
 
@@ -1009,7 +1064,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#24](https://github.com/nanoframework/System.Device.WiFi/pull/24)
+- Update 2 NuGet dependencies [\#24](https://github.com/nanoframework/System.Device.Wifi/pull/24)
 
 ## [v1.0.2-preview-011](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.2-preview-011) (2018-11-20)
 
@@ -1017,7 +1072,7 @@
 
 **Documentation and other chores:**
 
-- Update 2 NuGet dependencies [\#22](https://github.com/nanoframework/System.Device.WiFi/pull/22)
+- Update 2 NuGet dependencies [\#22](https://github.com/nanoframework/System.Device.Wifi/pull/22)
 
 ## [v1.0.2-preview-007](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.2-preview-007) (2018-11-08)
 
@@ -1029,17 +1084,22 @@
 
 **Documentation and other chores:**
 
-- Bumps nanoFramework.CoreLibrary from 1.0.4 to 1.0.6-preview-001 [\#20](https://github.com/nanoframework/System.Device.WiFi/pull/20)
-- Merge back changes from Release 1.0.0 [\#16](https://github.com/nanoframework/System.Device.WiFi/pull/16)
-- Update 2 NuGet dependencies [\#10](https://github.com/nanoframework/System.Device.WiFi/pull/10)
-- Update 2 NuGet dependencies [\#9](https://github.com/nanoframework/System.Device.WiFi/pull/9)
-- Update 2 NuGet dependencies [\#8](https://github.com/nanoframework/System.Device.WiFi/pull/8)
-- Bump nanoFramework.Runtime.Events from 1.0.0-preview188 to 1.0.0-preview191 in /source [\#3](https://github.com/nanoframework/System.Device.WiFi/pull/3)
-- Bump nanoFramework.CoreLibrary and nanoFramework.Runtime.Events in /source [\#1](https://github.com/nanoframework/System.Device.WiFi/pull/1)
+- Bumps nanoFramework.CoreLibrary from 1.0.4 to 1.0.6-preview-001 [\#20](https://github.com/nanoframework/System.Device.Wifi/pull/20)
+- Merge back changes from Release 1.0.0 [\#16](https://github.com/nanoframework/System.Device.Wifi/pull/16)
 
 ## [v1.0.0](https://github.com/nanoframework/System.Device.WiFi/tree/v1.0.0) (2018-10-17)
 
 [Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/df794f3bfaa2a7d30d25883e06e025ab7a51d8e9...v1.0.0)
+
+**Documentation and other chores:**
+
+- Merge 'develop' for Release 1.0.0 [\#15](https://github.com/nanoframework/System.Device.Wifi/pull/15)
+- Update 2 NuGet dependencies [\#14](https://github.com/nanoframework/System.Device.Wifi/pull/14)
+- Update 2 NuGet dependencies [\#10](https://github.com/nanoframework/System.Device.Wifi/pull/10)
+- Update 2 NuGet dependencies [\#9](https://github.com/nanoframework/System.Device.Wifi/pull/9)
+- Update 2 NuGet dependencies [\#8](https://github.com/nanoframework/System.Device.Wifi/pull/8)
+- Bump nanoFramework.Runtime.Events from 1.0.0-preview188 to 1.0.0-preview191 in /source [\#3](https://github.com/nanoframework/System.Device.Wifi/pull/3)
+- Bump nanoFramework.CoreLibrary and nanoFramework.Runtime.Events in /source [\#1](https://github.com/nanoframework/System.Device.Wifi/pull/1)
 
 
 
