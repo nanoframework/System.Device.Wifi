@@ -3,18 +3,18 @@
 // See LICENSE file in the project root for full license information.
 //
 
-namespace System.Device.WiFi
+namespace System.Device.Wifi
 {
     /// <summary>
-    /// Describes an available WiFi network.
+    /// Describes an available Wifi network.
     /// </summary>
-    public class WiFiAvailableNetwork
+    public class WifiAvailableNetwork
     {
         internal string _bsid = "";
         internal string _ssid = "";
         internal sbyte _rssi = 0;
 
-        private readonly WiFiNetworkKind _networkKind = WiFiNetworkKind.Any;
+        private readonly WifiNetworkKind _networkKind = WifiNetworkKind.Any;
 
         /// <summary>
         /// Gets the MAC address of the access point.
@@ -30,7 +30,7 @@ namespace System.Device.WiFi
         /// <summary>
         /// Gets a value describing the kind of network being described.
         /// </summary>
-        public WiFiNetworkKind NetworkKind { get { return _networkKind; } }
+        public WifiNetworkKind NetworkKind { get { return _networkKind; } }
 
         /// <summary>
         /// Gets the signal strength of the network in Ddm

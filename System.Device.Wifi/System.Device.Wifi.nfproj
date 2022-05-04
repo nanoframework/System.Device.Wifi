@@ -40,16 +40,16 @@
   <Import Project="$(NanoFrameworkProjectSystemPath)NFProjectSystem.props" Condition="Exists('$(NanoFrameworkProjectSystemPath)NFProjectSystem.props')" />
   <ItemGroup>
     <Compile Include="Friends.cs" />
-    <Compile Include="NetworkHelper\WiFiNetworkHelper.cs" />
-    <Compile Include="WiFIEvent.cs" />
-    <Compile Include="WiFiEventListener.cs" />
-    <Compile Include="WiFiAdapter.cs" />
-    <Compile Include="WiFiAvailableNetwork.cs" />
-    <Compile Include="WiFiConnectionResult.cs" />
-    <Compile Include="WiFiConnectionStatus.cs" />
-    <Compile Include="WiFiNetworkKind.cs" />
-    <Compile Include="WiFiNetworkReport.cs" />
-    <Compile Include="WiFiReconnectionKind.cs" />
+    <Compile Include="NetworkHelper\WifiNetworkHelper.cs" />
+    <Compile Include="WifiEvent.cs" />
+    <Compile Include="WifiEventListener.cs" />
+    <Compile Include="WifiAdapter.cs" />
+    <Compile Include="WifiAvailableNetwork.cs" />
+    <Compile Include="WifiConnectionResult.cs" />
+    <Compile Include="WifiConnectionStatus.cs" />
+    <Compile Include="WifiNetworkKind.cs" />
+    <Compile Include="WifiNetworkReport.cs" />
+    <Compile Include="WifiReconnectionKind.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

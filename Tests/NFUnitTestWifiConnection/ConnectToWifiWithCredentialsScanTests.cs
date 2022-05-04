@@ -30,7 +30,7 @@ namespace NFUnitTestWifiConnection
             // Give 10 seconds to the WiFi join to happen
             CancellationTokenSource cs = new(10000);
 
-            var success = WiFiNetworkHelper.ScanAndConnectDhcp(
+            var success = WifiNetworkHelper.ScanAndConnectDhcp(
                 Ssid,
                 Password,
                 requiresDateTime: true,
@@ -39,38 +39,38 @@ namespace NFUnitTestWifiConnection
             ConnectToWifiWithCredentialsTests.DisplayLastError(success);
 
             Assert.True(success);
-            Assert.Null(WiFiNetworkHelper.HelperException);
+            Assert.Null(WifiNetworkHelper.HelperException);
 
             // need to reset this internal flag to allow calling the NetworkHelper again
-            WiFiNetworkHelper.ResetInstance();
+            WifiNetworkHelper.ResetInstance();
         }
 
         [TestMethod]
         public void TestDhcp_01()
         {
-            WiFiNetworkHelper.SetupNetworkHelper(
+            WifiNetworkHelper.SetupNetworkHelper(
                 Ssid,
                 Password,
                 requiresDateTime: true);
 
             // wait 10 seconds to connect to the network and get an IP address
-            Assert.True(WiFiNetworkHelper.NetworkReady.WaitOne(10000, true));
-            Assert.Null(WiFiNetworkHelper.HelperException);
+            Assert.True(WifiNetworkHelper.NetworkReady.WaitOne(10000, true));
+            Assert.Null(WifiNetworkHelper.HelperException);
 
             // need to reset this internal flag to allow calling the NetworkHelper again
-            WiFiNetworkHelper.ResetInstance();
+            WifiNetworkHelper.ResetInstance();
         }
 
         [TestMethod]
         public void TestDhcp_02()
         {
-            WiFiNetworkHelper.SetupNetworkHelper(true);
+            WifiNetworkHelper.SetupNetworkHelper(true);
 
             // wait 10 seconds to connect to the network and get an IP address
-            Assert.True(WiFiNetworkHelper.NetworkReady.WaitOne(10000, true));
+            Assert.True(WifiNetworkHelper.NetworkReady.WaitOne(10000, true));
 
             // need to reset this internal flag to allow calling the NetworkHelper again
-            WiFiNetworkHelper.ResetInstance();
+            WifiNetworkHelper.ResetInstance();
         }
 
         [TestMethod]
@@ -79,10 +79,10 @@ namespace NFUnitTestWifiConnection
             Assert.Throws(typeof(InvalidOperationException), () =>
             {
                 // call once, it's OK
-                WiFiNetworkHelper.SetupNetworkHelper();
+                WifiNetworkHelper.SetupNetworkHelper();
 
                 // call twice, it's a NO NO and should throw an exception
-                WiFiNetworkHelper.SetupNetworkHelper();
+                WifiNetworkHelper.SetupNetworkHelper();
             });
         }
     }

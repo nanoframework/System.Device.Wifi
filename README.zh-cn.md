@@ -5,19 +5,19 @@
 -----
 文档语言: [English](README.md) | [简体中文](README.zh-cn.md)
 
-### 欢迎使用 .NET **nanoFramework** System.Device.WiFi Library repository
+### 欢迎使用 .NET **nanoFramework** System.Device.Wifi Library repository
 
-这个存储库包含了nanoFramework System.Device.WiFi。  
+这个存储库包含了nanoFramework System.Device.Wifi。  
 
 ## 构建状态
 
 | Component | Build Status | NuGet Package |
 |:-|---|---|
-| System.Device.WiFi | [![Build Status](https://dev.azure.com/nanoframework/System.Device.WiFi/_apis/build/status/System.Device.WiFi?repoName=nanoframework%2FSystem.Device.WiFi&branchName=main)](https://dev.azure.com/nanoframework/System.Device.WiFi/_build/latest?definitionId=13&repoName=nanoframework%2FSystem.Device.WiFi&branchName=main) | [![NuGet](https://img.shields.io/nuget/v/nanoFramework.System.Device.WiFi.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.System.Device.WiFi/) |
+| System.Device.Wifi | [![Build Status](https://dev.azure.com/nanoframework/System.Device.Wifi/_apis/build/status/System.Device.Wifi?repoName=nanoframework%2FSystem.Device.Wifi&branchName=main)](https://dev.azure.com/nanoframework/System.Device.Wifi/_build/latest?definitionId=13&repoName=nanoframework%2FSystem.Device.Wifi&branchName=main) | [![NuGet](https://img.shields.io/nuget/v/nanoFramework.System.Device.Wifi.svg?label=NuGet&style=flat&logo=nuget)](https://www.nuget.org/packages/nanoFramework.System.Device.Wifi/) |
 
-## WiFiNetworkHelper用法
+## WifiNetworkHelper用法
 
-WiFiNetworkHelper主要用于帮助您自动连接到WiFi网络。 也就是说，它也可以用来检查您是否有一个有效的IP地址和有效的日期在任何接口，包括在以太网上。  
+WifiNetworkHelper主要用于帮助您自动连接到Wifi网络。 也就是说，它也可以用来检查您是否有一个有效的IP地址和有效的日期在任何接口，包括在以太网上。  
 
 ### 推荐用法
 
@@ -28,14 +28,14 @@ const string Ssid = "您的wifi名称";
 const string Password = "您的wifi密码";
 // 连接wifi超时时间60秒
 CancellationTokenSource cs = new(60000);
-var success = WiFiNetworkHelper.ConnectDhcp(Ssid, Password, setDateTime: true, token: cs.Token);
+var success = WifiNetworkHelper.ConnectDhcp(Ssid, Password, setDateTime: true, token: cs.Token);
 if (!success)
 {
     // 如果出现异常你可以通过 ConnectionError 获取异常的详情信息：
-    Debug.WriteLine($"无法连接到网络，错误: {WiFiWiFiNetworkHelper.Status}");
-    if (WiFiNetworkHelper.ConnectionError.Exception != null)
+    Debug.WriteLine($"无法连接到网络，错误: {WifiWifiNetworkHelper.Status}");
+    if (WifiNetworkHelper.ConnectionError.Exception != null)
     {
-        Debug.WriteLine($"ex: {WiFiWiFiNetworkHelper.HelperException}");
+        Debug.WriteLine($"ex: {WifiWifiNetworkHelper.HelperException}");
     }
 }
     //否则 连接成功，您已经拥有有效的IP和时间
@@ -48,7 +48,7 @@ if (!success)
 您还可以使用预先存储在设备上的证书连接到网络，这取决于您拥有的设备类型。 请检查您的设备是否有适当的支持。  
 
 ```csharp
-if (!WiFiNetworkHelper.IsConfigurationStored())
+if (!WifiNetworkHelper.IsConfigurationStored())
 {
     Debug.WriteLine("设备中没有配置信息");
 }
@@ -57,14 +57,14 @@ else
     // wifi证书已经存储在设备上  
     // 给连接wifi的超时时间60秒
     CancellationTokenSource cs = new(60000);
-    var success = WiFiNetworkHelper.Reconnect(setDateTime: true, token: cs.Token);
+    var success = WifiNetworkHelper.Reconnect(setDateTime: true, token: cs.Token);
     if (!success)
     {
         // 如果出现异常你可以通过 ConnectionError 获取异常的详情信息：
-        Debug.WriteLine($"无法连接到网络，错误: {WiFiWiFiNetworkHelper.Status}");
-        if (WiFiNetworkHelper.ConnectionError.Exception != null)
+        Debug.WriteLine($"无法连接到网络，错误: {WifiWifiNetworkHelper.Status}");
+        if (WifiNetworkHelper.ConnectionError.Exception != null)
         {
-            Debug.WriteLine($"ex: {WiFiWiFiNetworkHelper.HelperException}");
+            Debug.WriteLine($"ex: {WifiWifiNetworkHelper.HelperException}");
         }
     }
     //否则 连接成功，您已经拥有有效的IP和时间
@@ -80,14 +80,14 @@ const string Ssid = "您的wifi名称";
 const string Password = "您的wifi密码";
 // 连接wifi超时时间60秒
 CancellationTokenSource cs = new(60000);
-var success = WiFiNetworkHelper.ScanAndConnectDhcp(Ssid, Password, setDateTime: true, token: cs.Token);
+var success = WifiNetworkHelper.ScanAndConnectDhcp(Ssid, Password, setDateTime: true, token: cs.Token);
 if (!success)
 {
         // 如果出现异常你可以通过 ConnectionError 获取异常的详情信息：
-    Debug.WriteLine($"无法连接到网络，错误: {WiFiWiFiNetworkHelper.Status}");
-    if (WiFiNetworkHelper.ConnectionError.Exception != null)
+    Debug.WriteLine($"无法连接到网络，错误: {WifiWifiNetworkHelper.Status}");
+    if (WifiNetworkHelper.ConnectionError.Exception != null)
     {
-        Debug.WriteLine($"ex: {WiFiWiFiNetworkHelper.HelperException}");
+        Debug.WriteLine($"ex: {WifiWifiNetworkHelper.HelperException}");
     }
 }
     //否则 连接成功，您已经拥有有效的IP和时间
@@ -96,19 +96,19 @@ if (!success)
 
 ### 使用静态IP地址连接
 
-你可以用一个静态IP地址加入一个WiFi网络  :
+你可以用一个静态IP地址加入一个Wifi网络  :
 
 ```csharp
 const string Ssid = "您的wifi名称";
 const string Password = "您的wifi密码";
 // 连接wifi超时时间60秒
 CancellationTokenSource cs = new(60000);
-var success = WiFiNetworkHelper.ConnectFixAddress(Ssid, Password, new IPConfiguration("192.168.1.7", "255.255.255.0", "192.168.1.1"), setDateTime: true, token: cs.Token);
+var success = WifiNetworkHelper.ConnectFixAddress(Ssid, Password, new IPConfiguration("192.168.1.7", "255.255.255.0", "192.168.1.1"), setDateTime: true, token: cs.Token);
 ```
 
 ### 检查有效的IP地址和日期
 
-WiFiNetworkHelper提供了几个功能来检查您的IP地址的有效性，日期时间，并帮助设置它们 :
+WifiNetworkHelper提供了几个功能来检查您的IP地址的有效性，日期时间，并帮助设置它们 :
 
 ```csharp
 var success = IsValidDateTime();
@@ -127,9 +127,9 @@ var success = WaitForValidIPAndDate(true, NetworkInterfaceType.Ethernet, cs.Toke
 // 如果 success是true，那就连接成功
 ```
 
-## WiFiNetworkHelper用法
+## WifiNetworkHelper用法
 
-WiFiNetworkHelper主要用于帮助您自动连接到WiFi网络。 也就是说，它也可以用来检查您是否有一个有效的IP地址和有效的日期在任何接口，包括在以太网上。  
+WifiNetworkHelper主要用于帮助您自动连接到Wifi网络。 也就是说，它也可以用来检查您是否有一个有效的IP地址和有效的日期在任何接口，包括在以太网上。  
 
 ### 推荐用法
 
@@ -140,14 +140,14 @@ const string Ssid = "您的wifi名称";
 const string Password = "您的wifi密码";
 // 连接wifi超时时间60秒
 CancellationTokenSource cs = new(60000);
-var success = WiFiNetworkHelper.ConnectDhcp(Ssid, Password, setDateTime: true, token: cs.Token);
+var success = WifiNetworkHelper.ConnectDhcp(Ssid, Password, setDateTime: true, token: cs.Token);
 if (!success)
 {
     // 如果出现异常你可以通过 ConnectionError 获取异常的详情信息：
-    Debug.WriteLine($"无法连接到网络，错误: {WiFiWiFiNetworkHelper.Status}");
-    if (WiFiNetworkHelper.ConnectionError.Exception != null)
+    Debug.WriteLine($"无法连接到网络，错误: {WifiWifiNetworkHelper.Status}");
+    if (WifiNetworkHelper.ConnectionError.Exception != null)
     {
-        Debug.WriteLine($"ex: {WiFiWiFiNetworkHelper.HelperException}");
+        Debug.WriteLine($"ex: {WifiWifiNetworkHelper.HelperException}");
     }
 }
 //否则 连接成功，您已经拥有有效的IP和时间
@@ -162,14 +162,14 @@ if (!success)
 // wifi证书已经存储在设备上  
 // 给连接wifi的超时时间60秒
 CancellationTokenSource cs = new(60000);
-var success = WiFiNetworkHelper.Reconnect(setDateTime: true, token: cs.Token);
+var success = WifiNetworkHelper.Reconnect(setDateTime: true, token: cs.Token);
 if (!success)
 {
     // 如果出现异常你可以通过 ConnectionError 获取异常的详情信息：
-    Debug.WriteLine($"无法连接到网络，错误: {WiFiWiFiNetworkHelper.Status}");
-    if (WiFiNetworkHelper.ConnectionError.Exception != null)
+    Debug.WriteLine($"无法连接到网络，错误: {WifiWifiNetworkHelper.Status}");
+    if (WifiNetworkHelper.ConnectionError.Exception != null)
     {
-        Debug.WriteLine($"ex: {WiFiWiFiNetworkHelper.HelperException}");
+        Debug.WriteLine($"ex: {WifiWifiNetworkHelper.HelperException}");
     }
 }
 //否则 连接成功，您已经拥有有效的IP和时间
@@ -184,14 +184,14 @@ const string Ssid = "您的wifi名称";
 const string Password = "您的wifi密码";
 // 连接wifi超时时间60秒
 CancellationTokenSource cs = new(60000);
-var success = WiFiNetworkHelper.ScanAndConnectDhcp(Ssid, Password, setDateTime: true, token: cs.Token);
+var success = WifiNetworkHelper.ScanAndConnectDhcp(Ssid, Password, setDateTime: true, token: cs.Token);
 if (!success)
 {
     // 如果出现异常你可以通过 ConnectionError 获取异常的详情信息：
-    Debug.WriteLine($"Can't connect to the network, error: {WiFiWiFiNetworkHelper.Status}");
-    if (WiFiNetworkHelper.ConnectionError.Exception != null)
+    Debug.WriteLine($"Can't connect to the network, error: {WifiWifiNetworkHelper.Status}");
+    if (WifiNetworkHelper.ConnectionError.Exception != null)
     {
-        Debug.WriteLine($"ex: {WiFiWiFiNetworkHelper.HelperException}");
+        Debug.WriteLine($"ex: {WifiWifiNetworkHelper.HelperException}");
     }
 }
 //否则 连接成功，您已经拥有有效的IP和时间
@@ -201,19 +201,19 @@ if (!success)
 
 ### 使用静态IP地址连接
 
-你可以用一个静态IP地址加入一个WiFi网络  :
+你可以用一个静态IP地址加入一个Wifi网络  :
 
 ```csharp
 const string Ssid = "您的wifi名称";
 const string Password = "您的wifi密码";
 // 连接wifi的超时时间
 CancellationTokenSource cs = new(60000);
-var success = WiFiNetworkHelper.ConnectFixAddress(Ssid, Password, new IPConfiguration("192.168.1.7", "255.255.255.0", "192.168.1.1"), setDateTime: true, token: cs.Token);
+var success = WifiNetworkHelper.ConnectFixAddress(Ssid, Password, new IPConfiguration("192.168.1.7", "255.255.255.0", "192.168.1.1"), setDateTime: true, token: cs.Token);
 ```
 
 ### Checking valid IP address and date
 
-WiFiNetworkHelper提供了几个功能来检查您的IP地址的有效性，日期时间，并帮助设置它们 :
+WifiNetworkHelper提供了几个功能来检查您的IP地址的有效性，日期时间，并帮助设置它们 :
 
 ```csharp
 var success = IsValidDateTime();

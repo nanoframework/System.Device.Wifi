@@ -26,15 +26,15 @@ namespace NFUnitTestWifiConnection
             // Give 10 seconds to the WiFi join to happen
             CancellationTokenSource cs = new(10000);
 
-            var success = WiFiNetworkHelper.Reconnect(token: cs.Token);
+            var success = WifiNetworkHelper.Reconnect(token: cs.Token);
 
             ConnectToWifiWithCredentialsTests.DisplayLastError(success);
 
             Assert.True(success);
-            Assert.Null(WiFiNetworkHelper.HelperException);
+            Assert.Null(WifiNetworkHelper.HelperException);
 
             // need to reset this internal flag to allow calling the NetworkHelper again
-            WiFiNetworkHelper.ResetInstance();
+            WifiNetworkHelper.ResetInstance();
         }
     }
 }

@@ -32,10 +32,10 @@ namespace NFUnitTestWifiConnection
             }
             else
             {
-                Debug.WriteLine($"Can't connect to the network, error: {WiFiNetworkHelper.Status}");
-                if (WiFiNetworkHelper.HelperException != null)
+                Debug.WriteLine($"Can't connect to the network, error: {WifiNetworkHelper.Status}");
+                if (WifiNetworkHelper.HelperException != null)
                 {
-                    Debug.WriteLine($"ex: { WiFiNetworkHelper.HelperException}");
+                    Debug.WriteLine($"ex: { WifiNetworkHelper.HelperException}");
                 }
             }
         }
@@ -46,7 +46,7 @@ namespace NFUnitTestWifiConnection
             // Give 10 seconds to the WiFi join to happen
             CancellationTokenSource cs = new(10000);
 
-            var success = WiFiNetworkHelper.ConnectDhcp(
+            var success = WifiNetworkHelper.ConnectDhcp(
                 Ssid,
                 Password,
                 requiresDateTime: true,
@@ -55,10 +55,10 @@ namespace NFUnitTestWifiConnection
             DisplayLastError(success);
 
             Assert.True(success);
-            Assert.Null(WiFiNetworkHelper.HelperException);
+            Assert.Null(WifiNetworkHelper.HelperException);
 
             // need to reset this internal flag to allow calling the NetworkHelper again
-            WiFiNetworkHelper.ResetInstance();
+            WifiNetworkHelper.ResetInstance();
         }
     }
 }
