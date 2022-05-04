@@ -30,7 +30,7 @@
   <PropertyGroup>
     <!-- override default options for MetaDataProcessor -->
     <NF_GenerateStubsDirectory>bin\$(Configuration)\Stubs</NF_GenerateStubsDirectory>
-    <NF_GenerateSkeletonProjectName>sys_dev_Wifi_native</NF_GenerateSkeletonProjectName>
+    <NF_GenerateSkeletonProjectName>sys_dev_wifi_native</NF_GenerateSkeletonProjectName>
   </PropertyGroup>
   <ItemGroup>
     <NFMDP_PE_ExcludeClassByName Include="ThisAssembly">
