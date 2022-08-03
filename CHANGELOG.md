@@ -2,7 +2,15 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/System.Device.WiFi/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.4.0.24...HEAD)
+[Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.5.2...HEAD)
+
+**Documentation and other chores:**
+
+- Update 2 NuGet dependencies [\#218](https://github.com/nanoframework/System.Device.Wifi/pull/218)
+
+## [v1.5.2](https://github.com/nanoframework/System.Device.WiFi/tree/v1.5.2) (2022-08-03)
+
+[Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.4.0.24...v1.5.2)
 
 **Documentation and other chores:**
 
