@@ -34,9 +34,9 @@
       },
       "nanoFramework.System.Threading": {
         "type": "Direct",
-        "requested": "[1.0.4, 1.0.4]",
-        "resolved": "1.0.4",
-        "contentHash": "P/6ZqtSj8/IKMIRMiv3hlDKwo7ExlWqJKyTeoJjF+NDK5NVQ4twAcbIXkV726SQwtEotdc8II8WanLoiGONI/g=="
+        "requested": "[1.1.8, 1.1.8]",
+        "resolved": "1.1.8",
+        "contentHash": "oES5GN3KHoDzifRNr06WM7P9NaQf+kDmIYkr1ETR2awmERHz4sRpECduGEatwyo1vMhMvZY/KoBcEpAyKNbDgQ=="
       },
       "Nerdbank.GitVersioning": {
         "type": "Direct",
