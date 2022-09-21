@@ -1,8 +1,8 @@
 # Changelog
 
-## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/System.Device.WiFi/tree/HEAD)
+## [v1.5.13](https://github.com/nanoframework/System.Device.WiFi/tree/v1.5.13) (2022-09-15)
 
-[Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.5.8...HEAD)
+[Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.5.8...v1.5.13)
 
 **Documentation and other chores:**
 
