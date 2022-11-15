@@ -3,6 +3,7 @@
 // See LICENSE file in the project root for full license information.
 //
 
+using System;
 using System.Runtime.CompilerServices;
 
 namespace System.Device.Wifi
@@ -187,12 +188,15 @@ namespace System.Device.Wifi
             return adapters;
         }
 
-
         /// <summary>
         /// Directs this adapter to initiate an asynchronous network scan.
         /// </summary>
-        /// <remarks>On successful completion, returns a list of networks scanned by this adapter signaled by the AvailableNetworksChanged event.
-        /// Use NetworkReport to retrive the list of available Networks.
+        /// <exception cref="InvalidOperationException">If the Wi-Fi interface hasn't been started.</exception>
+        /// <exception cref="Busy">If the Wi-Fi interface is performing a connect operation.</exception>
+        /// <exception cref="TimeoutException">If a timeout occurred when trying to initiate a scan operation.</exception>
+        /// <exception cref="Fail">Failed to get the configuration for the Wi-Fi adapter.</exception>
+        /// <remarks>On successful completion, returns a list of Wi-Fi networks scanned by this adapter signaled by the <see cref="AvailableNetworksChanged"/> event.
+        /// Use <see cref="NetworkReport"/> to retrieve the list of available Wi-Fi networks.
         /// </remarks>
         public void ScanAsync()
         {
