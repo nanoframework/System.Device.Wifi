@@ -2,7 +2,21 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/System.Device.WiFi/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.5.35...HEAD)
+[Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.5.37...HEAD)
+
+**Documentation and other chores:**
+
+- Update 5 NuGet dependencies [\#245](https://github.com/nanoframework/System.Device.Wifi/pull/245)
+- Update 1 NuGet dependencies [\#242](https://github.com/nanoframework/System.Device.Wifi/pull/242)
+- Update 1 NuGet dependencies [\#241](https://github.com/nanoframework/System.Device.Wifi/pull/241)
+- Update 1 NuGet dependencies [\#240](https://github.com/nanoframework/System.Device.Wifi/pull/240)
+- Update 1 NuGet dependencies [\#239](https://github.com/nanoframework/System.Device.Wifi/pull/239)
+- Improve documentation on ScanAsync [\#238](https://github.com/nanoframework/System.Device.Wifi/pull/238)
+- Update 1 NuGet dependencies [\#237](https://github.com/nanoframework/System.Device.Wifi/pull/237)
+
+## [v1.5.37](https://github.com/nanoframework/System.Device.WiFi/tree/v1.5.37) (2022-10-26)
+
+[Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.5.35...v1.5.37)
 
 **Documentation and other chores:**
 
