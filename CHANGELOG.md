@@ -2,7 +2,19 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/System.Device.WiFi/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.5.49...HEAD)
+[Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.5.51...HEAD)
+
+**Implemented enhancements:**
+
+- Adding disconnect and exposing WifiAdapter in helper [\#249](https://github.com/nanoframework/System.Device.Wifi/pull/249)
+
+**Documentation and other chores:**
+
+- Update 1 NuGet dependencies [\#248](https://github.com/nanoframework/System.Device.Wifi/pull/248)
+
+## [v1.5.51](https://github.com/nanoframework/System.Device.WiFi/tree/v1.5.51) (2022-12-28)
+
+[Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.5.49...v1.5.51)
 
 **Documentation and other chores:**
 
