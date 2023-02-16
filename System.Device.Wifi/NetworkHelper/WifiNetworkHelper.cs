@@ -22,7 +22,7 @@ namespace nanoFramework.Networking
 
         private static string _ssid;
         private static string _password;
-        private static WifiAdapter _wifi;
+        private static WifiAdapter _wifi = null;
         private static WifiReconnectionKind _reconnectionKind;
         private static IPConfiguration _ipConfiguration;
 
@@ -118,6 +118,21 @@ namespace nanoFramework.Networking
             // fire working thread
             new Thread(WorkingThread).Start();
         }
+
+        /// <summary>
+        /// Disconnect from the network.
+        /// </summary>
+        public static void Disconnect()
+        {
+            _wifi?.Disconnect();
+            _wifi?.Dispose();
+            _wifi = null;
+        }
+
+        /// <summary>
+        /// Gets the Wifi Adapter.
+        /// </summary>
+        public static WifiAdapter WifiAdapter { get => _wifi; }
 
         /// <summary>
         /// This method will connect the network with DHCP enabled, for your SSID and try to connect to it with the credentials you've passed. This will save as well
@@ -418,7 +433,7 @@ namespace nanoFramework.Networking
                     }
 
                     // sanity check
-                    if(ni == null)
+                    if (ni == null)
                     {
                         return;
                     }
@@ -517,7 +532,7 @@ namespace nanoFramework.Networking
                     NetworkChange.NetworkAddressChanged += new NetworkAddressChangedEventHandler(AddressChangedCallback);
                 }
 
-                if(!string.IsNullOrEmpty(_ssid) &&
+                if (!string.IsNullOrEmpty(_ssid) &&
                     !string.IsNullOrEmpty(_password))
                 {
                     bool isAlreadyConnected = false;
@@ -574,7 +589,7 @@ namespace nanoFramework.Networking
                     _workingNetworkInterface,
                     _ipConfiguration);
 
-                if(connectToWifi)
+                if (connectToWifi)
                 {
                     // connect to Wifi
                     _wifi.Connect(
