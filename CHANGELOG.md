@@ -2,7 +2,23 @@
 
 ## [**Changes available only in 'Preview' NuGet packages:**](https://github.com/nanoframework/System.Device.WiFi/tree/HEAD)
 
-[Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.5.51...HEAD)
+[Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.5.54...HEAD)
+
+**Documentation and other chores:**
+
+- Update 1 NuGet dependencies [\#259](https://github.com/nanoframework/System.Device.Wifi/pull/259)
+- Update README.zh-cn.md [\#258](https://github.com/nanoframework/System.Device.Wifi/pull/258)
+- Update 1 NuGet dependencies [\#257](https://github.com/nanoframework/System.Device.Wifi/pull/257)
+- Update 1 NuGet dependencies [\#256](https://github.com/nanoframework/System.Device.Wifi/pull/256)
+- Update 2 NuGet dependencies [\#255](https://github.com/nanoframework/System.Device.Wifi/pull/255)
+- Update 1 NuGet dependencies [\#254](https://github.com/nanoframework/System.Device.Wifi/pull/254)
+- Update 2 NuGet dependencies [\#253](https://github.com/nanoframework/System.Device.Wifi/pull/253)
+- Update 1 NuGet dependencies [\#251](https://github.com/nanoframework/System.Device.Wifi/pull/251)
+- Duplicate Wifi readme content [\#250](https://github.com/nanoframework/System.Device.Wifi/pull/250)
+
+## [v1.5.54](https://github.com/nanoframework/System.Device.WiFi/tree/v1.5.54) (2023-02-16)
+
+[Full Changelog](https://github.com/nanoframework/System.Device.WiFi/compare/v1.5.51...v1.5.54)
 
 **Implemented enhancements:**
 
