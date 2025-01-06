@@ -16,15 +16,15 @@
       },
       "nanoFramework.System.IO.Streams": {
         "type": "Direct",
-        "requested": "[1.1.76, 1.1.76]",
-        "resolved": "1.1.76",
-        "contentHash": "PQi/9JA+7bZOuWhi3irVt5Bk5VNY6atDcnphbXw0dU3G9AMFLLH6VCtom6jlYse4juzguGRp1JLax1TUyRAYSg=="
+        "requested": "[1.1.77, 1.1.77]",
+        "resolved": "1.1.77",
+        "contentHash": "zCEUBldDYkA1f02bdkz7VSLa/2NDRBtclS61ujcXs7IvfFcNF1qY2lLTCoPnznxAvJqPGoN49CbGbW9D4hJH3g=="
       },
       "nanoFramework.System.Net": {
         "type": "Direct",
-        "requested": "[1.11.13, 1.11.13]",
-        "resolved": "1.11.13",
-        "contentHash": "9SFE9+Zfi1g1SwjO3BKdRyg8DchRritxGeoftvuEvHgKKXscOwijcB/uClhOFHnrx9VTrnjWQ+XtQzgLTB2ZIg=="
+        "requested": "[1.11.14, 1.11.14]",
+        "resolved": "1.11.14",
+        "contentHash": "K1agfyG4mmsftIQWg6zEcEkrrx30Sg/3Xz+l02daLy6DbYNh11Af1WC0eJy3FvL5BJgFHJipqa56RJtN7flN1g=="
       },
       "nanoFramework.System.Text": {
         "type": "Direct",
