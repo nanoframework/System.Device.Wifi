@@ -21,7 +21,7 @@ This package requires a target with System.Device.Wifi v$nativeVersion$ (checksu
     <dependencies>
       <dependency id="nanoFramework.CoreLibrary" version="1.17.7" />
       <dependency id="nanoFramework.Runtime.Events" version="1.11.31" />
-      <dependency id="nanoFramework.System.Net" version="1.11.35" />
+      <dependency id="nanoFramework.System.Net" version="1.11.36" />
     </dependencies>
   </metadata>
   <files>
