@@ -96,7 +96,11 @@ namespace System.Device.Wifi
                 Array.Copy(nativeReport, bytePos, rawSsid, 0, 33);
                 
                 int ssidLength = Array.IndexOf(rawSsid, (byte)0);
-                if (ssidLength < 0) ssidLength = 33;
+                if (ssidLength < 0) 
+                {
+                    ssidLength = 33;
+                }
+                
                 WifiNetworks[index].Ssid = Encoding.UTF8.GetString(rawSsid, 0, ssidLength);
                 bytePos += 33;
 
