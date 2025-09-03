@@ -5,6 +5,7 @@
 
 using System;
 using System.Runtime.CompilerServices;
+using System.Text;
 
 namespace System.Device.Wifi
 {
@@ -91,14 +92,16 @@ namespace System.Device.Wifi
                 WifiNetworks[index].Bsid = BitConverter.ToString(nativeReport, bytePos, 6);
                 bytePos += 6;
 
-                // need to convert this programmatically to prevent referencing System.Text
-                char[] rawSsid = new char[33];
-                for (int i = 0; i < 33; i++)
+                byte[] rawSsid = new byte[33];
+                Array.Copy(nativeReport, bytePos, rawSsid, 0, 33);
+                
+                int ssidLength = Array.IndexOf(rawSsid, (byte)0);
+                if (ssidLength < 0) 
                 {
-                    rawSsid[i] = (char)nativeReport[bytePos + i];
+                    ssidLength = 33;
                 }
-
-                WifiNetworks[index].Ssid = new string(rawSsid, 0, 33);
+                
+                WifiNetworks[index].Ssid = Encoding.UTF8.GetString(rawSsid, 0, ssidLength);
                 bytePos += 33;
 
                 WifiNetworks[index]._rssi = (sbyte)nativeReport[bytePos];
