@@ -198,7 +198,7 @@ namespace System.Device.Wifi
         /// <exception cref="ArgumentException">If <paramref name="deviceName"/> is <see langword="null"/>, empty or the length over 32 characters.</exception>
         /// <exception cref="NotSupportedException">Thrown when the current firmware was built without Wi-Fi and setting the device name is not supported on this platform.</exception>
         /// <exception cref="NotImplementedException">Thrown on platforms where setting the device name is not yet implemented.</exception>
-        /// <exception cref="InvalidOperationException">Thrown when the underlying Wi-Fi stack rejects to specify device name. On ESP32 this corresponds to a failure of the native <c>esp_netif_set_hostname</c> call.</exception>
+        /// <exception cref="InvalidOperationException">Thrown when the underlying Wi-Fi stack rejects to specify device name.</exception>
         /// <remarks>
         /// The device name is sent to the access point during connection and may appear in the router’s
         /// client list or DHCP lease table.  
