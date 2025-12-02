@@ -94,13 +94,13 @@ namespace System.Device.Wifi
 
                 byte[] rawSsid = new byte[33];
                 Array.Copy(nativeReport, bytePos, rawSsid, 0, 33);
-                
+
                 int ssidLength = Array.IndexOf(rawSsid, (byte)0);
-                if (ssidLength < 0) 
+                if (ssidLength < 0)
                 {
                     ssidLength = 33;
                 }
-                
+
                 WifiNetworks[index].Ssid = Encoding.UTF8.GetString(rawSsid, 0, ssidLength);
                 bytePos += 33;
 
@@ -192,6 +192,29 @@ namespace System.Device.Wifi
         }
 
         /// <summary>
+        /// Sets the device name advertised by this Wi-Fi adapter when connecting to a network.
+        /// </summary>
+        /// <param name="deviceName">The device name to assign to this adapter.</param>
+        /// <exception cref="ArgumentException">If <paramref name="deviceName"/> is <see langword="null"/>, empty or the length over 32 characters.</exception>
+        /// <exception cref="NotSupportedException">Thrown when the current firmware was built without Wi-Fi and setting the device name is not supported on this platform.</exception>
+        /// <exception cref="NotImplementedException">Thrown on platforms where setting the device name is not yet implemented.</exception>
+        /// <exception cref="InvalidOperationException">Thrown when the underlying Wi-Fi stack rejects to specify device name.</exception>
+        /// <remarks>
+        /// The device name is sent to the access point during connection and may appear in the router’s
+        /// client list or DHCP lease table.  
+        /// This method must be called before initiating a connection to take effect.
+        /// </remarks>
+        public void SetDeviceName(string deviceName)
+        {
+            if (string.IsNullOrEmpty(deviceName) || deviceName.Length > 32)
+            {
+                throw new ArgumentException();
+            }
+
+            NativeSetDeviceName(deviceName);
+        }
+
+        /// <summary>
         /// Directs this adapter to initiate an asynchronous network scan.
         /// </summary>
         /// <exception cref="InvalidOperationException">If the Wi-Fi interface hasn't been started.</exception>
@@ -275,6 +298,9 @@ namespace System.Device.Wifi
 
         [MethodImpl(MethodImplOptions.InternalCall)]
         private extern byte[] GetNativeScanReport();
+
+        [MethodImpl(MethodImplOptions.InternalCall)]
+        private extern void NativeSetDeviceName(string deviceName);
 
         #endregion
 
