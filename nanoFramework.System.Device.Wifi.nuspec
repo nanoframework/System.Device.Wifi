@@ -19,17 +19,15 @@
 This package requires a target with System.Device.Wifi v$nativeVersion$ (checksum $checksum$).</description>
     <tags>nanoFramework C# csharp netmf netnf Wifi</tags>
     <dependencies>
-      <dependency id="nanoFramework.CoreLibrary" version="2.0.0-preview.35" />
-      <dependency id="nanoFramework.Runtime.Events" version="2.0.0-preview.8" />
-      <dependency id="nanoFramework.System.Net" version="2.0.0-preview.2" />
+      <group targetFramework=".NETnanoFramework1.0">
+        <dependency id="nanoFramework.CoreLibrary" version="2.0.0-preview.35" />
+        <dependency id="nanoFramework.Runtime.Events" version="2.0.0-preview.8" />
+        <dependency id="nanoFramework.System.Net" version="2.0.0-preview.2" />
+      </group>
     </dependencies>
   </metadata>
   <files>
-    <file src="System.Device.Wifi\bin\Release\System.Device.Wifi.dll" target="lib\System.Device.Wifi.dll" />
-    <file src="System.Device.Wifi\bin\Release\System.Device.Wifi.pdb" target="lib\System.Device.Wifi.pdb" />
-    <file src="System.Device.Wifi\bin\Release\System.Device.Wifi.pdbx" target="lib\System.Device.Wifi.pdbx" />
-    <file src="System.Device.Wifi\bin\Release\System.Device.Wifi.pe" target="lib\System.Device.Wifi.pe" />
-    <file src="System.Device.Wifi\bin\Release\System.Device.Wifi.xml" target="lib\System.Device.Wifi.xml" />
+    <file src="System.Device.Wifi\bin\Release\System.Device.Wifi.*" target="lib\netnano1.0" />
     <file src="assets\readme.txt" target="" />
     <file src="README.md" target="docs\" />
     <file src="assets\nf-logo.png" target="images" />
