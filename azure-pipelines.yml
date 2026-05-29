@@ -53,7 +53,7 @@ steps:
     parameters:
       sonarCloudProject: 'nanoframework_System.Device.WiFi'
       runUnitTests: false
-      unitTestRunsettings: '$(System.DefaultWorkingDirectory)\Tests\NFUnitTestWifiConnection\nano.runsettings'
+      unitTestRunsettings: '$(System.DefaultWorkingDirectory)\.runsettings'
       usePreviewBuild: true
 
   # step from template @ nf-tools repo
