@@ -46,7 +46,7 @@ namespace NFUnitTestWifiConnection
             Assert.IsNull(WifiNetworkHelper.HelperException);
 
             // need to reset this internal flag to allow calling the NetworkHelper again
-            WifiNetworkHelper.ResetInstance();
+            WifiNetworkHelper.Reset();
         }
 
         [TestMethod]
@@ -62,7 +62,7 @@ namespace NFUnitTestWifiConnection
             Assert.IsTrue(WifiNetworkHelper.NetworkReady.WaitOne(10000, true));
 
             // need to reset this internal flag to allow calling the NetworkHelper again
-            WifiNetworkHelper.ResetInstance();
+            WifiNetworkHelper.Reset();
         }
     }
 }

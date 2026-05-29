@@ -121,6 +121,59 @@ var success = WaitForValidIPAndDate(true, NetworkInterfaceType.Ethernet, cs.Toke
 // if success is true then you are connected
 ```
 
+### Retry and reconfiguration
+
+#### Retry after timeout
+
+Token-based methods (`ConnectDhcp`, `ScanAndConnectDhcp`, `ConnectFixAddress`) are retryable. If a connection attempt times out, call the method again:
+
+```csharp
+bool connected = false;
+while (!connected)
+{
+    CancellationTokenSource cs = new(30000);
+    connected = WifiNetworkHelper.ConnectDhcp(Ssid, Password, requiresDateTime: true, token: cs.Token);
+    if (!connected)
+    {
+        Debug.WriteLine($"Not ready, status: {WifiNetworkHelper.Status}");
+        Thread.Sleep(5000);
+    }
+}
+```
+
+#### Switching networks or restarting
+
+To switch to a different SSID or restart the event-based helper, call `Reset()` first:
+
+```csharp
+// Disconnect from current network if needed
+WifiNetworkHelper.Disconnect();
+
+// Reset the helper so it can be reconfigured
+WifiNetworkHelper.Reset();
+
+// Connect to a different SSID
+CancellationTokenSource cs = new(30000);
+WifiNetworkHelper.ConnectDhcp("NewSSID", "NewPassword", token: cs.Token);
+```
+
+The same applies to the event-based `SetupNetworkHelper`:
+
+```csharp
+WifiNetworkHelper.Reset();
+WifiNetworkHelper.SetupNetworkHelper("NewSSID", "NewPassword");
+```
+
+#### `Reconnect()` vs. `ConnectDhcp()`
+
+`Reconnect()` does **not** actively send join credentials. It only waits for the platform's automatic reconnection (configured via `WifiReconnectionKind.Automatic`) to produce a valid IP address. Use it only when credentials are already stored on the device and the platform is expected to reconnect automatically.
+
+If you need an explicit reconnect with credentials, use `ConnectDhcp()` instead.
+
+#### `NetworkReady` behaviour
+
+When using `SetupNetworkHelper()`, `NetworkReady` is reset when the connection is lost and re-signaled when it is restored, accurately reflecting live network state. Code that previously assumed `NetworkReady` would remain set permanently after first connect should be updated to handle transient disconnects.
+
 ## Feedback and documentation
 
 For documentation, providing feedback, issues and finding out how to contribute please refer to the [Home repo](https://github.com/nanoframework/Home).
