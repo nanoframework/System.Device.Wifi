@@ -174,7 +174,7 @@ If you need an explicit reconnect with credentials, use `ConnectDhcp()` instead.
 
 When using `SetupNetworkHelper()`, `NetworkReady` is reset when the connection is lost and re-signaled when it is restored, accurately reflecting live network state. Code that previously assumed `NetworkReady` would remain set permanently after first connect should be updated to handle transient disconnects.
 
-## 
+## Feedback and documentation
 
 For documentation, providing feedback, issues and finding out how to contribute please refer to the [Home repo](https://github.com/nanoframework/Home).
 

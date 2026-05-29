@@ -44,7 +44,7 @@ namespace nanoFramework.Networking
         /// The conditions for this are setup in the call to <see cref="WifiNetworkHelper.SetupNetworkHelper"/>. 
         /// It will be a composition of network connected, IpAddress available and valid system <see cref="DateTime"/>.
         /// <para>
-        /// When using <see cref="SetupNetworkHelper()"/>, this event is reset when the connection is lost
+        /// When using <see cref="SetupNetworkHelper(bool)"/>, this event is reset when the connection is lost
         /// and re-signaled when it is restored, accurately reflecting live network state.
         /// </para>
         /// </remarks>
@@ -271,7 +271,7 @@ namespace nanoFramework.Networking
         }
 
         /// <summary>
-        /// Resets the WifiNetworkHelper to its initial state, allowing <see cref="SetupNetworkHelper()"/> to be called again
+        /// Resets the WifiNetworkHelper to its initial state, allowing <see cref="SetupNetworkHelper(bool)"/> to be called again
         /// or the network configuration to be changed.
         /// </summary>
         /// <remarks>
@@ -534,6 +534,45 @@ namespace nanoFramework.Networking
         }
 
         /// <summary>
+        /// Ensures the target Wi-Fi profile is configured and returns whether an explicit connect should be performed.
+        /// </summary>
+        /// <param name="nis">Network interfaces currently available.</param>
+        /// <returns><see langword="true"/> when a connect should be issued after IP setup; otherwise <see langword="false"/>.</returns>
+        private static bool TryPrepareWifiConnection(NetworkInterface[] nis)
+        {
+            if (string.IsNullOrEmpty(_ssid) || string.IsNullOrEmpty(_password))
+            {
+                return false;
+            }
+
+            foreach (NetworkInterface ni in nis)
+            {
+                if (ni.NetworkInterfaceType == NetworkInterfaceType.Wireless80211)
+                {
+                    Wireless80211Configuration wc = Wireless80211Configuration.GetAllWireless80211Configurations()[ni.SpecificConfigId];
+
+                    if (wc.Ssid == _ssid)
+                    {
+                        return false;
+                    }
+                }
+            }
+
+            _wifi.Disconnect();
+
+            foreach (NetworkInterface ni in nis)
+            {
+                if (ni.NetworkInterfaceType == NetworkInterfaceType.Wireless80211)
+                {
+                    StoreWifiConfiguration(ni);
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        /// <summary>
         /// Perform setup of the various fields and events, along with any of the required event handlers.
         /// </summary>
         /// <param name="setupEvents">Set <see langword="true"/> to setup the events and background thread. Required for the event-based approach. Not required for the CancellationToken approach.</param>
@@ -549,12 +588,8 @@ namespace nanoFramework.Networking
                 // set flag
                 _helperInstanciated = true;
 
-                // flag to connect to Wifi after IP setup
-                bool connectToWifi = false;
-
                 // setup event
                 _ipAddressAvailable = new(false);
-
 
                 // currently we only support one Wifi adapter, so this is it
                 _wifi = WifiAdapter.FindAllAdapters()[0];
@@ -572,57 +607,7 @@ namespace nanoFramework.Networking
                 // setup handler
                 NetworkChange.NetworkAddressChanged += new NetworkAddressChangedEventHandler(AddressChangedCallback);
 
-                if (!string.IsNullOrEmpty(_ssid) &&
-                    !string.IsNullOrEmpty(_password))
-                {
-                    bool isAlreadyConnected = false;
-
-                    // this is to connect to a specific Wifi network
-                    // check if device it's already connected to the correct network
-                    foreach (NetworkInterface ni in nis)
-                    {
-                        if (ni.NetworkInterfaceType == NetworkInterfaceType.Wireless80211)
-                        {
-                            Wireless80211Configuration wc = Wireless80211Configuration.GetAllWireless80211Configurations()[ni.SpecificConfigId];
-
-                            // Let's make sure this configuration is saved
-                            if (wc.Ssid == _ssid)
-                            {
-                                isAlreadyConnected = true;
-                                break;
-                            }
-                        }
-                    }
-
-                    if (!isAlreadyConnected)
-                    {
-                        _wifi.Disconnect();
-                        isAlreadyConnected = false;
-                    }
-
-                    if (!isAlreadyConnected)
-                    {
-                        nis = NetworkInterface.GetAllNetworkInterfaces();
-
-                        foreach (NetworkInterface ni in nis)
-                        {
-                            if (ni.NetworkInterfaceType == NetworkInterfaceType.Wireless80211)
-                            {
-                                _wifi.Disconnect();
-
-                                // Make sure we store the configuration
-                                StoreWifiConfiguration(ni);
-
-                                // set flag to connect to Wifi after IP config
-                                connectToWifi = true;
-
-                                // done here
-                                break;
-                            }
-                        }
-                    }
-
-                }
+                bool connectToWifi = TryPrepareWifiConnection(nis);
 
                 NetworkHelperInternal.InternalSetupHelper(
                     nis,

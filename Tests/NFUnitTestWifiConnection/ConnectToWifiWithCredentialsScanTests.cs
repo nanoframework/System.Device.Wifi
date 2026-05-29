@@ -84,6 +84,9 @@ namespace NFUnitTestWifiConnection
                 // call twice, it's a NO NO and should throw an exception
                 WifiNetworkHelper.SetupNetworkHelper();
             });
+
+            // clear static state so this test doesn't affect later tests
+            WifiNetworkHelper.Reset();
         }
     }
 }
