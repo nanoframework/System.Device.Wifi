@@ -54,11 +54,70 @@ namespace NFUnitTestWifiConnection
 
             DisplayLastError(success);
 
-            Assert.True(success);
-            Assert.Null(WifiNetworkHelper.HelperException);
+            Assert.IsTrue(success);
+            Assert.IsNull(WifiNetworkHelper.HelperException);
 
-            // need to reset this internal flag to allow calling the NetworkHelper again
-            WifiNetworkHelper.ResetInstance();
+            WifiNetworkHelper.Reset();
+        }
+
+        [TestMethod]
+        public void TestRetryAfterTimeout()
+        {
+            // First attempt: very short timeout so it expires
+            CancellationTokenSource cs1 = new(1000);
+            var firstResult = WifiNetworkHelper.ConnectDhcp(
+                Ssid,
+                Password,
+                token: cs1.Token);
+
+            Assert.IsFalse(firstResult, "First call should have timed out");
+
+            // Second attempt with a longer timeout — must not throw InvalidOperationException
+            CancellationTokenSource cs2 = new(15000);
+            var secondResult = WifiNetworkHelper.ConnectDhcp(
+                Ssid,
+                Password,
+                requiresDateTime: true,
+                token: cs2.Token);
+
+            DisplayLastError(secondResult);
+            Assert.IsTrue(secondResult, "Second attempt should succeed after retry");
+
+            WifiNetworkHelper.Reset();
+        }
+
+        [TestMethod]
+        public void TestResetAllowsEventBasedRestart()
+        {
+            // Use event-based helper once
+            WifiNetworkHelper.SetupNetworkHelper(Ssid, Password);
+
+            bool connected = WifiNetworkHelper.NetworkReady.WaitOne(15000, true);
+            Assert.IsTrue(connected, "Expected to connect on first event-based attempt");
+
+            // Reset and restart with same credentials
+            WifiNetworkHelper.Reset();
+            WifiNetworkHelper.SetupNetworkHelper(Ssid, Password);
+
+            connected = WifiNetworkHelper.NetworkReady.WaitOne(15000, true);
+            Assert.IsTrue(connected, "Expected to connect after Reset + SetupNetworkHelper restart");
+
+            WifiNetworkHelper.Reset();
+        }
+
+        [TestMethod]
+        public void TestSingleUsageEventBased()
+        {
+            Assert.ThrowsException(typeof(System.InvalidOperationException), () =>
+            {
+                // First call is OK
+                WifiNetworkHelper.SetupNetworkHelper(Ssid, Password);
+
+                // Second call without Reset must throw
+                WifiNetworkHelper.SetupNetworkHelper(Ssid, Password);
+            });
+
+            WifiNetworkHelper.Reset();
         }
     }
 }

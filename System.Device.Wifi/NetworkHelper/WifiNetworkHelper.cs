@@ -33,7 +33,7 @@ namespace nanoFramework.Networking
         private static NetworkInterfaceType _workingNetworkInterface = NetworkInterfaceType.Wireless80211;
 
         /// <summary>
-        /// This flag will make sure there is only one and only call to any of the helper methods.
+        /// This flag will make sure there is only one and only one call to the event-based helper methods.
         /// </summary>
         private static bool _helperInstanciated = false;
 
@@ -42,7 +42,12 @@ namespace nanoFramework.Networking
         /// </summary>
         /// <remarks>
         /// The conditions for this are setup in the call to <see cref="WifiNetworkHelper.SetupNetworkHelper"/>. 
-        /// It will be a composition of network connected, IpAddress available and valid system <see cref="DateTime"/>.</remarks>
+        /// It will be a composition of network connected, IpAddress available and valid system <see cref="DateTime"/>.
+        /// <para>
+        /// When using <see cref="SetupNetworkHelper()"/>, this event is reset when the connection is lost
+        /// and re-signaled when it is restored, accurately reflecting live network state.
+        /// </para>
+        /// </remarks>
         public static ManualResetEvent NetworkReady => _networkReady;
 
         /// <summary>
@@ -60,7 +65,7 @@ namespace nanoFramework.Networking
         /// That will be the network connection to be up, having a valid IpAddress and optionally for a valid date and time to become available.
         /// </summary>
         /// <param name="requiresDateTime">Set to <see langword="true"/> if valid date and time are required.</param>
-        /// <exception cref="InvalidOperationException">If any of the <see cref="NetworkHelper"/> methods is called more than once.</exception>
+        /// <exception cref="InvalidOperationException">If called more than once without an intervening call to <see cref="Reset"/>.</exception>
         /// <exception cref="NotSupportedException">There is no network interface configured. Open the 'Edit Network Configuration' in Device Explorer and configure one.</exception>
         public static void SetupNetworkHelper(bool requiresDateTime = false)
         {
@@ -78,6 +83,7 @@ namespace nanoFramework.Networking
         /// </summary>
         /// <param name="ipConfiguration">The static IP configuration you want to apply.</param>
         /// <param name="requiresDateTime">Set to <see langword="true"/> if valid date and time are required.</param>
+        /// <exception cref="InvalidOperationException">If called more than once without an intervening call to <see cref="Reset"/>.</exception>
         /// <exception cref="NotSupportedException">There is no network interface configured. Open the 'Edit Network Configuration' in Device Explorer and configure one.</exception>
         public static void SetupNetworkHelper(
             IPConfiguration ipConfiguration,
@@ -100,7 +106,7 @@ namespace nanoFramework.Networking
         /// <param name="ssid">The SSID of the network you are trying to connect to.</param>
         /// <param name="password">The password associated to the SSID of the network you are trying to connect to.</param>
         /// <param name="reconnectionKind">The <see cref="WifiReconnectionKind"/> to setup for the connection.</param>
-        /// <exception cref="InvalidOperationException">If any of the <see cref="NetworkHelper"/> methods is called more than once.</exception>
+        /// <exception cref="InvalidOperationException">If called more than once without an intervening call to <see cref="Reset"/>.</exception>
         /// <exception cref="NotSupportedException">There is no network interface configured. Open the 'Edit Network Configuration' in Device Explorer and configure one.</exception>
         public static void SetupNetworkHelper(
             string ssid,
@@ -137,6 +143,7 @@ namespace nanoFramework.Networking
         /// <summary>
         /// This method will connect the network with DHCP enabled, for your SSID and try to connect to it with the credentials you've passed. This will save as well
         /// the configuration of your network.
+        /// This method is retryable and can be called multiple times after a previous call times out or fails.
         /// </summary>
         /// <param name="ssid">The SSID of the network you are trying to connect to.</param>
         /// <param name="password">The password associated to the SSID of the network you are trying to connect to.</param>
@@ -165,6 +172,7 @@ namespace nanoFramework.Networking
         /// <summary>
         /// This method will connect the network with the static IP address you are providing, for your SSID and try to connect to it with the credentials you've passed. This will save as well
         /// the configuration of your network.
+        /// This method is retryable and can be called multiple times after a previous call times out or fails.
         /// </summary>
         /// <param name="ssid">The SSID you are trying to connect to.</param>
         /// <param name="password">The password associated to the SSID you are trying to connect to.</param>
@@ -195,6 +203,7 @@ namespace nanoFramework.Networking
         /// <summary>
         /// This method will scan and connect the network with DHCP enabled, for your SSID and try to connect to it with the credentials you've passed. This will save as well
         /// the configuration of your network. 
+        /// This method is retryable and can be called multiple times after a previous call times out or fails.
         /// </summary>
         /// <param name="ssid">The SSID you are trying to connect to.</param>
         /// <param name="password">The password associated to the SSID you are trying to connect to.</param>
@@ -221,15 +230,21 @@ namespace nanoFramework.Networking
                 token);
 
         /// <summary>
-        /// This method will connect the network, the information used to connect is the one already stored on the device.
+        /// Waits for the platform's automatic WiFi reconnection to produce a valid IP address.
+        /// This method does not actively send join credentials to the access point.
+        /// It relies on the <see cref="WifiReconnectionKind.Automatic"/> behaviour previously configured
+        /// when calling <see cref="ConnectDhcp"/> or <see cref="ConnectFixAddress"/>.
         /// </summary>
+        /// <remarks>
+        /// Use this method only when the device credentials are already stored and the platform is expected
+        /// to reconnect automatically. If you need an explicit reconnect with credentials, call
+        /// <see cref="ConnectDhcp"/> or <see cref="ConnectFixAddress"/> instead.
+        /// This method is retryable and can be called multiple times.
+        /// </remarks>
         /// <param name="requiresDateTime">Set to <see langword="true"/> if valid date and time are required.</param>
         /// <param name="wifiAdapterId">The index of the Wifi adapter to be used. Relevant only if there are multiple Wifi adapters.</param>
         /// <param name="token">A <see cref="CancellationToken"/> used for timing out the operation.</param>
         /// <returns><see langword="true"/> on success. On failure returns <see langword="false"/> and details with the cause of the failure are made available in the <see cref="Status"/> property</returns>
-        /// <remarks>
-        /// This function can be called only if an existing network has been setup previously and if the credentials are valid.
-        /// </remarks>
         public static bool Reconnect(
             bool requiresDateTime = false,
             int wifiAdapterId = 0,
@@ -253,6 +268,33 @@ namespace nanoFramework.Networking
 
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Resets the WifiNetworkHelper to its initial state, allowing <see cref="SetupNetworkHelper()"/> to be called again
+        /// or the network configuration to be changed.
+        /// </summary>
+        /// <remarks>
+        /// Call this before switching to a different WiFi network or restarting the event-based helper.
+        /// This method does not disconnect the WiFi adapter; call <see cref="Disconnect"/> first if needed.
+        /// </remarks>
+        public static void Reset()
+        {
+            // deregister event handler to prevent a handler leak
+            NetworkChange.NetworkAddressChanged -= AddressChangedCallback;
+
+            _helperInstanciated = false;
+            _ipAddressAvailable = null;
+            _networkReady = new(false);
+            _requiresDateTime = false;
+            _networkHelperStatus = NetworkHelperStatus.None;
+            _helperException = null;
+            _ipConfiguration = null;
+            _ssid = null;
+            _password = null;
+
+            // reset the underlying NetworkHelper as well
+            NetworkHelper.Reset();
         }
 
         private static bool ScanAndConnect(
@@ -494,15 +536,16 @@ namespace nanoFramework.Networking
         /// <summary>
         /// Perform setup of the various fields and events, along with any of the required event handlers.
         /// </summary>
-        /// <param name="setupEvents">Set true to setup the events. Required for the thread approach. Not required for the CancelationToken implementation.</param>
+        /// <param name="setupEvents">Set <see langword="true"/> to setup the events and background thread. Required for the event-based approach. Not required for the CancellationToken approach.</param>
         private static void SetupHelper(bool setupEvents)
         {
-            if (_helperInstanciated)
+            if (setupEvents)
             {
-                throw new InvalidOperationException();
-            }
-            else
-            {
+                if (_helperInstanciated)
+                {
+                    throw new InvalidOperationException();
+                }
+
                 // set flag
                 _helperInstanciated = true;
 
@@ -518,19 +561,16 @@ namespace nanoFramework.Networking
 
                 NetworkInterface[] nis = NetworkInterface.GetAllNetworkInterfaces();
 
-                if (setupEvents)
+                // check if there are any network interface setup
+                if (nis.Length == 0)
                 {
-                    // check if there are any network interface setup
-                    if (nis.Length == 0)
-                    {
-                        _networkHelperStatus = NetworkHelperStatus.FailedNoNetworkInterface;
+                    _networkHelperStatus = NetworkHelperStatus.FailedNoNetworkInterface;
 
-                        throw new NotSupportedException();
-                    }
-
-                    // setup handler
-                    NetworkChange.NetworkAddressChanged += new NetworkAddressChangedEventHandler(AddressChangedCallback);
+                    throw new NotSupportedException();
                 }
+
+                // setup handler
+                NetworkChange.NetworkAddressChanged += new NetworkAddressChangedEventHandler(AddressChangedCallback);
 
                 if (!string.IsNullOrEmpty(_ssid) &&
                     !string.IsNullOrEmpty(_password))
@@ -601,6 +641,18 @@ namespace nanoFramework.Networking
                 // update status
                 _networkHelperStatus = NetworkHelperStatus.Started;
             }
+            else
+            {
+                NetworkInterface[] nis = NetworkInterface.GetAllNetworkInterfaces();
+
+                NetworkHelperInternal.InternalSetupHelper(
+                    nis,
+                    _workingNetworkInterface,
+                    _ipConfiguration);
+
+                // update status
+                _networkHelperStatus = NetworkHelperStatus.Started;
+            }
         }
 
         private static void AddressChangedCallback(object sender, EventArgs e)
@@ -609,26 +661,39 @@ namespace nanoFramework.Networking
                 _workingNetworkInterface,
                 _ipConfiguration))
             {
-                _ipAddressAvailable.Set();
+                if (_ipAddressAvailable != null)
+                {
+                    _ipAddressAvailable.Set();
+                }
+
+                // re-signal ready; check DateTime condition in case it was required
+                if (!_requiresDateTime || DateTime.UtcNow.Year >= 2021)
+                {
+                    _networkReady.Set();
+                    _networkHelperStatus = NetworkHelperStatus.NetworkIsReady;
+                }
+            }
+            else
+            {
+                // IP was lost — reset signals so callers block until the connection is restored
+                _networkReady.Reset();
+
+                if (_ipAddressAvailable != null)
+                {
+                    _ipAddressAvailable.Reset();
+                }
+
+                _networkHelperStatus = NetworkHelperStatus.Reconnecting;
             }
         }
 
         /// <summary>
-        /// Method to reset internal fields to it's defaults
+        /// Method to reset internal fields to their defaults.
         /// ONLY TO BE USED BY UNIT TESTS
         /// </summary>
         internal static void ResetInstance()
         {
-            _ipAddressAvailable = null;
-            _networkReady = new(false);
-            _requiresDateTime = false;
-            _networkHelperStatus = NetworkHelperStatus.None;
-            _helperException = null;
-            _ipConfiguration = null;
-            _helperInstanciated = false;
-            _ssid = null;
-            _password = null;
-            NetworkHelper.ResetInstance();
+            Reset();
         }
     }
 }

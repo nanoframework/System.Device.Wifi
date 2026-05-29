@@ -42,11 +42,11 @@ namespace NFUnitTestWifiConnection
 
             ConnectToWifiWithCredentialsTests.DisplayLastError(success);
 
-            Assert.True(success);
-            Assert.Null(WifiNetworkHelper.HelperException);
+            Assert.IsTrue(success);
+            Assert.IsNull(WifiNetworkHelper.HelperException);
 
             // need to reset this internal flag to allow calling the NetworkHelper again
-            WifiNetworkHelper.ResetInstance();
+            WifiNetworkHelper.Reset();
         }
 
         [TestMethod]
@@ -59,10 +59,10 @@ namespace NFUnitTestWifiConnection
                 new[] { "192.168.1.1" }), true);
 
             // wait 10 seconds to connect to the network
-            Assert.True(WifiNetworkHelper.NetworkReady.WaitOne(10000, true));
+            Assert.IsTrue(WifiNetworkHelper.NetworkReady.WaitOne(10000, true));
 
             // need to reset this internal flag to allow calling the NetworkHelper again
-            WifiNetworkHelper.ResetInstance();
+            WifiNetworkHelper.Reset();
         }
     }
 }
